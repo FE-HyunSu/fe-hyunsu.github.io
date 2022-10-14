@@ -23,29 +23,61 @@ layout: default
       {% endif %}
     </li>
 
+    <li>
+    {% for tag in site.data.tags %}
+    <span class="tag" data-tag="{{tag}}">
+      {{ site.data.format[tag] }}
+    </span>
+    {% endfor %}
+    </li>
+
+    <li>
+      <br>
+    </li>
+
     {%- for post in site.posts -%}
       <li>
-        {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          <h2 class="post-title">{{ post.title | escape }}</h2>
-        </a>
-        <div class="post-meta">
-          <div class="post-date">
-            <i class="icon-calendar"></i>
-            {{ post.date | date: date_format }}
+        <div class="post-wrapper"
+          {% if post.tags %}
+            {% for tag in post.tags %}
+              data-{{ tag }}
+            {% endfor %}
+          {% endif %}
+        >
+          {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            <h2 class="post-title">{{ post.title | escape }}</h2>
+          </a>
+          <div class="post-meta">
+            <div class="post-date">
+              <i class="icon-calendar"></i>
+              {{ post.date | date: date_format }}
+            </div>
+            {%- if post.categories.size > 0-%}
+            <ul class="post-categories">
+              {%- for tag in post.categories -%}
+              <li>{{ tag }}</li>
+              {%- endfor -%}
+            </ul>
+            {%- endif -%}
           </div>
-          {%- if post.categories.size > 0-%}
-          <ul class="post-categories">
-            {%- for tag in post.categories -%}
-            <li>{{ tag }}</li>
-            {%- endfor -%}
-          </ul>
-          {%- endif -%}
-        </div>
-        <div class="post">
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
+          <div class="post">
+            {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+              <a class="post-link" href={{ post.url | relative_url }}>
+                ...(more)
+              </a>
+            {%- endif -%}
+          </div>
+          <div class="tag-container">
+            {% for tag in post.tags %}
+            <a>
+              <span class="tag" data-tag="{{tag}}">
+                {{ site.data.format[tag] }}
+              </span>
+            </a>
+            {% endfor %}
+          </div>
         </div>
       </li>
     {%- endfor -%}
@@ -55,3 +87,57 @@ layout: default
 		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
 	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
 {%- endif -%}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script>
+  var currentTag = null;
+  $(document).ready(function() {
+    const queryTag = getQuery().tag;
+    if (queryTag) {
+      currentTag = queryTag;
+      filterByTagName(currentTag)
+    }
+  });
+  $("[data-tag]").click((e) => {
+    if (currentTag == e.target.dataset.tag) {
+      releaseFilter();
+      currentTag = null;
+    } else {
+      currentTag = e.target.dataset.tag;
+      filterByTagName(currentTag);
+    }
+    updateQueryString(currentTag)
+  })
+
+  function getQuery() {
+    var query = {};
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { query[key] = value; });
+    return query;
+  }
+
+  function releaseFilter() {
+    $('.hidden').removeClass('hidden');
+    $('.tag').removeClass('selected');
+  }
+
+  function filterByTagName(tagName) {
+    $('.hidden').removeClass('hidden');
+    $('.post-wrapper').each((index, elem) => {
+      if (!elem.hasAttribute(`data-${tagName}`)) {
+        $(elem).addClass('hidden');
+      }
+    });
+    $(`.tag`).removeClass('selected');
+    $(`.tag[data-tag=${$.escapeSelector(tagName)}]`).addClass('selected');
+  }
+  
+  function updateQueryString(tagName) {
+    let path;
+    if (tagName == null) {
+      path = `${location.protocol}//${location.host}${location.pathname}`;
+    } else {
+      path = `${location.protocol}//${location.host}${location.pathname}?tag=${tagName}`;
+    }
+    window.history.replaceState({ path }, '', path);
+  }
+</script>

@@ -19,6 +19,17 @@ layout: default
   <div class="post">
     {{ content }}
   </div>
+  <div class="tag-container">
+  {% if page.tags %}
+    {% for tag in page.tags %}
+      {% if site.data.tags contains tag %}
+        <a class="no-underline" href="{{ site.baseurl }}/?tag={{ tag }}">
+          <span class="tag">{{ site.data.format[tag] }}</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  </div>
   {%- if site.plainwhite.disqus_shortname -%}
   <div id="disqus_thread" style="margin-top:25px"></div>
   <script>

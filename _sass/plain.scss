@@ -1,6 +1,7 @@
-@import "ext/fonts";
-@import "ext/normalize";
-@import "syntax";
+@import 'ext/fonts';
+@import 'ext/normalize';
+@import 'syntax';
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 $linkColor: #0a59b0;
 $mobileW: 768px;
@@ -15,7 +16,7 @@ $leftWidth: 220px;
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 16px;
   line-height: 1.2em;
   margin: 0;
@@ -40,9 +41,6 @@ a {
 
 h2 {
   margin: 0.7em 0;
-  @media screen and (max-width: $mobileW) {
-    margin: 0.3em 0;
-  }
 }
 main {
   margin: 0 90px;
@@ -81,14 +79,11 @@ main {
     padding-bottom: 15vh;
     @media screen and (max-width: $mobileW) {
       height: auto;
-      padding: 5vh 30px;
-    }
-    @media screen and (max-width: $smallMobileW) {
-      padding: 5vh 20px;
+      padding: 10vh 0;
     }
     @media screen and (min-width: $mobileW + 1) {
       position: fixed;
-      max-width: 280px;
+      max-width: 285px;
     }
     min-width: $leftWidth;
     justify-content: center;
@@ -102,28 +97,14 @@ main {
       font-weight: normal;
     }
     .tagline {
-      text-align: center;
       font-size: 22px;
-      margin-top: 0px;
+      margin-top: 17px;
       color: #aaa;
       white-space: pre-wrap;
       line-height: normal;
     }
     img {
       max-width: 150px;
-    }
-    img.dark {
-      display: none;
-    }
-    .about-header {
-      display: flex;
-      flex-direction: column;
-      .about-title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 17px;
-      }
     }
   }
 }
@@ -135,11 +116,12 @@ main {
 .social {
   list-style-type: none;
   padding: 0;
+  margin-top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   a {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
   li {
     i {
@@ -181,6 +163,12 @@ main {
   border-bottom: 1px solid #ececec;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
+  display: block;
+  overflow: hidden;
+}
+
+.post-wrapper.hidden {
+  display: none;
 }
 
 .post-categories {
@@ -243,7 +231,7 @@ main {
   padding-left: 30px;
 }
 .post {
-  font-family: "Merriweather", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   font-weight: 300;
   color: #222;
   line-height: 1.9em;
@@ -286,7 +274,8 @@ main {
   transition: width 0.1s;
 }
 table {
-  th, td {
+  th,
+  td {
     padding: 8px 13px;
     border: 1px solid #dfe2e5;
   }
@@ -296,41 +285,38 @@ table {
   }
 }
 
-footer {
-  display: none;
+.tag {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 2px;
+  font-size: 0.75rem;
+  color: #fff;
+  background-color: #426cb4;
+  opacity: 0.6;
+  cursor: pointer;
+  line-height: 2;
+  transition: 0.5s;
 }
-@media screen and (max-width: $mobileW) {
-  .about {
-    .about-header.condensed {
-      align-items: start;
-      align-self: start;
-      .about-title {
-        flex-direction: row;
-        margin-bottom: 10px;
-        img {
-          max-height: 40px;
-        }
-        h2 {
-          margin: 0 10px;
-        }
-      }
-      .tagline {
-        font-size: 18px;
-        margin-bottom: 0px;
-      }
-    }
-    .about-footer.condensed {
-      display: none;
-    }
-  }
-  footer.condensed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 40px;
-    @media screen and (max-width: $smallMobileW){
-      margin: 0 20px;
-    }
-    border-top: 1px solid #eee;
-  }
+
+.tag:hover {
+  opacity: 1;
+}
+
+.tag.selected {
+  opacity: 1;
+}
+
+.tag-container {
+  margin-top: 20px;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.img-profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
 }
