@@ -58,17 +58,3 @@ theme: plainwhite
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
-
-<<<<<<< HEAD
-remote_theme: samarsault/plainwhite-jekyll
-=======
-#################
-
-baseurl: ""
-url: ""
-twitter_username: jekyllrb
-github_username:  jekyll
-# theme: minima
-# plugins:
-#   - jekyll-feed
->>>>>>> feature/20221014_blog_theme_재셋팅
