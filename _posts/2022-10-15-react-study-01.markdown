@@ -1,0 +1,30 @@
+---
+layout: post
+title: 'React Study [chapter 1]'
+date: 2022-10-15
+tags: [react, javascript]
+---
+
+## React study 1차.
+
+### 🧑‍🔬 study 범위
+
+- [https://ko.reactjs.org/docs/hello-world.html](https://ko.reactjs.org/docs/hello-world.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/introducing-jsx.html](https://ko.reactjs.org/docs/introducing-jsx.html){:target="\_blank"}
+
+<br/>
+
+## 🚌 Part1. Hello world
+
+- React 기본 예시.
+- 공식 문서를 보는 방법.
+- 사전 지식.
+
+### 🏂 React 기본 예시.
+
+```jsx
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<h1>Hello, world!</h1>);
+```
+
+<br/>

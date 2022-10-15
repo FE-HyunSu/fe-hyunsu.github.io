@@ -1,3 +1,64 @@
+// profile image
+.img-profile {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  img {
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 1px solid #999;
+    border-radius: 100%;
+    animation: profile-effect 1s infinite;
+    transform-origin: 50% 50%;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 1px solid #999;
+    border-radius: 100%;
+    animation: profile-effect 1s 0.2s infinite;
+    transform-origin: 50% 50%;
+  }
+}
+.dark {
+  .img-profile {
+    &:before,
+    &:after {
+      border-color: #fff;
+    }
+  }
+}
+
+@keyframes profile-effect {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
+
+// theme control box style.
 .switch-box {
   display: flex;
   justify-content: center;
@@ -6,5 +67,76 @@
     display: inline-block;
     padding-right: 5px;
     font-weight: lighter;
+  }
+}
+
+//tag hover underline.
+.link-tag {
+  &:hover {
+    border-bottom: 0 !important;
+  }
+}
+
+// post
+.post-container {
+  .post {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #999;
+  }
+}
+
+.posts {
+  & > li {
+    transition: 0.2s;
+    &:hover {
+      .post-title {
+        text-decoration: underline;
+      }
+      transform: scale(1.03, 1.03);
+    }
+  }
+}
+
+// site-info
+.site-info {
+  display: block;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  border-top: 1px solid #eee !important;
+  border-bottom: 1px solid #eee !important;
+  p {
+    font-size: 11px;
+    text-align: center;
+    color: #bbb;
+    transition: 0.3s;
+    a {
+      color: #888;
+      text-decoration: none;
+    }
+    &:hover {
+      color: #666;
+      a {
+        color: #000;
+      }
+    }
+  }
+}
+.dark {
+  .site-info {
+    border-color: #333 !important;
+    word-break: keep-all;
+    p {
+      color: #333;
+      &:hover {
+        color: #888;
+        a {
+          color: #fff;
+        }
+      }
+    }
   }
 }

@@ -252,7 +252,7 @@ main {
   h4,
   h5,
   h6 {
-    font-family: Raleway, sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
   }
 }
 .posts-labelgroup {
@@ -281,7 +281,7 @@ table {
   }
   th {
     background-color: #eee;
-    font-family: Raleway;
+    font-family: 'Nanum Gothic';
   }
 }
 
@@ -312,11 +312,4 @@ table {
 
 .no-underline {
   text-decoration: none;
-}
-
-.img-profile {
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  overflow: hidden;
 }
