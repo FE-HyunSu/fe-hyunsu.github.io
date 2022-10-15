@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '👨‍👨‍👧‍👦 React study meeting (1st)'
+title: '👨‍👨‍👧‍👦 React study meeting (week 1)'
 date: 2022-10-15
 tags: [react, javascript]
 ---
