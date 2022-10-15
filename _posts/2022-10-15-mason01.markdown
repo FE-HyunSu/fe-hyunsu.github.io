@@ -1,0 +1,26 @@
+---
+layout: post
+title: '테스트'
+date: 2022-10-15
+tags: [javascript]
+---
+
+테스트입니다.
+[링크도요](https://www.naver.com){:target="\_blank"}
+잘 될지 모르겠어요.
+
+```javascript
+let a = [1, 2, 3, 4];
+a.forEach((item) => console.log(item));
+```
+
+테스트입니다.
+
+# 타이틀 1
+
+- 내용
+- 내용
+
+## 타이틀 2
+
+### 타이틀 3
