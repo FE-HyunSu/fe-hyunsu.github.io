@@ -1,30 +1,162 @@
 ---
 layout: post
-title: 'React Study [chapter 1]'
+title: '👨‍👨‍👧‍👦 React study meeting (1st)'
 date: 2022-10-15
 tags: [react, javascript]
 ---
 
-## React study 1차.
+## 🚌 chapter1. Hello world 👋
 
-### 🧑‍🔬 study 범위
+### 📝 목차
 
-- [https://ko.reactjs.org/docs/hello-world.html](https://ko.reactjs.org/docs/hello-world.html){:target="\_blank"}
-- [https://ko.reactjs.org/docs/introducing-jsx.html](https://ko.reactjs.org/docs/introducing-jsx.html){:target="\_blank"}
+- (1) React 란?
+- (2) React 참고 페이지
+- (3) React 기본 예시
 
 <br/>
 
-## 🚌 Part1. Hello world
+### 🧘 (1) React 란?
 
-- React 기본 예시.
-- 공식 문서를 보는 방법.
-- 사전 지식.
+- facebook에서 만들어 제공해주는 프론트엔드 라이브러리.
+- React는 JavaScript 기반으로 만들어진 라이브러리로, JavaScript 언어에 대한 기본적인 이해가 필요.
+- React는 웹 프레임워크로, JavaScript 라이브러리의 하나로서 사용자 인터페이스를 만들기 위해 사용.
 
-### 🏂 React 기본 예시.
+<br/>
+
+### 🔦 (2) React 참고 페이지
+
+- React 공식 페이지 : [https://ko.reactjs.org](https://ko.reactjs.org){:target="\_blank"}
+- 벨로퍼트 모던 리액트 : [https://react.vlpt.us](https://react.vlpt.us){:target="\_blank"}
+- 우아한Tech : [https://www.youtube.com/c/우아한Tech](https://www.youtube.com/c/%EC%9A%B0%EC%95%84%ED%95%9CTech){:target="\_blank"}
+- 그 외 많은 개발자분들의 기술 포스팅 : google.. 👍
+
+<br/>
+
+### 🏂 (3) React 기본 예시
+
+- React18 에서는 기존에 사용하던 <span class="fc-point">ReactDOM.render</span> 대신에 <span class="fc-point">ReactDOM.createRoot</span>가 도입됨.
 
 ```jsx
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<h1>Hello, world!</h1>);
+
+// result : Hello, world!
+```
+
+- 기존 <span class="fc-point">ReactDOM.render</span> 방식은 최초 렌더링뿐 아니라 업데이트로 인해 리렌더링이 일어날 때에도 <span class="fc-point">DOM Element</span>를 통해 접근.
+
+```jsx
+// 기존 ReactDOM.render 방식.
+import * as ReactDOM from 'react-dom';
+import App from 'App';
+
+const container = document.getElementById('app');
+// 최초 렌더링
+ReactDOM.render(<App />, container);
+// 리렌더링
+ReactDOM.render(<App />, container);
+```
+
+- 업데이트로 인해 리렌더링이 발생했을 때, container를 다시 넘겨줄 필요가 없다.
+
+```jsx
+import * as ReactDOMClient from 'react-dom/client';
+import App from 'App';
+
+const container = document.getElementById('app');
+const root = ReactDOMClient.createRoot(container);
+// 최초 렌더링
+root.render(<App />);
+// 리렌더링
+root.render(<App />);
 ```
 
 <br/>
+
+---
+
+<br/>
+
+## 🚌 chapter2. JSX 소개
+
+### 📝 목차
+
+- (1) JSX 소개
+- (2) JSX에 표현식 포함하기
+- (3) JSX에 Javascript 적용
+- (4) JSX attribute 적용 방식
+
+<br/>
+
+### 🎉 (1) JSX 소개
+
+- JSX는 <span class="fc-point">J</span>ava<span class="fc-point">S</span>cript에 <span class="fc-point">X</span>ML을 추가한 확장한 문법.
+- JSX는 React "엘리먼트(element)" 를 생성.
+- React는 별도의 파일에 마크업과 로직을 넣어 기술을 인위적으로 분리하는 대신, 둘 다 포함하는 "컴포넌트"를 라고 부르는 느슨하게 연결된 유닛으로 관심사를 분리.
+
+```jsx
+const element = <h1>Hello, world!</h1>;
+
+// 문자열도, HTML 태그도 아닌, jsx 문법.
+```
+
+<br/>
+
+### 🔬 (2) JSX에 표현식 포함하기
+
+- 변수를 선언한 후 { }(중괄호)로 JSX 안에 사용이 가능.
+
+```jsx
+const name = 'Mason';
+const element = <h1>Hello, {name}</h1>;
+
+// result : Hello, Mason
+```
+
+<br/>
+
+### 🏃 (3) JSX에 Javascript 적용
+
+- 변수를 선언한 후 { }(중괄호)로 Javascript 사용이 가능.
+
+```jsx
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'Kim',
+  lastName: 'HyunSu',
+};
+
+const element = <h1>Hello, {formatName(user)}!</h1>;
+
+// result : Hello, Kim Hyunsu
+```
+
+<br/>
+
+### 🧥 (4) JSX attribute 적용 방식
+
+- JSX는 HTML보다는 JavaScript에 가깝기 때문에, React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 규칙을 사용.
+- ex) class => className / tabindex => tabIndex
+
+```jsx
+const element = <h1 className="name">Hello, Mason</h1>;
+```
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://ko.reactjs.org/docs/hello-world.html](https://ko.reactjs.org/docs/hello-world.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/introducing-jsx.html](https://ko.reactjs.org/docs/introducing-jsx.html){:target="\_blank"}
+- [https://velog.io/@jini_eun/React-React.js%EB%9E%80-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC](https://velog.io/@jini_eun/React-React.js%EB%9E%80-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC){:target="\_blank"}
+- [https://react.vlpt.us/basic/01-concept.html](https://react.vlpt.us/basic/01-concept.html){:target="\_blank"}
+- [https://velog.io/@citron03/React-18%EC%97%90%EC%84%9C-ReactDOM.render%EC%99%80-createRoot](https://velog.io/@citron03/React-18%EC%97%90%EC%84%9C-ReactDOM.render%EC%99%80-createRoot){:target="\_blank"}
+    <!-- - [https://goddaehee.tistory.com/296](https://goddaehee.tistory.com/296){:target="\_blank"} -->
+  <br/>

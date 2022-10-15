@@ -1,5 +1,5 @@
 title: MASON
-author: KimHyunSu
+author: KIMHYUNSU
 email: fe.hyunsu@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
   frontEnd.
@@ -12,7 +12,7 @@ url: 'https://fe-hyunsu.github.io'
 sass:
   sass_dir: _sass
 plainwhite:
-  name: KimHyunSu
+  name: KIMHYUNSU
   tagline: Frontend Developer.
   date_format: '%b %-d, %Y'
   sitemap: true # set to true to generate sitemap.xml content

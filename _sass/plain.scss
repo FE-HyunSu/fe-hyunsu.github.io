@@ -16,7 +16,7 @@ $leftWidth: 220px;
 }
 
 body {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: -apple-system, 'Nanum Gothic', sans-serif;
   font-size: 16px;
   line-height: 1.2em;
   margin: 0;
@@ -146,7 +146,7 @@ main {
 
     a {
       display: block;
-      font-family: 'Merriweather';
+      font-family: -apple-system, 'Merriweather';
       text-align: center;
       padding: 1rem 0;
       text-decoration: none;
@@ -231,7 +231,7 @@ main {
   padding-left: 30px;
 }
 .post {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: -apple-system, 'Nanum Gothic', sans-serif;
   font-weight: 300;
   color: #222;
   line-height: 1.9em;
@@ -252,7 +252,7 @@ main {
   h4,
   h5,
   h6 {
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: -apple-system, 'Nanum Gothic', sans-serif;
   }
 }
 .posts-labelgroup {
@@ -281,7 +281,7 @@ table {
   }
   th {
     background-color: #eee;
-    font-family: 'Nanum Gothic';
+    font-family: -apple-system, 'Nanum Gothic';
   }
 }
 
