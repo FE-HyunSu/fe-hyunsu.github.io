@@ -3,102 +3,121 @@ layout: default
 ---
 
 {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-{%- endif -%}
-
-{{ content }}
-
-{%- if site.posts.size > 0 -%}
-  <ul class="posts">
-    <li class="posts-labelgroup" id="posts-labelgroup">
-      <h1 id="posts-label">posts</h1>
-      {% if site.plainwhite.search %}
-      <div class="search-container">
-        <div class="search-section">
-          <i class="icon-search"></i>
-          <input type="text" name="search" id="searchbar" autocomplete="off" aria-label="search in posts">
-        </div>
-        <div class="search-results" id="search-results" data-placeholder="No Results" style="display: none;"></div>
+<h1 class="page-heading">{{ page.title }}</h1>
+{%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
+<ul class="posts">
+  <li class="posts-labelgroup" id="posts-labelgroup">
+    <h1 id="posts-label">search</h1>
+    {% if site.plainwhite.search %}
+    <div class="search-container">
+      <div class="search-section">
+        <i class="icon-search"></i>
+        <input
+          type="text"
+          name="search"
+          id="searchbar"
+          autocomplete="off"
+          aria-label="search in posts"
+        />
       </div>
-      {% endif %}
-    </li>
+      <div
+        class="search-results"
+        id="search-results"
+        data-placeholder="No Results"
+        style="display: none"
+      ></div>
+    </div>
+    {% endif %}
+  </li>
 
-    <li>
+  <li>
     {% for tag in site.data.tags %}
-    <span class="tag" data-tag="{{tag}}">
-      {{ site.data.format[tag] }}
-    </span>
+    <span class="tag" data-tag="{{tag}}"> {{ site.data.format[tag] }} </span>
     {% endfor %}
-    </li>
+  </li>
 
-    <li>
-      <br>
-    </li>
+  <li>
+    <br />
+  </li>
 
-    {%- for post in site.posts -%}
-      <li>
-        <div class="post-wrapper"
-          {% if post.tags %}
-            {% for tag in post.tags %}
-              data-{{ tag }}
-            {% endfor %}
-          {% endif %}
-        >
-          {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            <h2 class="post-title">{{ post.title | escape }}</h2>
-          </a>
-          <div class="post-meta">
-            <div class="post-date">
-              <i class="icon-calendar"></i>
-              {{ post.date | date: date_format }}
-            </div>
-            {%- if post.categories.size > 0-%}
-            <ul class="post-categories">
-              {%- for tag in post.categories -%}
-              <li>{{ tag }}</li>
-              {%- endfor -%}
-            </ul>
-            {%- endif -%}
-          </div>
-          <div class="post">
-            {%- if site.show_excerpts -%}
-              {{ post.excerpt }}
-              <a class="post-link" href={{ post.url | relative_url }}>
-                ...(more)
-              </a>
-            {%- endif -%}
-          </div>
-          <div class="tag-container">
-            {% for tag in post.tags %}
-            <a>
-              <span class="tag" data-tag="{{tag}}">
-                {{ site.data.format[tag] }}
-              </span>
-            </a>
-            {% endfor %}
-          </div>
+  {%- for post in site.posts -%}
+  <li>
+    <div
+      class="post-wrapper"
+      {%
+      if
+      post.tags
+      %}
+      {%
+      for
+      tag
+      in
+      post.tags
+      %}
+      data-{{
+      tag
+      }}
+      {%
+      endfor
+      %}
+      {%
+      endif
+      %}
+    >
+      {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h2 class="post-title">{{ post.title | escape }}</h2>
+      </a>
+      <div class="post-meta">
+        <div class="post-date">
+          <i class="icon-calendar"></i>
+          {{ post.date | date: date_format }}
         </div>
-      </li>
-    {%- endfor -%}
-  </ul>
+        {%- if post.categories.size > 0-%}
+        <ul class="post-categories">
+          {%- for tag in post.categories -%}
+          <li>{{ tag }}</li>
+          {%- endfor -%}
+        </ul>
+        {%- endif -%}
+      </div>
+      <div class="post">
+        {%- if site.show_excerpts -%} {{ post.excerpt }}
+        <a class="post-link" href="{{" post.url | relative_url }}> ...(more) </a>
+        {%- endif -%}
+      </div>
+      <div class="tag-container">
+        {% for tag in post.tags %}
+        <a>
+          <span class="tag" data-tag="{{tag}}"> {{ site.data.format[tag] }} </span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </li>
+  {%- endfor -%}
+</ul>
 
-  <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+<!-- <p class="feed-subscribe"><svg class="svg-icon orange">
 		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
 	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
 {%- endif -%}
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+  crossorigin="anonymous"
+></script>
 <script>
   var currentTag = null;
-  $(document).ready(function() {
+  $(document).ready(function () {
     const queryTag = getQuery().tag;
     if (queryTag) {
       currentTag = queryTag;
-      filterByTagName(currentTag)
+      filterByTagName(currentTag);
     }
   });
-  $("[data-tag]").click((e) => {
+  $('[data-tag]').click((e) => {
     if (currentTag == e.target.dataset.tag) {
       releaseFilter();
       currentTag = null;
@@ -106,12 +125,14 @@ layout: default
       currentTag = e.target.dataset.tag;
       filterByTagName(currentTag);
     }
-    updateQueryString(currentTag)
-  })
+    updateQueryString(currentTag);
+  });
 
   function getQuery() {
     var query = {};
-    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { query[key] = value; });
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+      query[key] = value;
+    });
     return query;
   }
 
@@ -130,7 +151,7 @@ layout: default
     $(`.tag`).removeClass('selected');
     $(`.tag[data-tag=${$.escapeSelector(tagName)}]`).addClass('selected');
   }
-  
+
   function updateQueryString(tagName) {
     let path;
     if (tagName == null) {

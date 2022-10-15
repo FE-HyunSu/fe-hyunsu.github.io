@@ -2,6 +2,7 @@
 ---
 
 @import "plain";
+@import "mason";
 
 {% if site.plainwhite.search %}
   @import "search";

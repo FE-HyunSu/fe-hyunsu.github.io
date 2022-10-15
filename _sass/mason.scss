@@ -1,0 +1,10 @@
+.switch-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  strong {
+    display: inline-block;
+    padding-right: 5px;
+    font-weight: lighter;
+  }
+}
