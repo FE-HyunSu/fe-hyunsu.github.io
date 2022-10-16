@@ -28,13 +28,19 @@ tags: [react, javascript]
 - React 공식 페이지 : [https://ko.reactjs.org](https://ko.reactjs.org){:target="\_blank"}
 - 벨로퍼트 모던 리액트 : [https://react.vlpt.us](https://react.vlpt.us){:target="\_blank"}
 - 우아한Tech : [https://www.youtube.com/c/우아한Tech](https://www.youtube.com/c/%EC%9A%B0%EC%95%84%ED%95%9CTech){:target="\_blank"}
+- 별코딩 : [https://www.youtube.com/c/별코딩](https://www.youtube.com/c/%EB%B3%84%EC%BD%94%EB%94%A9){:target="\_blank"}
 - 그 외 많은 개발자분들의 기술 포스팅 : google.. 👍
 
 <br/>
 
 ### 🏂 (3) React 기본 예시
 
-- React18 에서는 기존에 사용하던 <span class="fc-point">ReactDOM.render</span> 대신에 <span class="fc-point">ReactDOM.createRoot</span>가 도입됨.
+- React 는 기본적으로 실제 DOM 이용하지 않음.
+- 자신들이 만든 VirtualDOM 혹은 React Element라고 불리우는 객체 형태를 이용함.
+- 이 VirtualDOM이 실제 브라우저에 DOM 형태로 렌더링 됨.
+  1. 가상 DOM을 위한 html 파일에는 빈껍데기인 <span class="fc-point"><div id="root"></div></span> 가 존재함.
+  2. 브라우저 DOM 엘리먼트와 달리 React 엘리먼트는 일반 객체이며(plain object) 쉽게 생성하고,
+  3. React DOM은 React 엘리먼트와 일치하도록 DOM을 업데이트한다.
 
 ```jsx
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -43,6 +49,7 @@ root.render(<h1>Hello, world!</h1>);
 // result : Hello, world!
 ```
 
+- React18 에서는 기존에 사용하던 <span class="fc-point">ReactDOM.render</span> 대신에 <span class="fc-point">ReactDOM.createRoot</span>가 도입됨. (2021년 6월 8일)
 - 기존 <span class="fc-point">ReactDOM.render</span> 방식은 최초 렌더링뿐 아니라 업데이트로 인해 리렌더링이 일어날 때에도 <span class="fc-point">DOM Element</span>를 통해 접근.
 
 ```jsx
@@ -158,5 +165,5 @@ const element = <h1 className="name">Hello, Mason</h1>;
 - [https://velog.io/@jini_eun/React-React.js%EB%9E%80-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC](https://velog.io/@jini_eun/React-React.js%EB%9E%80-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC){:target="\_blank"}
 - [https://react.vlpt.us/basic/01-concept.html](https://react.vlpt.us/basic/01-concept.html){:target="\_blank"}
 - [https://velog.io/@citron03/React-18%EC%97%90%EC%84%9C-ReactDOM.render%EC%99%80-createRoot](https://velog.io/@citron03/React-18%EC%97%90%EC%84%9C-ReactDOM.render%EC%99%80-createRoot){:target="\_blank"}
-    <!-- - [https://goddaehee.tistory.com/296](https://goddaehee.tistory.com/296){:target="\_blank"} -->
+- [https://immigration9.github.io/react/2021/06/12/automatic-batching-react.html](https://immigration9.github.io/react/2021/06/12/automatic-batching-react.html){:target="\_blank"}
   <br/>
