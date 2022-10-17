@@ -1,8 +1,8 @@
 ---
 layout: post
-title: '👨‍👨‍👧‍👦 React study meeting (week 1)'
+title: '👨‍👨‍👧‍👦 React study meeting (step 1)'
 date: 2022-10-15
-tags: [react, javascript]
+tags: [front-study, react, javascript]
 ---
 
 ## 🚌 chapter1. Hello world 👋

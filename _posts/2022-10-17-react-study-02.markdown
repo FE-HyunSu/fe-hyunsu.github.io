@@ -1,0 +1,14 @@
+---
+layout: post
+title: '👨‍👨‍👧‍👦 React study meeting (step 1)'
+date: 2022-10-17
+tags: [front-study, react, javascript]
+---
+
+## 🚌 chapter3. 엘리먼트 렌더링 👋
+
+(작성중)
+
+## 🚌 chapter4. Components와 Props
+
+(작성중)
