@@ -12,3 +12,14 @@ tags: [front-study, react, javascript]
 ## 🚌 chapter4. Components와 Props
 
 (작성중)
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://ko.reactjs.org/docs/rendering-elements.html](https://ko.reactjs.org/docs/rendering-elements.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/components-and-props.html](https://ko.reactjs.org/docs/components-and-props.html){:target="\_blank"}
+
+<br/>
