@@ -9,6 +9,11 @@ tags: [react, diary]
 
 <br/>
 
+### 🌎 URL
+
+- 페이지 URL : [https://ubiquitous-longma-e702f7.netlify.app](https://ubiquitous-longma-e702f7.netlify.app){:target="\_blank"}
+- Github 저장소 : [https://github.com/FE-HyunSu/groupAccountBook](https://github.com/FE-HyunSu/groupAccountBook){:target="\_blank"}
+
 ### 🥲 작업 내용
 
 - React 스터디 모임에서 총무에 당첨되었고, 회비 정산내역 기록용으로 React 프로젝트를 생성했다.
@@ -24,11 +29,6 @@ tags: [react, diary]
 - (이슈) gh-pages로 배포가 제대로 되지 않아, netlify로 배포했다. 이슈 해결 필요.
 - (개선) AccountList를 선언순서와 관계없이 sort 되도록 기준 정리 및 적용 필요.
 - (개선) 특정 user를 선택했을때, 해당 user의 입출금 내역만 보여지도록 개선 필요.
-
-### 🌎 URL
-
-- 페이지 URL : [https://ubiquitous-longma-e702f7.netlify.app](https://ubiquitous-longma-e702f7.netlify.app){:target="\_blank"}
-- Github 저장소 : [https://github.com/FE-HyunSu/groupAccountBook](https://github.com/FE-HyunSu/groupAccountBook){:target="\_blank"}
 
   <br/>
 
