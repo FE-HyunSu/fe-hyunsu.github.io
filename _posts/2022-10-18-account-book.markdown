@@ -18,6 +18,13 @@ tags: [react, diary]
 - UI는 카카오뱅크 모임통장을 참고했다.
 - 업데이트 할게 많긴 하지만 일단, 여기까지.. 추후에 디벨롭하기로 하자.
 
+### 🚏 next step
+
+- (이슈) IOS safari 브라우저에서 style 적용이 되지 않고 있다. 이슈 해결 필요.
+- (이슈) gh-pages로 배포가 제대로 되지 않아, netlify로 배포했다. 이슈 해결 필요.
+- (개선) AccountList를 선언순서와 관계없이 sort 되도록 기준 정리 및 적용 필요.
+- (개선) 특정 user를 선택했을때, 해당 user의 입출금 내역만 보여지도록 개선 필요.
+
 ### 🌎 URL
 
 - 페이지 URL : [https://ubiquitous-longma-e702f7.netlify.app](https://ubiquitous-longma-e702f7.netlify.app){:target="\_blank"}

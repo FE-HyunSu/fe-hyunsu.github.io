@@ -7,9 +7,63 @@ tags: [front-study, react, javascript]
 
 ## 🚌 chapter3. 엘리먼트 렌더링 👋
 
-(작성중)
+### 📝 목차
 
-## 🚌 chapter4. Components와 Props
+- (1) 엘리먼트(Element)
+- (2) 변경된 부분만 업데이트
+
+<br/>
+
+### 🏠 (1) 엘리먼트(Element)
+
+- 엘리먼트(Element)는 React 앱의 가장 작은 단위.
+- 엘리먼트(Element)는 화면에 표시할 내용을 기술함. (엘리먼트는 컴포넌트의 "구성 요소")
+
+```jsx
+// React 에서 <h1>Hello, mason</h1> 를 화면에 출력.
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const element = <h1>Hello, mason</h1>;
+console.log(element); // React의 DOM Element를 콘솔로 확인. (React DOM Element)
+root.render(element);
+```
+
+- 브라우저의 DOM Element
+  ```html
+  <h1>Hello, mason</h1>
+  ```
+- React DOM Element
+
+  ```javascript
+  // [object Object]
+  {
+  	"$$typof": "Symbol(react.element)",
+  	"type": "h1",
+  	"key": null,
+  	"ref": null,
+  	"props": {
+  		"children": "Hello, mason"
+  	},
+  	"_owner": null,
+  	"_store": {}
+  }
+  ```
+
+- React 엘리먼트는 브라우저 DOM 엘리먼트와 다름.
+- React 엘리먼트는 일반 객체이며(plain object) 쉽게 추가가 가능.
+- React DOM은 React 엘리먼트와 일치하도록 DOM을 업데이트 함.
+
+<br/>
+
+### (2) 변경된 부분만 업데이트
+
+1. React DOM은 해당 엘리먼트와 그 자식 엘리먼트를 이전의 엘리먼트와 비교.
+2. DOM을 원하는 상태로 만드는데 필요한 경우에만 DOM을 업데이트 함.
+
+<img src="../assets/images/img_study_diff.png" alt="" style="width:100%; max-width:700px; min-width:320px;" />
+
+<br/>
+
+## 🎡 chapter4. Components와 Props
 
 (작성중)
 
@@ -21,5 +75,7 @@ tags: [front-study, react, javascript]
 
 - [https://ko.reactjs.org/docs/rendering-elements.html](https://ko.reactjs.org/docs/rendering-elements.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/components-and-props.html](https://ko.reactjs.org/docs/components-and-props.html){:target="\_blank"}
+- [https://codepen.io/gaearon/pen/edyBaE?editors=1011](https://codepen.io/gaearon/pen/edyBaE?editors=1011){:target="\_blank"}
+- [https://tonynguyenit.medium.com/how-react-virtual-dom-decide-to-update-browser-dom-91f170718733](https://tonynguyenit.medium.com/how-react-virtual-dom-decide-to-update-browser-dom-91f170718733){:target="\_blank"}
 
-<br/>
+  <br/>
