@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ' ❤️‍🔥 Firebase firestore'
+title: ' ❤️‍🔥 Firebase firestore - 1'
 date: 2022-10-20
-tags: [Firebase]
+tags: [front-study]
 ---
 
 ## 🎇 Firebase firestore
@@ -29,11 +29,9 @@ tags: [Firebase]
 
 - 테스트 모드로 시작. <br/><br/><img src="../assets/images/img_firebase_05.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
-- asia 선택.<br/><br/><img src="../assets/images/img_firebase_06.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+- asia 서버 선택.<br/><br/><img src="../assets/images/img_firebase_06.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
-- 컬렉션 시작 -> 컬렉션 ID(json파일명) ->
-
-- npm install firebase
+<br/>
 
 ## 🎫 참고 페이지
 
