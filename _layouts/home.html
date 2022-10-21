@@ -59,9 +59,10 @@ layout: default
       {%
       endif
       %}
+      onclick="location.href='{{ post.url | relative_url }}'"
     >
       {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
-      <a class="post-link" href="{{ post.url | relative_url }}">
+      <a class="post-link" href="#" onclick="return false;">
         <h2 class="post-title">{{ post.title | escape }}</h2>
       </a>
       <div class="post-meta">
