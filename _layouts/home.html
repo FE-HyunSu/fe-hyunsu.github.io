@@ -142,7 +142,7 @@ layout: default
     $('.hidden').removeClass('hidden');
     $('.post-wrapper').each((index, elem) => {
       if (!elem.hasAttribute(`data-${tagName}`)) {
-        $(elem).addClass('hidden');
+        $(elem).parent().addClass('hidden');
       }
     });
     $(`.tag`).removeClass('selected');
