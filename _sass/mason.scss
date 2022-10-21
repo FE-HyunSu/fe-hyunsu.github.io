@@ -96,6 +96,11 @@
 .posts {
   & > li {
     transition: 0.2s;
+    .post-title {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
     &:hover {
       .post-title {
         text-decoration: underline;
@@ -222,6 +227,9 @@
     .post {
       h2 {
         font-size: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
     }
   }
