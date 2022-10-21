@@ -30,14 +30,10 @@ layout: default
     {% endif %}
   </li>
 
-  <li>
+  <li class="labelgroup-box">
     {% for tag in site.data.tags %}
     <span class="tag" data-tag="{{tag}}"> {{ site.data.format[tag] }} </span>
     {% endfor %}
-  </li>
-
-  <li>
-    <br />
   </li>
 
   {%- for post in site.posts -%}

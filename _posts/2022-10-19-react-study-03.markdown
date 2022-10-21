@@ -1,0 +1,56 @@
+---
+layout: post
+title: '👨‍👦‍👦👩‍👧 React study 03'
+date: 2022-10-21
+tags: [front-study, react]
+---
+
+## 🚌 chapter5. State and Lifecycle 👋
+
+### 📝 목차
+
+- (1) 엘리먼트(Element)
+- (2) 변경된 부분만 업데이트
+
+<br/>
+
+### 🏠 (1) 엘리먼트(Element)
+
+- 엘리먼트(Element)는 React 앱의 가장 작은 단위.
+- 엘리먼트(Element)는 화면에 표시할 내용을 기술함. (엘리먼트는 컴포넌트의 "구성 요소")
+
+```jsx
+// React 에서 <h1>Hello, mason</h1> 를 화면에 출력.
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const element = <h1>Hello, mason</h1>;
+console.log(element); // React의 DOM Element를 콘솔로 확인. (React DOM Element)
+root.render(element);
+```
+
+<br/>
+
+---
+
+<br/>
+
+## 🚌 chapter6. 이벤트 처리하기 👋
+
+<br/>
+
+---
+
+<br/>
+
+## 🚌 chapter7. 조건부 렌더링 👋
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://ko.reactjs.org/docs/state-and-lifecycle.html](https://ko.reactjs.org/docs/state-and-lifecycle.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/handling-events.html](https://ko.reactjs.org/docs/handling-events.html){:target="\_blank"}
+  <br/>
