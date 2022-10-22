@@ -1,31 +1,44 @@
 ---
 layout: post
-title: '👨‍👦‍👦👩‍👧 React-Documents-Step02'
+title: '👨‍👦‍👦👩‍👧 React-Documents-Step02 (작성중)'
 date: 2022-10-21
 tags: [front-study, react]
 ---
 
-## 🚌 chapter5. State and Lifecycle 👋
+## 🌀 chapter5. State and Lifecycle
 
 ### 📝 목차
 
-- (1) 엘리먼트(Element)
-- (2) 변경된 부분만 업데이트
+- (1) React Lifecycle
+- (2) State
 
 <br/>
 
-### 🏠 (1) 엘리먼트(Element)
+### 🏠 (1) React Lifecycle
 
-- 엘리먼트(Element)는 React 앱의 가장 작은 단위.
-- 엘리먼트(Element)는 화면에 표시할 내용을 기술함. (엘리먼트는 컴포넌트의 "구성 요소")
+- React Hooks Lifecycle에 대해 알아봄.
 
-```jsx
-// React 에서 <h1>Hello, mason</h1> 를 화면에 출력.
-const root = ReactDOM.createRoot(document.getElementById('root'));
-const element = <h1>Hello, mason</h1>;
-console.log(element); // React의 DOM Element를 콘솔로 확인. (React DOM Element)
-root.render(element);
-```
+<img src="../assets/images/img_lifecycle.jpeg" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+
+<strong> 🔋 1. Mount</strong>
+
+- (1) 컴포넌트 마운팅 시작됨.
+- (2) 리턴값을 렌더링함.
+- (3) 렌더링된 상태를 가상돔에 그림.
+- (4) 가상돔과 돔의 엘리먼트들을 비교함.
+- (5) (최초마운팅) 초기 렌더링의 경우 현재 컴포넌트의 정보가 돔에 없기 때문에 모든 부분을 그림. (CSR의 단점인 초기 렌더링속도가 느린 이유)
+  <br/>(업데이트시) 가상돔과 돔의 엘리먼트가 다른 부분이 감지된다면 그 부분만 돔에 업데이트 함.
+- (6) 컴포넌트 내부에 useLayoutEffect, useEffect 훅을 실행한다. - 여기까지가 마운팅.
+
+<strong> 🪫 2. Updating (컴포넌트 생성 후 props or State가 업데이트)</strong>
+
+- (1) 직전에 실행된 useEffect 나 유저의 인터렉션에 의해서 state 나 props 값이 변경됨.
+- (2) Mounting 과정 실행. (변경된 state와 props 변경되었지만 UI에 변화가 없다면, 돔을 업데이트 하지 않음.)
+
+<strong> 🧨 3. unMount</strong>
+
+- 컴포넌트가 소멸할때, useEffect 내부의 return에 정의된 함수를 실행. (이것을 clean-up 함수라고 함)
+- 그리고 컴포넌트가 소멸함.e
 
 <br/>
 
@@ -36,6 +49,18 @@ root.render(element);
 ## 🚌 chapter6. 이벤트 처리하기 👋
 
 <br/>
+
+- 우리가 알고 있는 이벤트 처리 방식.
+
+```javascript
+<button onclick="activateLasers()">Activate Lasers</button>
+```
+
+- React에서 이벤트 처리 방식.
+
+```jsx
+<button onClick={activateLasers}>Activate Lasers</button>
+```
 
 ---
 
@@ -49,8 +74,17 @@ root.render(element);
 
 <br/>
 
+## 🚌 chapter8. 리스트와 Key 👋
+
+<br/>
+
+---
+
+<br/>
+
 ## 🎫 참고 페이지
 
 - [https://ko.reactjs.org/docs/state-and-lifecycle.html](https://ko.reactjs.org/docs/state-and-lifecycle.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/handling-events.html](https://ko.reactjs.org/docs/handling-events.html){:target="\_blank"}
+- [https://github.com/Wavez/react-hooks-lifecycle](https://github.com/Wavez/react-hooks-lifecycle){:target="\_blank"}
   <br/>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ' ❤️‍🔥 Firebase firestore - 2'
+title: ' ❤️‍🔥 Firebase firestore - 2 (작성중)'
 date: 2022-10-21
 tags: [backend-study]
 ---
