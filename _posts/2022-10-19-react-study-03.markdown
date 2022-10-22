@@ -10,7 +10,7 @@ tags: [front-study, react]
 ### 📝 목차
 
 - (1) React Lifecycle
-- (2) State
+- (2) useEffect, useLayoutEffect
 
 <br/>
 
@@ -28,7 +28,7 @@ tags: [front-study, react]
 - (4) 가상돔과 돔의 엘리먼트들을 비교함.
 - (5) (최초마운팅) 초기 렌더링의 경우 현재 컴포넌트의 정보가 돔에 없기 때문에 모든 부분을 그림. (CSR의 단점인 초기 렌더링속도가 느린 이유)
   <br/>(업데이트시) 가상돔과 돔의 엘리먼트가 다른 부분이 감지된다면 그 부분만 돔에 업데이트 함.
-- (6) 컴포넌트 내부에 useLayoutEffect, useEffect 훅을 실행한다. - 여기까지가 마운팅.
+- (6) 컴포넌트 내부에 useLayoutEffect, useEffect 훅을 실행.
 
 <strong> 🪫 2. Updating (컴포넌트 생성 후 props or State가 업데이트)</strong>
 
@@ -38,7 +38,20 @@ tags: [front-study, react]
 <strong> 🧨 3. unMount</strong>
 
 - 컴포넌트가 소멸할때, useEffect 내부의 return에 정의된 함수를 실행. (이것을 clean-up 함수라고 함)
-- 그리고 컴포넌트가 소멸함.e
+- 그리고 컴포넌트가 소멸함.
+
+<br/>
+
+### 📟 (2) useEffect, useLayoutEffect
+
+```javascript
+// useEffect : 렌더링된 이후에 동작. (비동기)
+// useLayoutEffect : 렌더링 되기 이전에 동작. (동기)
+```
+
+- useLayoutEffect 를 사용한 경험이 거의 없었는데, 해당 Hook의 특징에 대해 한번 더 상기하고 리팩토링 or 최적화 작업 시 적용해 보도록 하자.
+- useLayoutEffect 는 기능상으로 useEffect와 비슷하지만 변화가 적용된 후의 값을 보여주기 때문에 유저 경험에 좋다는 장점이 있음.
+- 어떤 상황에 적용하면 좋을까?
 
 <br/>
 
@@ -61,6 +74,8 @@ tags: [front-study, react]
 ```jsx
 <button onClick={activateLasers}>Activate Lasers</button>
 ```
+
+<br/>
 
 ---
 
