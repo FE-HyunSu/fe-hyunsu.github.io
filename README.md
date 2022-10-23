@@ -7,8 +7,8 @@
 ### 🪬 내용
 
 - plainwhite-jekyll theme 를 사용하여 Gitblog 생성.
-- 개인 취향에 맞게 커스텀 수정.
-- `Ruby` `jekyll`
+- 개인 취향에 맞게 UI 커스텀 적용.
+- `Ruby` `jekyll` `plainwhite-jekyll` `SCSS`
 
 ### 🥾 etc.
 
