@@ -25,8 +25,9 @@
     width: 100%;
     height: 100%;
     margin: auto;
+    border: 1px solid #999;
     border-radius: 100%;
-    animation: profile-effect 1s infinite;
+    animation: profile-effect 2s infinite;
     transform-origin: 50% 50%;
   }
   &:after {
@@ -41,7 +42,7 @@
     margin: auto;
     border: 1px solid #999;
     border-radius: 100%;
-    animation: profile-effect 1s 0.2s infinite;
+    animation: profile-effect 2s 0.5s infinite;
     transform-origin: 50% 50%;
   }
 }
@@ -60,7 +61,7 @@
     opacity: 1;
   }
   100% {
-    transform: scale(1.2, 1.2);
+    transform: scale(1.3, 1.3);
     opacity: 0;
   }
 }
