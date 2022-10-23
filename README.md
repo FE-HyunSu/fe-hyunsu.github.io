@@ -10,6 +10,6 @@
 - 개인 취향에 맞게 UI 커스텀 적용.
 - `Ruby` `jekyll` `plainwhite-jekyll` `SCSS`
 
-### 🥾 etc.
+### 🥾 Reference theme
 
 - plainwhite-jekyll : [https://github.com/samarsault/plainwhite-jekyll](https://github.com/samarsault/plainwhite-jekyll)
