@@ -11,19 +11,20 @@ tags: [backend-study]
 
 ### 🚒 Data 셋팅.
 
-- text
+- 컬렉션에 필요한 data 입력.<br/><img src="../assets/images/img_firestore.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
-<br/>
+- npm 설치
 
-### ⛹️‍♂️ 시작하기
-
-- Firebase 홈으로 이동. <br/><br/><img src="../assets/images/img_firebase_02.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+```java
+  npm i @firebase/firestore
+```
 
 <br/>
 
 ## 🎫 참고 페이지
 
 - [https://firebase.google.com](https://firebase.google.com){:target="\_blank"}
+- [https://www.npmjs.com/package/@firebase/firestore](https://www.npmjs.com/package/@firebase/firestore){:target="\_blank"}
   <br/>
 
 ---

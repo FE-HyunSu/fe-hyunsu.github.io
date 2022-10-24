@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '👨‍👦‍👦👩‍👧 React-Documents-Step03 (작성중)'
-date: 2022-10-25
+date: 2022-10-24
 tags: [front-study, react]
 ---
 
@@ -30,8 +30,6 @@ tags: [front-study, react]
 - [https://ko.reactjs.org/docs/forms.html](https://ko.reactjs.org/docs/forms.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/lifting-state-up.html](https://ko.reactjs.org/docs/lifting-state-up.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/composition-vs-inheritance.html](https://ko.reactjs.org/docs/composition-vs-inheritance.html){:target="\_blank"}
-- [https://ko.reactjs.org/docs/thinking-in-react.html](https://ko.reactjs.org/docs/thinking-in-react.html){:target="\_blank"}
-
-  <br/>
+- [https://ko.reactjs.org/docs/thinking-in-react.html](https://ko.reactjs.org/docs/thinking-in-react.html){:target="\_blank"}<br/><br/>
 
 ---
