@@ -1,0 +1,37 @@
+---
+layout: post
+title: '👨‍👦‍👦👩‍👧 React-Documents-Step03 (작성중)'
+date: 2022-10-25
+tags: [front-study, react]
+---
+
+## 🧾 chapter9. Forms
+
+<br/>
+
+## 🏗 chapter10. State 끌어올리기
+
+<br/>
+
+## ⏳ chapter11. 합성 vs 상속
+
+<br/>
+
+## 🪫 chapter12. React로 생각하기
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://ko.reactjs.org/docs/forms.html](https://ko.reactjs.org/docs/forms.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/lifting-state-up.html](https://ko.reactjs.org/docs/lifting-state-up.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/composition-vs-inheritance.html](https://ko.reactjs.org/docs/composition-vs-inheritance.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/thinking-in-react.html](https://ko.reactjs.org/docs/thinking-in-react.html){:target="\_blank"}
+
+  <br/>
+
+---
