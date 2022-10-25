@@ -7,6 +7,36 @@ tags: [front-study, react]
 
 ## 🧾 chapter9. Forms
 
+- React에서 Form 태그 제어 방법에 대해 알아보자.
+- HTML 폼 엘리먼트는 폼 엘리먼트 자체가 내부 상태를 가지기 때문에, React의 다른 DOM 엘리먼트와 다르게 동작함.
+- React에서 사용자 입력값을 제어하려면, useRef나 useState를 이용했었는데, Hooks에도 useForm 이 있음.
+
+```jsx
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import Header from './Header';
+
+export function App() {
+  const { register, handleSubmit } = useForm();
+  const [data, setData] = useState('');
+
+  return (
+    <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+      <Header />
+      <input {...register('firstName')} placeholder="First name" />
+      <select {...register('category', { required: true })}>
+        <option value="">Select...</option>
+        <option value="A">Option A</option>
+        <option value="B">Option B</option>
+      </select>
+      <textarea {...register('aboutYou')} placeholder="About you" />
+      <p>{data}</p>
+      <input type="submit" />
+    </form>
+  );
+}
+```
+
 <br/>
 
 ## 🏗 chapter10. State 끌어올리기
@@ -30,6 +60,12 @@ tags: [front-study, react]
 - [https://ko.reactjs.org/docs/forms.html](https://ko.reactjs.org/docs/forms.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/lifting-state-up.html](https://ko.reactjs.org/docs/lifting-state-up.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/composition-vs-inheritance.html](https://ko.reactjs.org/docs/composition-vs-inheritance.html){:target="\_blank"}
-- [https://ko.reactjs.org/docs/thinking-in-react.html](https://ko.reactjs.org/docs/thinking-in-react.html){:target="\_blank"}<br/><br/>
+- [https://ko.reactjs.org/docs/thinking-in-react.html](https://ko.reactjs.org/docs/thinking-in-react.html){:target="\_blank"}
+- [https://www.react-hook-form.com](https://www.react-hook-form.com){:target="\_blank"}
+  <br/><br/>
 
 ---
+
+```
+
+```
