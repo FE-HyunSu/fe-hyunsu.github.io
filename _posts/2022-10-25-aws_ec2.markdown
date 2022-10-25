@@ -1,0 +1,91 @@
+---
+layout: post
+title: '🏖 AWS EC2 Instance (작성중)'
+date: 2022-10-25
+tags: [Front-study]
+---
+
+## 🚧 1. 개요
+
+- AWS EC2 Instance를 사용하는법에 대해 알아보자.
+- AWS EC2
+  - Amazon Web Service.
+  - Elastic Compute Cloud.
+  - 원격제어를 통해 컴퓨터를 조작할수 있도록 도와주는 서비스.
+
+(이미지)
+
+- AWS Management console. 에서 EC2로 검색.
+  (이미지)
+- EC2
+- [https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Home:](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Home:){:target="\_blank"}
+  (이미지)
+
+1. 어떤 지역에 있는 컴퓨터를 빌린것인지 정해야 함. 1. 서비스 지역 ‘아시아 태평양 (서울)’ 로 지정.
+   (이미지)
+2. 좌측 메뉴에 인스턴스 > 인스턴스 메뉴 선택.
+   (이미지)
+3. 인스턴스 시작
+   (이미지)
+4. Ubuntu Server 20.04 를 선택.
+   (이미지)
+5. 다음 세부정보 선택
+
+- 프리티어 사용가능 항목 선택(1년 미만 유저, 기준일 2022.04.03)
+- 다음:인스턴스 세부 정보 구성. 선택.
+  (이미지)
+
+6. 인스턴스 세부 정보 구성
+   (이미지)
+
+- 인스턴스 개수 : PC 대수 설정.
+
+7. 스토리지 추가
+   (이미지)
+
+- 8기가 기본값 사용.
+
+8. 태그추가
+   (이미지)
+9. 보안 그룹 구성
+
+- 방화벽 설정. 추후에 설정하고, 검토 및 시작 버튼 클릭.
+  (이미지)
+
+10. 시작하기
+    (이미지)
+    (이미지)
+    (이미지)
+
+- 새 키페어를 선택 시 키 페어 유형을 선택해야함.
+- RSA, ED25519. 둘의 차이는
+
+- **RSA**
+  - **RSA**는 공개키 암호시스템의 하나로, 암호화뿐만 아니라 전자서명이 가능한 최초의 알고리즘으로 알려져 있다. RSA가 갖는 전자서명 기능은 인증을 요구하는 전자 상거래 등에 RSA의 광범위한 활용을 가능하게 하였다. RSA는 두 개의 **키**를 사용한다. 여기서 키란 메시지를 열고 잠그는 상수(constant)를 의미한다. 일반적으로 많은 공개키 알고리즘의 **공개키**(public key)는 모두에게 알려져 있으며 메시지를 암호화(encrypt)하는데 쓰이며, 암호화된 메시지는 **개인키**(private key)를 가진 자만이 복호화(decrypt)하여 열어볼 수 있다. 하지만 RSA 공개키 알고리즘은 이러한 제약조건이 없다. 즉 개인키로 암호화하여 공개키로 복호화할 수도 있다. 공개키 알고리즘은 누구나 어떤 메시지를 암호화할 수 있지만, 그것을 해독하여 열람할 수 있는 사람은 개인키를 지닌 단 한 사람만이 존재한다는 점에서 대칭키 알고리즘과 차이를 가진다.
+- **ED25519**
+
+  - Ed25519는 SHA-512 및 Curve25519를 사용한 EdDSA 서명 체계이다. 또한 Ed25519는 몇 가지 매력적인 기능을 갖춘 공개 키 서명 시스템이다. Ed25519 시그니처는 타원 곡선 시그니처로 여러 수준의 설계 및 구현에서 신중하게 엔지니어링되어 보안을 손상시키지 않으면서 매우 빠른 속도를 달성한다.
+  - 빠른 단일 서명 확인 (Fast single-signature verification)
+  - 매우 빠른 배치 검증 (Even faster batch verification)
+  - 빠른 키 생성(Fast key generation)
+  - 높은 보안 수준(High security level)
+  - 완전 방지 세션 키(Foolproof session keys)
+  - 충돌 탄력성(Collision resilience)
+  - 비밀 배열 인덱스가 없음(No secret array indices)
+  - 비밀 지점 조건이 없음(No secret branch conditions)
+  - 작은 서명(Small signatures)
+  - 작은 키(Small keys)
+
+   <br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://www.youtube.com/watch?v=Pv2yDJ2NKQA](https://www.youtube.com/watch?v=Pv2yDJ2NKQA){:target="\_blank"}
+- [https://naleejang.tistory.com/218](https://naleejang.tistory.com/218){:target="\_blank"}
+  <br/><br/>
+
+---
