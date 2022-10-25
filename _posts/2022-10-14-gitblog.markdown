@@ -7,6 +7,11 @@ tags: [front-study]
 
 ## Github Blog
 
+```javascript
+// 서버 실행
+> bundle exec jekyll serve
+```
+
 <br/>
 
 ---
