@@ -12,30 +12,32 @@ tags: [front-study, react]
 - React에서 사용자 입력값을 제어하려면, useRef나 useState를 이용했었는데, Hooks에도 useForm 이 있음.
 
 ```jsx
-import { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
-import Header from './Header';
+import './styles.css';
 
-export function App() {
+export default function App() {
   const { register, handleSubmit } = useForm();
-  const [data, setData] = useState('');
-
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
-    <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
-      <Header />
-      <input {...register('firstName')} placeholder="First name" />
-      <select {...register('category', { required: true })}>
-        <option value="">Select...</option>
-        <option value="A">Option A</option>
-        <option value="B">Option B</option>
-      </select>
-      <textarea {...register('aboutYou')} placeholder="About you" />
-      <p>{data}</p>
-      <input type="submit" />
-    </form>
+    <div className="App">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input type="text" placeholder="username" {...register('username')} />
+        <input type="submit" />
+      </form>
+    </div>
   );
 }
 ```
+
+### 🧬 장점
+
+- 적은 코드로 더 좋은 퍼포먼스를 낼 수 있다.
+- 다른 라이브러리 혹은 React에 비해 Re-render 수가 적다.
+- Fast Mounting (로딩속도가 빠름)
+- TS를 기본으로 지원함.
 
 <br/>
 
