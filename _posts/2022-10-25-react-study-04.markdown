@@ -77,12 +77,70 @@ const [editMode, setEditMode] = useState(false);
 export default function AccountItem({ setEditMode, dateTime, accountName, price, description }) {
 	...
 }
-
 ```
 
 <br/>
 
 ## ⏳ chapter11. 합성 vs 상속
+
+- React는 강력한 합성 모델을 가지고 있음.
+- 상속 대신 합성을 사용하여 컴포넌트 간에 코드를 재사용하는 것이 좋음.
+
+```jsx
+<Dialog
+  dimmed
+  title="타이틀"
+  checkBoxList={[
+    {
+      title: '버튼명',
+      isChecked: true,
+      hasArrowButton: true,
+    },
+    {
+      title: '버튼명',
+      isChecked: false,
+      hasArrowButton: true,
+    },
+    {
+      title: '버튼명',
+      isChecked: false,
+      hasArrowButton: true,
+    },
+    {
+      title: '버튼명',
+      isChecked: false,
+      hasArrowButton: true,
+    },
+    {
+      title: '버튼명',
+      isChecked: false,
+      hasArrowButton: true,
+    },
+  ]}
+  labelButtonList={[
+    {
+      title: '버튼레이블',
+    },
+  ]}
+/>
+```
+
+- 합성 컴포넌트 방식
+
+```jsx
+<Dialog>
+  <Dialog.Dimmed />
+  <Dialog.Title>타이틀</Dialog.Title>
+  <Dialog.CheckBox isChecked hasArrowButton>
+    버튼명
+  </Dialog.CheckBox>
+  <Dialog.CheckBox hasArrowButton>버튼명</Dialog.CheckBox>
+  <Dialog.CheckBox hasArrowButton>버튼명</Dialog.CheckBox>
+  <Dialog.CheckBox hasArrowButton>버튼명</Dialog.CheckBox>
+  <Dialog.CheckBox hasArrowButton>버튼명</Dialog.CheckBox>
+  <Dialog.LabelButton>버튼레이블</Dialog.LabelButton>
+</Dialog>
+```
 
 <br/>
 
@@ -101,10 +159,7 @@ export default function AccountItem({ setEditMode, dateTime, accountName, price,
 - [https://ko.reactjs.org/docs/composition-vs-inheritance.html](https://ko.reactjs.org/docs/composition-vs-inheritance.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/thinking-in-react.html](https://ko.reactjs.org/docs/thinking-in-react.html){:target="\_blank"}
 - [https://www.react-hook-form.com](https://www.react-hook-form.com){:target="\_blank"}
+- [https://fe-developers.kakaoent.com/2022/220731-composition-component](https://fe-developers.kakaoent.com/2022/220731-composition-component){:target="\_blank"}
   <br/><br/>
 
 ---
-
-```
-
-```
