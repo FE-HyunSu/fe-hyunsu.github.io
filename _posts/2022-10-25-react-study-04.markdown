@@ -146,6 +146,12 @@ export default function AccountItem({ setEditMode, dateTime, accountName, price,
 
 ## 🪫 chapter12. React로 생각하기
 
+- UI를 컴포넌트 계층 구조로 나누기.
+- React로 정적인 버전 만들기.
+- UI state에 대한 최소한의 (하지만 완전한) 표현 찾아내기.
+- State가 어디에 있어야 할 지 찾기.
+- 역방향 데이터 흐름 추가하기.
+
 <br/>
 
 ---
