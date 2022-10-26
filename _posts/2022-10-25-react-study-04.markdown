@@ -41,6 +41,45 @@ export function App() {
 
 ## 🏗 chapter10. State 끌어올리기
 
+- 종종 동일한 데이터에 대한 변경사항을 여러 컴포넌트에 반영해야 할 필요가 있음.
+- 이럴 때는 가장 가까운 공통 조상으로 state를 끌어올리는 것이 가능함.
+
+```jsx
+// A.jsx
+const [editMode, setEditMode] = useState(false);
+...
+<SectionBox>
+	<ul>
+		{accountTarget &&
+			accountTarget.map((item, idx) => {
+				return (
+					<li key={idx}>
+						<AccountItem
+							setEditMode={setEditMode}
+							dateTime={item.dateTime}
+							accountName={returnUserName(item.targetId)}
+							price={item.calculation}
+							description={item.description}
+						/>
+					</li>
+				);
+			})}
+	</ul>
+</SectionBox>
+...
+```
+
+- A 컴포넌트와 B 컴포넌트간의 State 값을 전달. (setEditMode)
+  <br/>
+
+```jsx
+// B.jsx
+export default function AccountItem({ setEditMode, dateTime, accountName, price, description }) {
+	...
+}
+
+```
+
 <br/>
 
 ## ⏳ chapter11. 합성 vs 상속
@@ -65,3 +104,7 @@ export function App() {
   <br/><br/>
 
 ---
+
+```
+
+```
