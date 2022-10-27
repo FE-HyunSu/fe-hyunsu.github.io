@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ' ❤️‍🔥 Firebase firestore - 2 (작성중)'
+title: ' ❤️‍🔥 Firebase firestore - 2'
 date: 2022-10-21
 tags: [backend-study]
 ---
@@ -45,7 +45,7 @@ export const app = initializeApp(firebaseConfig);
 export const database = getFirestore(app);
 ```
 
-### component 에서 data 호출.
+### 📥 컴포넌트에 data 호출.
 
 - 해당 컴포넌트에서는 data 호출만 적용할 것이기 때문에 app, addDoc 함수는 사용되지 않는다.
 - getMemberList 함수를 통해, firestore에 등록한 data 호출에 성공.
