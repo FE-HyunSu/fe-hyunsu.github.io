@@ -69,11 +69,21 @@ const getMemberList = () => {
 
 <br/>
 
+### 🔭 Next step
+
+- firebaseConfig.js 의 key 값 dotenv 적용.
+- firebase 호스팅 설정.
+- memberList 외 accountList도 firestore 연동 처리.
+- firestore 호출 함수 로직 개선.
+
+<br/>
+
 ## 🎫 참고 페이지
 
 - [https://firebase.google.com](https://firebase.google.com){:target="\_blank"}
 - [https://www.npmjs.com/package/@firebase/firestore](https://www.npmjs.com/package/@firebase/firestore){:target="\_blank"}
 - [https://www.freecodecamp.org/news/nextjs-firebase-tutorial-build-an-evernote-clone](https://www.freecodecamp.org/news/nextjs-firebase-tutorial-build-an-evernote-clone/){:target="\_blank"}
+- [https://velog.io/@hoho_0815/env-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC](https://velog.io/@hoho_0815/env-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC){:target="\_blank"}
   <br/>
 
 ---
