@@ -2,22 +2,25 @@
 layout: default
 ---
 
-<nav>
-  <ul>
-    <li>
-      <button type="button" onclick="location.href='/'">
-        <span>ALL</span>
-      </button>
-    </li>
-    {% for tag in site.data.tags %}
-    <li>
-      <button type="button">
-        <span data-tag="{{tag}}"> {{ site.data.format[tag] }} </span>
-      </button>
-    </li>
-    {% endfor %}
-  </ul>
-</nav>
+<header>
+  <h1>MASON</h1>
+  <nav>
+    <ul>
+      <li>
+        <button type="button" onclick="location.href='/'">
+          <span>ALL</span>
+        </button>
+      </li>
+      {% for tag in site.data.tags %}
+      <li>
+        <button type="button">
+          <span data-tag="{{tag}}"> {{ site.data.format[tag] }} </span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
 
 {%- if page.title -%}
 <h1 class="page-heading">{{ page.title }}</h1>
