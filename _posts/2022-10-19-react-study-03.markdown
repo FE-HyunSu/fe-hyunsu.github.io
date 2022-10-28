@@ -2,7 +2,7 @@
 layout: post
 title: '👨‍👦‍👦👩‍👧 React-Documents-Step02'
 date: 2022-10-21
-tags: [front-study, react]
+tags: [react-study]
 ---
 
 ## 🌀 chapter5. State and Lifecycle

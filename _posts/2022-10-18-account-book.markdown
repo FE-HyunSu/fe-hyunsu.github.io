@@ -29,7 +29,6 @@ tags: [react, diary]
 - (이슈) gh-pages로 배포가 제대로 되지 않아, netlify로 배포했다. 이슈 해결 필요.
 - (개선) AccountList를 선언순서와 관계없이 sort 되도록 기준 정리 및 적용 필요.
 - (개선) 특정 user를 선택했을때, 해당 user의 입출금 내역만 보여지도록 개선 필요.
-
   <br/>
 
 ---

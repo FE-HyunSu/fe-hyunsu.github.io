@@ -2,7 +2,7 @@
 layout: post
 title: ' ❤️‍🔥 Firebase firestore - 1'
 date: 2022-10-20
-tags: [backend-study]
+tags: [back-end]
 ---
 
 ## 🎇 Firebase firestore 설치 및 셋팅

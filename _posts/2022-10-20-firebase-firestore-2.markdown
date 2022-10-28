@@ -2,7 +2,7 @@
 layout: post
 title: ' ❤️‍🔥 Firebase firestore - 2'
 date: 2022-10-21
-tags: [backend-study]
+tags: [back-end]
 ---
 
 ## 🎇 Firebase firestore 활용

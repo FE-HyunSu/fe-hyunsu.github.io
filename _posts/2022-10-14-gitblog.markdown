@@ -2,7 +2,7 @@
 layout: post
 title: ' 🎊 github blog (작성중)'
 date: 2022-10-14
-tags: [front-study]
+tags: [diary]
 ---
 
 ## Github Blog
