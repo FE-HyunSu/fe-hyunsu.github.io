@@ -266,9 +266,11 @@ header {
     align-items: center;
     width: 100px;
     padding-left: 30px;
+    font-weight: 300;
     font-size: 14px;
     line-height: 1;
     box-sizing: border-box;
+    animation: logoEffect 3s infinite;
   }
   nav {
     width: calc(100% - 100px);
@@ -305,5 +307,46 @@ header {
         }
       }
     }
+  }
+}
+
+@keyframes logoEffect {
+  0% {
+    transform: scale(1, 1);
+  }
+  2% {
+    transform: scale(1, 0.1);
+  }
+  4% {
+    transform: scale(1, 1);
+  }
+  6% {
+    transform: scale(1, 0.1);
+  }
+  8% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1, 0.1);
+  }
+  15% {
+    transform: scale(1.5, 0.1);
+  }
+  17% {
+    color: #fff999;
+    transform: scale(1, 1);
+  }
+  19% {
+    color: #004c99;
+    transform: scale(1.5, 0.1);
+  }
+  21% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
   }
 }

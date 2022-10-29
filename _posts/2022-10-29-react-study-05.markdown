@@ -1,0 +1,45 @@
+---
+layout: post
+title: '👨‍👦‍👦👩‍👧 React-Documents-Step04'
+date: 2022-10-29
+tags: [study-group]
+---
+
+## 🚇 chapter13. 접근성
+
+- 웹 접근성은 모두가 사용할 수 있도록 웹사이트를 디자인, 개발하는 것을 의미함.
+- 보조과학기술(assistive technology)들이 웹페이지들을 해석할 수 있도록 접근성을 갖추는 것이 필요함.
+- 웹 접근성 : '지능정보화기본법'에 따라 장애인이나 고령자분들이 웹 사이트에서 제공하는 정보를 비장애인과 동등하게 접근하고 이용 할 수 있도록 보장하는 것으로 웹 접근성 준수는 법적의무사항.<br/> - 스크린 리더 소프트웨어<br/> - 화면 확대 도구<br/> - 음성 인식<br/> - 키보드 오버레이
+- React는 접근성을 갖춘 웹사이트를 만들 수 있도록 모든 지원을 하고 있으며, 대부분은 표준 HTML 기술이 사용됨.
+
+## 🎛 chapter14. 코드 분할
+
+## 🛍 chapter15. Context
+
+## 🚨 chapter16. Error Boundary
+
+## 🚠 chapter17. Ref 전달하기
+
+## 🏠 chapter18. Fragment
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://ko.reactjs.org/docs/accessibility.html](https://ko.reactjs.org/docs/accessibility.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/code-splitting.html](https://ko.reactjs.org/docs/code-splitting.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/context.html](https://ko.reactjs.org/docs/context.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/error-boundaries.html](https://ko.reactjs.org/docs/error-boundaries.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/forwarding-refs.html](https://ko.reactjs.org/docs/forwarding-refs.html){:target="\_blank"}
+- [https://ko.reactjs.org/docs/fragments.html](https://ko.reactjs.org/docs/fragments.html){:target="\_blank"}
+- [http://www.wa.or.kr/m1/sub1.asp](http://www.wa.or.kr/m1/sub1.asp){:target="\_blank"}
+- [](){:target="\_blank"}
+- [](){:target="\_blank"}
+- [https://developer.mozilla.org/ko/docs/Web/HTML/Element](https://developer.mozilla.org/ko/docs/Web/HTML/Element){:target="\_blank"}
+  <br/><br/>
+
+---
