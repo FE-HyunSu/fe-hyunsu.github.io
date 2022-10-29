@@ -13,7 +13,95 @@ tags: [study-group]
 - 웹 접근성 준수는 법적의무사항임. (지능정보화기본법)<br/>[http://www.wa.or.kr/m1/sub1.asp](http://www.wa.or.kr/m1/sub1.asp){:target="\_blank"}
 - React는 접근성을 갖춘 웹사이트를 만들 수 있도록 모든 지원을 하고 있으며, 대부분은 표준 HTML 기술이 사용됨.
 
-## 🎛 chapter14. 코드 분할
+<br/>
+
+---
+
+<br/>
+
+## 🎛 chapter14. 코드 분할 (Code spliting)
+
+- 대부분 React 앱들은 Webpack, Rollup 또는 Browserify 같은 Bundling Tool 을 사용하여 여러 파일을 하나로 병합한 Bundled file을 웹 패이지에 포함하여 한번에 전체 앱을 로드 할 수 있다.
+- 프로젝트가 커질수록 번들 사이즈가 커지고, 특히 CSR 환경으로 개발된 프로젝트의 경우에는 초기 렌더링 속도가 점점 더 늦어지는 단점이 있다.
+- 번들이 커지는 것을 방지하기 위해 번들을 나누는 Code splitting 방법이 있다.
+- 코드 분할은 런타임에 여러 번들을 동적으로 만들고, 불러오는 것으로 Webpack, Rollup과 Browserify (factor-bundle) 같은 번들러가 지원하는 기능이다.
+- Code spliting은 프로젝트를 '지연 로딩' 하게 도와주고, 사용자에게 좋은 성능을 제공한다. 프로젝트 코드의 양을 줄이지 않고, 사용자가 필요하지 않는 코드를 불러오지 않게 하여, 초기 로딩의 속도와 비용을 줄여준다.
+
+### 🏗 1. 동적 import()
+
+```jsx
+// before
+import { add } from './math';
+console.log(add(16, 26));
+```
+
+- 동적 import() 사용.
+
+```jsx
+// after
+import('./math').then((math) => {
+  console.log(math.add(16, 26));
+});
+```
+
+### 🛸 2. React.lazy
+
+```jsx
+// before
+import ExpampleConponent from './ExpampleConponent';
+```
+
+- React.lazy 함수를 사용해서 동적 import를 적용.
+
+```jsx
+// after
+const Main = lazy(() => import('./components/Main'));
+const AboutPage = lazy(() => import('./components/AboutPage'));
+const MySkillsPage = lazy(() => import('./components/MySkillsPage'));
+```
+
+### 🚔 3. Example
+
+```jsx
+const Main = lazy(() => import('./components/Main'));
+const AboutPage = lazy(() => import('./components/AboutPage'));
+const MySkillsPage = lazy(() => import('./components/MySkillsPage'));
+const BlogPage = lazy(() => import('./components/BlogPage'));
+const WorkPage = lazy(() => import('./components/WorkPage'));
+const SoundBar = lazy(() => import('./subComponents/SoundBar'));
+
+function App() {
+  const location = useLocation();
+  return (
+    <>
+      <ThemeProvider theme={lightTheme}>
+        <Suspense fallback={<Loading />}>
+          <SoundBar />
+          <AnimatePresence exitBeforeEnter>
+            <Switch location={location} key={location.pathname}>
+              <Route exact path="/" component={Main} />
+              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/blog" component={BlogPage} />
+              <Route exact path="/work" component={WorkPage} />
+              <Route exact path="/skills" component={MySkillsPage} />
+            </Switch>
+          </AnimatePresence>
+        </Suspense>
+      </ThemeProvider>
+    </>
+  );
+}
+```
+
+- React.lazy 는 동적 import() 를 호출하는 함수를 인자로 가지고, 이 함수는 React 컴포넌트를 포함하여 default export를 가진 모듈로 결정되는 Promise 를 반환해야 함.
+- 또한, lazy component 는 Suspense component 하위에서 rendering 되어야하며, Suspense 는 lazy component가 로드되길 기다리는 동안 로딩 화면과 같은 예비 컨텐츠를 보여줄 수 있게 해준다.
+- Code Splitting을 어느 지점에 적용해야 하는지에 대해 고민해야 한다.
+
+<br/>
+
+---
+
+<br/>
 
 ## 🛍 chapter15. Context
 
@@ -38,7 +126,7 @@ tags: [study-group]
 - [https://ko.reactjs.org/docs/forwarding-refs.html](https://ko.reactjs.org/docs/forwarding-refs.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/fragments.html](https://ko.reactjs.org/docs/fragments.html){:target="\_blank"}
 - [http://www.wa.or.kr/m1/sub1.asp](http://www.wa.or.kr/m1/sub1.asp){:target="\_blank"}
-- [](){:target="\_blank"}
+- [https://hwani.dev/react-code-splitting](https://hwani.dev/react-code-splitting){:target="\_blank"}
 - [](){:target="\_blank"}
 - [https://developer.mozilla.org/ko/docs/Web/HTML/Element](https://developer.mozilla.org/ko/docs/Web/HTML/Element){:target="\_blank"}
   <br/><br/>
