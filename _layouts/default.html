@@ -6,6 +6,25 @@
 
   <body>
     <main class="container">
+      <header>
+        <h1>MASON</h1>
+        <nav>
+          <ul>
+            <li>
+              <button type="button" onclick="location.href='/'">
+                <span>ALL</span>
+              </button>
+            </li>
+            {% for tag in site.data.tags %}
+            <li>
+              <button type="button" onclick="location.href='/?tag={{tag}}'">
+                <span data-tag="{{tag}}"> {{ site.data.format[tag] }} </span>
+              </button>
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </header>
       <section class="about">
         <a href="{{ site.baseurl }}/" class="img-profile"
           ><img src="{{ "/assets/profile.png" | relative_url }}" alt="{{ site.plainwhite.name

@@ -2,7 +2,7 @@
 layout: post
 title: '👨‍👦‍👦👩‍👧 React-Documents-Step01 (2)'
 date: 2022-10-17
-tags: [react-study]
+tags: [study-group]
 ---
 
 ## 🚌 chapter3. 엘리먼트 렌더링 👋

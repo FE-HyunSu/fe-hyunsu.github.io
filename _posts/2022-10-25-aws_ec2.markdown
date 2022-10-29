@@ -1,8 +1,8 @@
 ---
 layout: post
 title: '🏖 AWS EC2 Instance (작성중)'
-date: 2022-10-25
-tags: [diary]
+date: 2002-10-25
+tags: [backend-study]
 ---
 
 ## 🚧 1. 개요

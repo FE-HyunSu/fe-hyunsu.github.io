@@ -2,7 +2,7 @@
 layout: post
 title: ' 💵 AccountBook'
 date: 2022-10-18
-tags: [diary]
+tags: [frontend-study, backend-study]
 ---
 
 ## 🛼 React study 모임 정산 페이지
