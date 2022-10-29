@@ -145,17 +145,17 @@
   .posts {
     & > li {
       .post-wrapper {
-        background-color: #222;
+        background-color: #252c34;
       }
       &:hover {
         .post-wrapper {
-          background-color: #333;
+          background-color: #1c2228;
         }
       }
     }
   }
   .site-info {
-    border-color: #333 !important;
+    border-color: #3a3d41 !important;
     word-break: keep-all;
     p {
       color: #333;
@@ -245,8 +245,8 @@ main {
 
 .dark {
   header {
-    border-bottom: 1px solid #333 !important;
-    background-color: #131313;
+    border-bottom: 1px solid #3a3d41 !important;
+    background-color: #212529;
     h1 {
       a {
         color: inherit;
