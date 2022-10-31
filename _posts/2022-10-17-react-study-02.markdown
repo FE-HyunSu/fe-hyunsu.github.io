@@ -151,4 +151,6 @@ function App() {
 - [https://codepen.io/gaearon/pen/edyBaE?editors=1011](https://codepen.io/gaearon/pen/edyBaE?editors=1011){:target="\_blank"}
 - [https://tonynguyenit.medium.com/how-react-virtual-dom-decide-to-update-browser-dom-91f170718733](https://tonynguyenit.medium.com/how-react-virtual-dom-decide-to-update-browser-dom-91f170718733){:target="\_blank"}
 - [https://velog.io/@sdc337dc/0.%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8](https://velog.io/@sdc337dc/0.%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8){:target="\_blank"}
-  <br/>
+  <br/><br/>
+
+---

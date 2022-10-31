@@ -140,4 +140,6 @@ const todoItems = todos.map((todo, index) => <li key={index}>{todo.text}</li>);
 - [https://ko.reactjs.org/docs/state-and-lifecycle.html](https://ko.reactjs.org/docs/state-and-lifecycle.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/handling-events.html](https://ko.reactjs.org/docs/handling-events.html){:target="\_blank"}
 - [https://github.com/Wavez/react-hooks-lifecycle](https://github.com/Wavez/react-hooks-lifecycle){:target="\_blank"}
-  <br/>
+  <br/><br/>
+
+---

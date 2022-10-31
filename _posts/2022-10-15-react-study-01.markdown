@@ -166,4 +166,6 @@ const element = <h1 className="name">Hello, Mason</h1>;
 - [https://react.vlpt.us/basic/01-concept.html](https://react.vlpt.us/basic/01-concept.html){:target="\_blank"}
 - [https://velog.io/@citron03/React-18%EC%97%90%EC%84%9C-ReactDOM.render%EC%99%80-createRoot](https://velog.io/@citron03/React-18%EC%97%90%EC%84%9C-ReactDOM.render%EC%99%80-createRoot){:target="\_blank"}
 - [https://immigration9.github.io/react/2021/06/12/automatic-batching-react.html](https://immigration9.github.io/react/2021/06/12/automatic-batching-react.html){:target="\_blank"}
-  <br/>
+  <br/><br/>
+
+---

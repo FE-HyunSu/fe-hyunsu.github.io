@@ -21,4 +21,6 @@ tags: [frontend-study]
 ## 🎫 참고 페이지
 
 - [https://github.com/samarsault/plainwhite-jekyll](https://github.com/samarsault/plainwhite-jekyll){:target="\_blank"}
-  <br/>
+  <br/><br/>
+
+---

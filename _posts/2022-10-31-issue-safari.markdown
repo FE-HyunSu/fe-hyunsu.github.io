@@ -46,6 +46,6 @@ const addComa = (number) => {
 
 - [https://github.com/typesense/typesense-instantsearch-adapter/issues/29](https://github.com/typesense/typesense-instantsearch-adapter/issues/29){:target="\_blank"}
 - [https://mc500.tistory.com/658](https://mc500.tistory.com/658){:target="\_blank"}
-  <br/>
+  <br/><br/>
 
 ---

@@ -84,6 +84,6 @@ const getMemberList = () => {
 - [https://www.npmjs.com/package/@firebase/firestore](https://www.npmjs.com/package/@firebase/firestore){:target="\_blank"}
 - [https://www.freecodecamp.org/news/nextjs-firebase-tutorial-build-an-evernote-clone](https://www.freecodecamp.org/news/nextjs-firebase-tutorial-build-an-evernote-clone/){:target="\_blank"}
 - [https://velog.io/@hoho_0815/env-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC](https://velog.io/@hoho_0815/env-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC){:target="\_blank"}
-  <br/>
+  <br/><br/>
 
 ---
