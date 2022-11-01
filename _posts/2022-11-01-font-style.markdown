@@ -38,8 +38,8 @@ tags: [frontend-study]
 
 ## 🎫 참고 페이지
 
-- [https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range)
-- [https://d2.naver.com/helloworld/4969726](https://d2.naver.com/helloworld/4969726)
+- [https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range){:target="\_blank"}
+- [https://d2.naver.com/helloworld/4969726](https://d2.naver.com/helloworld/4969726){:target="\_blank"}
   <br/><br/>
 
 ---
