@@ -31,6 +31,9 @@ tags: [study-group]
 
 ## 📇 chapter22. 성능 최적화
 
+- code spliting
+-
+
 <br/>
 
 ---

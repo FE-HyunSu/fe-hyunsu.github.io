@@ -7,6 +7,9 @@ tags: [frontend-study]
 
 ## Github Blog
 
+- Github Blog 적용을 위해 jekyll plainwhite 테마를 선택.
+- [https://github.com/samarsault/plainwhite-jekyll](https://github.com/samarsault/plainwhite-jekyll)
+
 ```javascript
 // 서버 실행
 > bundle exec jekyll serve
