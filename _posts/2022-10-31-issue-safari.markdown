@@ -38,7 +38,6 @@ const addComa = (number) => {
 ```
 
 - safari 브라우저에서 적용되지 않았던 regex의 lookbehind 문법에 대해 알아보자.
--
 
 ```javascript
 // Negative Lookahead

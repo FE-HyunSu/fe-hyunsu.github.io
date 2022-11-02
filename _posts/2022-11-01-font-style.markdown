@@ -13,7 +13,7 @@ tags: [frontend-study]
 @font-face {
   font-family: 'font-name';
   src: url('font-name-file.woff2') format('woff2'), url('font-name-file.woff') format('woff');
-  unicode-range: U+AC00- U+D7A3; /* 한글폰트에 적용. */
+  unicode-range: U+AC00-U+D7A3; /* 한글폰트에 적용. */
 }
 @font-face {
   font-family: 'font-name-number';
