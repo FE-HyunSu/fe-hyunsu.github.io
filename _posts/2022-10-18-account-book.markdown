@@ -2,7 +2,7 @@
 layout: post
 title: ' 💵 AccountBook'
 date: 2022-11-04
-tags: [frontend-study]
+tags: [toyproject]
 ---
 
 ## 🛼 React study 모임 정산 페이지
@@ -14,20 +14,21 @@ tags: [frontend-study]
 
 <br/>
 
-### 🥲 작업 내용
+### 🥲 개요
 
 - React 스터디 모임에서 총무에 당첨됨.
 - 개인 스터디겸 회비 정산내역 기록용으로 React 프로젝트를 생성.
 
 <br/>
 
-### 🚲 초기모델 배포(v1.0)
+### 🚍 초기모델 배포(v1.0)
 
 - React nextJs 환경으로 페이지 생성.
 - UI는 카카오뱅크를 참고.
 - 유저 정보와 입출금 데이터는 json 파일로 대체했다.
   - memberList.json : 멤버 정보. { id : 고유값, userName : 이름, imgUrl : 프로필 이미지 }
   - accountList.json : 입출금 내역. { targetId : 멤버id, dateTime : 날짜, description : 내용, calculation : 금액 }
+- netlify를 통해 배포.
 - 추가 개선내용 TodoList를 작성.
 
 <br/>
