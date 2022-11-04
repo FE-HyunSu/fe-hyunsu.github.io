@@ -1,19 +1,66 @@
 ---
 layout: post
-title: ' 🎊 github blog (작성중)'
-date: 2002-10-14
+title: ' 🎊 GitBlog'
+date: 2022-10-14
 tags: [frontend-study]
 ---
 
-## Github Blog
+## 🛶 GitBlog
 
-- Github Blog 적용을 위해 jekyll plainwhite 테마를 선택.
+### 🗿 개요
+
+- Git Blog 적용을 위해 jekyll 을 통해, 구축 계획함.
+- 장점으로는, HTML 기반으로 커스텀이 가능하고 제공되는 템플릿이 많다.
+- GitHub을 사용하면서, 호스팅 비용이 필요하지 않다.
+
+<br/>
+
+### 🧯 Ruby, 설치.
+
+- Jekyll을 사용하기 위해 Ruby를 설치. (Jekyll은 Ruby로 만든 정적 웹사이트 생성기이기 때문)
+
+```javascript
+$ sudo apt install ruby ruby-dev build-essential
+```
+
+- .bashrc 파일에 루비 환경설정 추가, source 명령어로 업데이트!
+
+```
+$ echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+$ echo 'export GEM_HOME=$HOME/gems' >> ~/.bashrc
+$ echo 'export PATH=$HOME/gems/bin:$PATH' >> ~/.bashrc
+$ source ~/.bashrc
+```
+
+- jekyll과 bundler 설치.
+
+```javascript
+$ gem install jekyll bundler
+```
+
+- jekyll blog 생성.
+
+```javascript
+$ jekyll new {blogName}
+```
+
+<br/>
+
+### 🏖 Theme 선택.
+
+- Git Blog 적용을 위해 jekyll plainwhite 테마를 선택.
 - [https://github.com/samarsault/plainwhite-jekyll](https://github.com/samarsault/plainwhite-jekyll)
 
 ```javascript
 // 서버 실행
-> bundle exec jekyll serve
+$ bundle exec jekyll serve
 ```
+
+<br/>
+
+### 🎠 page custom.
+
+- 각자 취향에 맞게 커스텀.
 
 <br/>
 
@@ -24,6 +71,7 @@ tags: [frontend-study]
 ## 🎫 참고 페이지
 
 - [https://github.com/samarsault/plainwhite-jekyll](https://github.com/samarsault/plainwhite-jekyll){:target="\_blank"}
+- [https://hits.seeyoufarm.com](https://hits.seeyoufarm.com){:target="\_blank"}
   <br/><br/>
 
 ---
