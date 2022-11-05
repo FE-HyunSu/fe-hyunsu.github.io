@@ -5,7 +5,7 @@ date: 2022-11-05
 tags: [frontend-study]
 ---
 
-## 🧙 Project set.
+## 🧙 Nextjs package set.
 
 - Nextjs는 SPA와 SSR의 단점을 해결하기 위해서 React에 Server Side Rendering기능을 더하여 SPA와 SSR의 장점 모두를 가짐.
 - react nextjs 최신버전으로 설치.
