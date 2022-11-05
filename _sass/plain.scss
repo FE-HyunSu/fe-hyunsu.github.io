@@ -242,6 +242,7 @@ main {
     color: $linkColor;
     text-decoration: none;
     transition: border-bottom 0.4s;
+    word-break: break-all;
     &:hover {
       border-bottom: 0.5px solid $linkColor;
     }

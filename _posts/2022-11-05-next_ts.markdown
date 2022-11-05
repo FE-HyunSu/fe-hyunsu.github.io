@@ -62,16 +62,16 @@ $ Would you like to use ESLint with this project? … No / Yes
 ## 🦄 style convention.
 
 - styled-components, styled-reset package 설치.
-- ```java
+
+```java
   $ npm i styled-reset
   $ npm i --save-dev @types/styled-components
-  ```
-
-<br/>
+```
 
 - nextjs는 SSR 이후 CSR로 라우팅을 하게되어 서버에서 생성된 해시값과 브라우저에서 생성된 해시값이 서로 달라 에러가 발생됨.
 - babel-plugin-styled-components 바벨 플러그인을 통해 해결.
-- ```javascript
+
+```javascript
   //.babelrc
   {
     "presets": ["next/babel"],
@@ -86,7 +86,7 @@ $ Would you like to use ESLint with this project? … No / Yes
       ]
     ]
   }
-  ```
+```
 
 <br/>
 
