@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '🏖 AWS EC2 Instance (작성중)'
-date: 2002-10-25
+title: '🏖 AWS EC2 Instance'
+date: 2022-11-06
 tags: [backend-study]
 ---
 
@@ -9,57 +9,44 @@ tags: [backend-study]
 
 - AWS EC2 Instance를 사용하는법에 대해 알아보자.
 - AWS EC2
+
   - Amazon Web Service.
   - Elastic Compute Cloud.
   - 원격제어를 통해 컴퓨터를 조작할수 있도록 도와주는 서비스.
 
-(이미지)
+- <img src="../assets/images/img_aws_ec2_1.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
-- AWS Management console. 에서 EC2로 검색.
-  (이미지)
+- AWS Management console. 에서 EC2로 검색.<br/><img src="../assets/images/img_aws_ec2_2.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 - EC2
 - [https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Home:](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Home:){:target="\_blank"}
-  (이미지)
 
-1. 어떤 지역에 있는 컴퓨터를 빌린것인지 정해야 함. 1. 서비스 지역 ‘아시아 태평양 (서울)’ 로 지정.
-   (이미지)
-2. 좌측 메뉴에 인스턴스 > 인스턴스 메뉴 선택.
-   (이미지)
-3. 인스턴스 시작
-   (이미지)
-4. Ubuntu Server 20.04 를 선택.
-   (이미지)
+1. 어떤 지역에 있는 컴퓨터를 빌린것인지 정해야 함. 1. 서비스 지역 ‘아시아 태평양 (서울)’ 로 지정.<br/><img src="../assets/images/img_aws_ec2_3.png" alt="" style="width:150px" />
+2. 좌측 메뉴에 인스턴스 > 인스턴스 메뉴 선택.<br/><img src="../assets/images/img_aws_ec2_4.png" alt="" style="width:150px;" />
+3. 인스턴스 시작<br/><img src="../assets/images/img_aws_ec2_5.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+4. Ubuntu Server 20.04 를 선택.<br/><img src="../assets/images/img_aws_ec2_6.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 5. 다음 세부정보 선택
 
 - 프리티어 사용가능 항목 선택(1년 미만 유저, 기준일 2022.04.03)
 - 다음:인스턴스 세부 정보 구성. 선택.
-  (이미지)
 
-6. 인스턴스 세부 정보 구성
-   (이미지)
+6. 인스턴스 세부 정보 구성<br/><img src="../assets/images/img_aws_ec2_7.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
 - 인스턴스 개수 : PC 대수 설정.
 
-7. 스토리지 추가
-   (이미지)
+7. 스토리지 추가<br/><img src="../assets/images/img_aws_ec2_8.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
 - 8기가 기본값 사용.
 
-8. 태그추가
-   (이미지)
+8. 태그추가<br/><img src="../assets/images/img_aws_ec2_9.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+
 9. 보안 그룹 구성
 
-- 방화벽 설정. 추후에 설정하고, 검토 및 시작 버튼 클릭.
-  (이미지)
+- 방화벽 설정. 추후에 설정하고, 검토 및 시작 버튼 클릭.<br/><img src="../assets/images/img_aws_ec2_10.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
-10. 시작하기
-    (이미지)
-    (이미지)
-    (이미지)
+10. 시작하기<br/><img src="../assets/images/img_aws_ec2_11.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
-- 새 키페어를 선택 시 키 페어 유형을 선택해야함.
-- RSA, ED25519. 둘의 차이는
-
+- 새 키페어를 선택 시 키 페어 유형을 선택해야함.<br/><img src="../assets/images/img_aws_ec2_12.png" alt="" style="width:90%; max-width:500px; min-width:300px;" /><br/><img src="../assets/images/img_aws_ec2_13.png" alt="" style="width:90%; max-width:500px; min-width:300px;" />
+- RSA, ED25519 차이.
 - **RSA**
   - **RSA**는 공개키 암호시스템의 하나로, 암호화뿐만 아니라 전자서명이 가능한 최초의 알고리즘으로 알려져 있다. RSA가 갖는 전자서명 기능은 인증을 요구하는 전자 상거래 등에 RSA의 광범위한 활용을 가능하게 하였다. RSA는 두 개의 **키**를 사용한다. 여기서 키란 메시지를 열고 잠그는 상수(constant)를 의미한다. 일반적으로 많은 공개키 알고리즘의 **공개키**(public key)는 모두에게 알려져 있으며 메시지를 암호화(encrypt)하는데 쓰이며, 암호화된 메시지는 **개인키**(private key)를 가진 자만이 복호화(decrypt)하여 열어볼 수 있다. 하지만 RSA 공개키 알고리즘은 이러한 제약조건이 없다. 즉 개인키로 암호화하여 공개키로 복호화할 수도 있다. 공개키 알고리즘은 누구나 어떤 메시지를 암호화할 수 있지만, 그것을 해독하여 열람할 수 있는 사람은 개인키를 지닌 단 한 사람만이 존재한다는 점에서 대칭키 알고리즘과 차이를 가진다.
 - **ED25519**
@@ -76,7 +63,49 @@ tags: [backend-study]
   - 작은 서명(Small signatures)
   - 작은 키(Small keys)
 
-   <br/>
+  <img src="../assets/images/img_aws_ec2_14.png" alt="" style="width:90%; max-width:600px; min-width:300px;" /><br/><img src="../assets/images/img_aws_ec2_15.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+
+<br/>
+
+### 🦑 생성완료
+
+- <img src="../assets/images/img_aws_ec2_16.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+- <img src="../assets/images/img_aws_ec2_17.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+- 상태 검사 항목까지 초록색 글씨가 떠야 끝난 것.
+- <img src="../assets/images/img_aws_ec2_18.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+- 우클릭 > 연결.
+- <img src="../assets/images/img_aws_ec2_19.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+- <img src="../assets/images/img_aws_ec2_20.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+- 연결을 누르면 해당 인스턴스의 쉘이 뜸.
+  - ls -al테스트 명령어.
+  - <img src="../assets/images/img_aws_ec2_21.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+  - sudo apt update 명령어를 통해서 리눅스 우분투 배포판 업데이트.
+  - 명령어를 입력하면 해당 인스턴스의 정보를 컨트롤 할 수 있음.
+  - 아파치 웹서버 설치.
+  - <img src="../assets/images/img_aws_ec2_22.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+- 이렇게 설치하면 ip 주소로 웹페이지로 접근이 가능함.
+- 인스턴스 목록에서 퍼블릭 IPv4주소의 IP로 접근이 가능.
+- 인스턴스 중지, 재시작 시 IP주소가 변경됨.
+- IP주소 변경에 대한 불편함을 해소하기 위해선. AWS의 EIP 서비스를 적용해야 함. (고정 IP)
+- 유료 서비스이지만, 한 계정당 1개는 고정으로 사용할 수 있음.
+- 네트워크 및 보안 > 탄력적 IP > 탄력적 IP 주소 할당.
+- <img src="../assets/images/img_aws_ec2_23.png" alt="" style="width:300px;" />
+- 보안설정.
+- <img src="../assets/images/img_aws_ec2_24.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+- 인바운드 규칙 : 외부에서 -> EC2 인스턴스로 접속. (최소한으로 열려야 안전)
+- 아웃 바운드 : EC2 인스턴스에서 -> 외부로 접속. (다 열려있어야 함)
+- 22번 포트는 기본적으로 열려있음.
+- 웹을 쓰기 위해선 80번 포트도 열어야함.
+- 어떻게? -> 보안 그룹 클릭.
+- <img src="../assets/images/img_aws_ec2_25.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+- 인바운드 규칙 편집을 선택.
+- http 를 추가해야 웹페이지로 접근이 가능함.
+- <img src="../assets/images/img_aws_ec2_26.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+- FileZilla 연결
+- AWS에 파일을 업로드 할 땐 SFTP(Secure File transfer protocol) 라는 보안 파일 전송 프로토콜을 사용한다.
+- 따라서 FileZila를 사용하기 전에 EC2 인스턴스의 보안 그룹에서 22번 포트에 접속이 가능하게 설정해뒀는지를 확인하자.
+- putty를 통해 키 파일(.ppk)을 받고 키파일을 받기 위해선 키페어(.pem) 파일 필요.
+  <br/><br/>
 
 ---
 
