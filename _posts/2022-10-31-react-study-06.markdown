@@ -1,54 +1,128 @@
 ---
 layout: post
 title: '👨‍👦‍👦👩‍👧 React-Documents-Step05'
-date: 2022-10-31
+date: 2022-11-06
 tags: [study-group]
 ---
 
 ## 🪜 chapter19. 고차 컴포넌트
 
+- 고차 컴포넌트 : HOC(Higher Order Component).
+- 컴포넌트 자체를 매개변수로 받아 새로운 컴포넌트를 반환하는 함수를 의미함.
+- ex 1) withError, withLoading 두개의 HOC 적용 예시.
+
+```jsx
+const withLoading =
+  ({ loadingText }) =>
+  (Component) =>
+  ({ isLoading, ...rest }) => {
+    if (isLoading) {
+      return <div>{loadingText ? loadingText : 'Loading ...'}</div>;
+    }
+    return <Component {...rest} />;
+  };
+
+const withError =
+  ({ errorText }) =>
+  (Component) =>
+  ({ error, ...rest }) => {
+    if (error) {
+      return <div>{errorText ? errorText : 'Something went wrong ...'}</div>;
+    }
+    return <Component {...rest} />;
+  };
+```
+
+- 위 withError, withLoading 두개의 HOC를 활용하여, 에러와 로딩 상태를 체크 후 컴포넌트 호출.
+
+```jsx
+const DataTableWithFeedback = compose(
+  withError({ errorText: 'error..' }),
+  withLoading({ loadingText: 'loading..' }),
+)(DataTable);
+const App = () => {
+  ...
+  return (
+    <DataTableWithFeedback
+      columns={columns}
+      data={data}
+      error={error}
+      isLoading={isLoading}
+    />
+  );
+};
+```
+
+- ex 2) api 주소를 인자로 받는 withFetch HOC
+
+```jsx
+const UserProfileWithData = compose(
+  withFetch(props => `https://api.mydomain/users/${props.userId}`),
+  withFetch(props => `https://api.mydomain/profile/${props.profileId}`),
+)(UserProfile);
+
+const App = () => {
+  ...
+  const userId = '1';
+  return (
+    <UserProfileWithData
+      columns={columns}
+      userId={userId}
+    />
+  );
+};
+```
+
+- custom hook으로 표시.
+
+```jsx
+const App = () => {
+  const userId = '1';
+
+  const {
+    data: userData,
+    isLoading: userIsLoading,
+    error: userError
+  } = useFetch(`https://api.mydomain/user/${userId}`);
+
+  const profileId = userData?.profileId;
+
+  const {
+    data: userProfileData,
+    isLoading: userProfileIsLoading,
+    error: userProfileError
+  } = useFetch(`https://api.mydomain/user/${profileId}/profile`);
+
+  if (userError || userProfileError) {
+    return <div>Something went wrong ...</div>;
+  }
+
+  if (userIsLoading || userProfileIsLoading) {
+    return <div>Is loading ...</div>;
+  }
+
+  return (
+    <User
+      user={userData}>
+      userProfile={userProfileData}
+    />
+  );
+};
+```
+
 <br/>
 
----
+### 🤦‍♀️ HOC의 단점 (함수형 기준)
+
+- 암묵적인 props 전달.
 
 <br/>
 
-## 🔮 chapter20. 다른 라이브러리와 통합하기
+### 🪖 정리
 
-<br/>
-
----
-
-<br/>
-
-## 🦠 chapter21. JSX 이해하기
-
-<br/>
-
----
-
-<br/>
-
-## 📇 chapter22. 성능 최적화
-
-- code spliting
--
-
-<br/>
-
----
-
-<br/>
-
-## 🔐 chapter23. Portal
-
-<br/>
-
----
-
-<br/>
-
-## 🪩 chapter24. Profiler
+- HOC에는 with, custom hooks에는 use 접두어를 붙이는 컨벤션이 존재함.
+- Hook이 데이터 넘기기도 유용하고, custom hook간에 데이터를 넘기는 것 또한 명확하게 볼 수 있음.
+- 의존성이 있는 경우, hook을 쓰는 것이 더 코드에 많은 이점을 가져올 수 있다.
 
 <br/>
 
@@ -64,6 +138,8 @@ tags: [study-group]
 - [https://ko.reactjs.org/docs/optimizing-performance.html](https://ko.reactjs.org/docs/optimizing-performance.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/portals.html](https://ko.reactjs.org/docs/portals.html){:target="\_blank"}
 - [https://ko.reactjs.org/docs/profiler.html](https://ko.reactjs.org/docs/profiler.html){:target="\_blank"}
+- [https://ostarblog.tistory.com/12](https://ostarblog.tistory.com/12){:target="\_blank"}
+- [https://yceffort.kr/2020/10/react-hooks-and-hocs](https://yceffort.kr/2020/10/react-hooks-and-hocs){:target="\_blank"}
   <br/><br/>
 
 ---
