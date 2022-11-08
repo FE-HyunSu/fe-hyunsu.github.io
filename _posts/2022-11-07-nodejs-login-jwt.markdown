@@ -82,6 +82,7 @@ signInWithEmailAndPassword(auth, email, password)
 
 - 🧘‍♂️ 로그인 상태 유지.
 - 🏄‍♀️ 로그인 UI 적용.
+- 🎭 dotenv package 통해 .env 환경설정 파일 적용.
 
 <br/>
 
