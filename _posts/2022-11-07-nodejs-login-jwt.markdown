@@ -80,9 +80,10 @@ signInWithEmailAndPassword(auth, email, password)
 
 ## ⛹️ TODO LIST
 
-- 🧘‍♂️ 로그인 상태 유지.
-- 🏄‍♀️ 로그인 UI 적용.
-- 🎭 dotenv package 통해 .env 환경설정 파일 적용.
+- 🧩 React nextjs typescript에 적용.
+- 🧘‍♂️ JWT 활용 Login 적용.
+- 🏄‍♀️ Login UI 적용.
+- 🎭 .env 환경설정 파일 적용. (dotenv)
 
 <br/>
 
