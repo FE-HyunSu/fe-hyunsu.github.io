@@ -96,6 +96,26 @@ signInWithEmailAndPassword(auth, email, password)
 
 ### ⏳ (정리중..)
 
+### 🪪 Firebase 로그인 함수 적용.
+
+```tsx
+...
+const login = async () => {
+  await signInWithEmailAndPassword(firebaseClientAuth, email, password)
+    .then((userCredential) => {
+      // login 성공 시.
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      // login 실패 시.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode + ' / ' + errorMessage);
+    });
+};
+```
+
 <br/>
 
 ---
