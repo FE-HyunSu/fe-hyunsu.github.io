@@ -12,6 +12,12 @@ tags: [frontend-study]
 
 <br/>
 
+## 📻 Add Package
+
+- firebase : firebase firestore에 등록한 데이터 연동을 위해 package 설치.
+
+<br/>
+
 ## 📚 Folder tree.
 
 ```jsx
