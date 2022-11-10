@@ -20,14 +20,13 @@ $ Would you like to use ESLint with this project? … No / Yes
 
 <br/>
 
-## 📚 Folder tree.
+## 📚 초기 Folder tree.
 
 ```
 |-- [.next]
 |-- [node_modules]
 |-- [pages]
 |-- [public]
-|-- [styles]
 |-- next-env.d.ts
 |-- next.config.js
 |-- package-lock.json
@@ -39,13 +38,47 @@ $ Would you like to use ESLint with this project? … No / Yes
 - Nextjs 와 Nextjs + Typescript 프로젝트 생성 시 차이점.
   - next-env.d.ts : Nextjs 내용이 typescript 컴파일러에 추가될 수 있도록 하는 내용.
   - tsconfig.json : Nextjs 에서 추천된 설정으로 초기값 셋팅. ts셋팅 커스텀 시 수정.
+- Nextjs 특 : pages폴더가 라우터의 기능을 하고 있음. 파일이름이 곧 URL.
+- 기본 셋팅을 위해 pages 폴더 하위 index.tsx 파일을 제외하고 모두 삭제함.
 
 <br/>
 
-## 🫥 Base set.
+## 📻 Add Package
 
-- Nextjs 특 : pages폴더가 라우터의 기능을 하고 있음. 파일이름이 곧 URL.
-- 기본 셋팅을 위해 pages 폴더 하위 index.tsx 파일을 제외하고 모두 삭제함.
+- styled-reset : 브라우저마다 기본적으로 설치되어 있는 style reset package.
+- styled-components : CSS-in-JS package.
+
+<br/>
+
+## 📰 .babelrc
+
+- nextjs 프로젝트 진행 시 styled-components으로 적용한 style이 제대로 적용되지 않는다.
+- 이유는 styled-components의 style이 적용전에 렌더링이 되기 때문.
+- .babelrc 파일을 통해서, styled-components 설정값을 지정함.
+
+```tsx
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "fileName": true, // 코드가 포함된 파일명을 알려줌
+        "displayName": true, // 클래스명에 해당 스타일 정보 추가
+        "pure": true // 사용하지 않은 속성 제거
+      }
+    ]
+  ]
+}
+```
+
+<br/>
+
+## 🫥 reset + common style
+
+- style/global-style.ts
+- styled.d.ts
+- theme.ts
 
 <br/>
 
@@ -55,38 +88,6 @@ $ Would you like to use ESLint with this project? … No / Yes
 - [hooks] : custom hooks 모음.
 - [components] : 재사용 가능 컴포넌트.
 - [styles] : styled-component로 작성된 reset과 media, theme 요소.
-- .babelrc : babel-plugin-styled-components 셋팅.
-
-<br/>
-
-## 🦄 style convention.
-
-- styled-components, styled-reset package 설치.
-
-```java
-  $ npm i styled-reset
-  $ npm i --save-dev @types/styled-components
-```
-
-- nextjs는 SSR 이후 CSR로 라우팅을 하게되어 서버에서 생성된 해시값과 브라우저에서 생성된 해시값이 서로 달라 에러가 발생됨.
-- babel-plugin-styled-components 바벨 플러그인을 통해 해결.
-
-```javascript
-  //.babelrc
-  {
-    "presets": ["next/babel"],
-    "plugins": [
-      [
-        "babel-plugin-styled-components",
-        {
-          "fileName": true, // 코드가 포함된 파일명을 알려줌
-          "displayName": true, // 클래스명에 해당 스타일 정보 추가
-          "pure": true // 사용하지 않은 속성 제거
-        }
-      ]
-    ]
-  }
-```
 
 <br/>
 
