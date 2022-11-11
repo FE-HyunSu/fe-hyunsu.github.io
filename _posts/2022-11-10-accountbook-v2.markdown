@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '📟 AccountBook develop'
-date: 2022-11-12
+date: 2022-11-11
 tags: [frontend-study]
 ---
 
@@ -9,6 +9,12 @@ tags: [frontend-study]
 
 - AccountBook project 를 nextjs + Typescript 로 migration.
 - 기존 작성했던 [Nextjs+Ts](https://fe-hyunsu.github.io/next_ts){:target="\_blank"}을 참고하여 기본 셋팅 진행.
+
+<br/>
+
+## 📺 URL
+
+- [https://tubular-cocada-39cf07.netlify.app](https://tubular-cocada-39cf07.netlify.app){:target="\_blank"}
 
 <br/>
 
