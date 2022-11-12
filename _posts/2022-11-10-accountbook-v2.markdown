@@ -18,9 +18,68 @@ tags: [frontend-study]
 
 <br/>
 
-## 📻 Add Package
+## 🪖 Firebase 데이터 연동 셋팅
 
-- firebase : firebase firestore에 등록한 데이터 연동을 위해 package 설치.
+#### 1. Firebase npm package 설치.
+
+```javascript
+$ npm install firebase
+```
+
+#### 2. firebaseConfig.js 파일 추가. (개인 인증키 가림 - [링크](https://github.com/FE-HyunSu/accountbook.v2/blob/main/firebaseConfig.js){:target="\_blank"})
+
+```js
+// firebaseConfig.js
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAION,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+  appId: FIREBASE_APP_ID,
+};
+
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
+export const database = getFirestore(app);
+```
+
+#### 3. 컴포넌트에서 Firebase firestore database 호출.
+
+```tsx
+// firebaseConfig.js에서 export한 app, database 를 import.
+import { app, database } from '../../../firebaseConfig';
+// firesotre에서 제공하는 함수를 import.
+import { collection, addDoc, getDocs } from 'firebase/firestore';
+...
+
+// Firestore 데이터 호출 방법1.
+const db = firebase.firestore();
+db.collection('생성한 컬렉션 이름').get().then((result)=>{
+  console.log(result);
+});
+
+// Firestore 데이터 호출 방법2.
+const db = firebase.firestore();
+db.collection('product') //원하는 컬렉션 선택하기, 지금은 product를 선택함
+  .where('원하는 조건1') // 쿼리 조건 설정
+  .where('원하는 조건2') // 쿼리 조건은 여러개 설정 가능함
+  .orderBy('오름차순 내림차순?') // 정렬방식 최신자료 먼저 정렬 가능함
+  .limit(10) // 가지고 오는 갯수를 제한 할 수 있다.
+  .doc('원하는 도큐먼트') // 원하는 도큐먼트 선택하기
+  .get() // 이제까지 정보를 통해 자료를 가져오라는 의미
+  .then((result) => { // 결과를 then으로 받을 수 있다.
+    console.log(result);
+  });
+```
 
 <br/>
 
@@ -114,6 +173,18 @@ tags: [frontend-study]
   <dd className={Number(price) > 0 ? `plus` : `minus`}>{addComa(price)}</dd>
 </AccountCard>
 ...
+```
+
+<br/>
+
+## 📝 Develop3 : Firebase Data 연동 방식 수정
+
+- ver1 에서 Firebase Data 정보를 accountList 컴포넌트에서 직접 불러왔음.
+- 코드의 가독성 및 비효율적인 관리와 호출이 일어나고 있어, 개선. (근영님 추천)
+- firebase 관련 파일 폴더 정리 및 데이터 호출 컴포넌트 추가. (컴포넌트 역할 분리)
+
+```tsx
+// 작성중..
 ```
 
 <br/>
