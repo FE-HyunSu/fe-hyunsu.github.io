@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '📟 AccountBook develop'
-date: 2022-11-11
+date: 2022-11-12
 tags: [toyproject]
 ---
 
@@ -224,13 +224,13 @@ export { getData, setData };
 
 <br/>
 
-## Develop4 : 환경변수 적용(.env)
+## 🔊 Develop4 : 환경변수 적용(.env)
 
 - nextjs 에서는 env파일의 프리픽스를 NEXT_PUBLIC 로 설정할것.
 
 ```jsx
 // 적용 우선순위 순서로 작성.
-// 1).env.local : 다른 파일들에 정의된 값들을 모두 덮어쓴다.
+// 1) .env.local : 다른 파일들에 정의된 값들을 모두 덮어쓴다.
 // 2) .env.test : 테스트 환경(process.env.NODE_ENV === 'test') 에서 적용된다.
 // 3) .env.production : 배포/빌드 환경(process.env.NODE_ENV === 'production') 에서 적용된다.
 // 4) .env.development : 개발 환경(process.env.NODE_ENV === 'development') 에서 적용된다.
@@ -245,7 +245,7 @@ export { getData, setData };
 
   <img src="../assets/images/post/img_20221113_02.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
 
-- 적용결과. 잘됨ㅎ
+- 배포, 적용결과 성공.
 
   <img src="../assets/images/post/img_20221113_03.png" alt="" style="width:70%; max-width:500px; min-width:300px;" />
 
