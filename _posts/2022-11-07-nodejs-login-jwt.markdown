@@ -5,7 +5,7 @@ date: 2022-11-07
 tags: [frontend-study]
 ---
 
-## 🥮 Login 기능 구현 (feat. Firebase)
+## 🥮 Firebase Login 기능 구현
 
 - Firebase Authentication 기능을 통해 로그인 기능 적용.
 - 1차 : nodejs express 셋팅 후 html에서 구현.
@@ -91,30 +91,10 @@ signInWithEmailAndPassword(auth, email, password)
 
 - 🧩 React nextjs typescript에 적용.
 - 🧘‍♂️ JWT 활용 Login 적용.
-- 🎭 .env 환경설정 파일 적용. (dotenv)
 - 🏄‍♀️ Login UI 적용.
+- 🔊 상태관리로 로그인 상태 유지.
 
 ### ⏳ (정리중..)
-
-### 🪪 Firebase 로그인 함수 적용.
-
-```tsx
-...
-const login = async () => {
-  await signInWithEmailAndPassword(firebaseClientAuth, email, password)
-    .then((userCredential) => {
-      // login 성공 시.
-      const user = userCredential.user;
-      console.log(user);
-    })
-    .catch((error) => {
-      // login 실패 시.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode + ' / ' + errorMessage);
-    });
-};
-```
 
 <br/>
 
