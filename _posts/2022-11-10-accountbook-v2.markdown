@@ -2,7 +2,7 @@
 layout: post
 title: '📟 AccountBook develop'
 date: 2022-11-11
-tags: [frontend-study]
+tags: [toyproject]
 ---
 
 ## 🔉 AccountBook project migration
@@ -26,7 +26,7 @@ tags: [frontend-study]
 $ npm install firebase
 ```
 
-#### 2. firebaseConfig.js 파일 추가. (개인 인증키 가림 - [링크](https://github.com/FE-HyunSu/accountbook.v2/blob/main/firebaseConfig.js){:target="\_blank"})
+#### 2. firebaseConfig.js 파일 추가. (개인 인증키 가림)
 
 ```js
 // firebaseConfig.js
@@ -39,12 +39,12 @@ import { getFirestore } from 'firebase/firestore';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: FIREBASE_API_KEY,
-  authDomain: FIREBASE_AUTH_DOMAION,
-  projectId: FIREBASE_PROJECT_ID,
-  storageBucket: FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
-  appId: FIREBASE_APP_ID,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_APIKEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
@@ -182,11 +182,80 @@ db.collection('product') //원하는 컬렉션 선택하기, 지금은 product�
 - ver1 에서 Firebase Data 정보를 accountList 컴포넌트에서 직접 불러왔음.
 - 코드의 가독성 및 비효율적인 관리와 호출이 일어나고 있어, 개선. (근영님 추천)
 - firebase 관련 파일 폴더 정리 및 데이터 호출 컴포넌트 추가. (컴포넌트 역할 분리)
+- firebase config 파일.
 
-```tsx
-// 작성중..
+```javascript
+// firebase.js
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_APIKEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+};
+
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
+export const database = getFirestore(app);
+```
+
+- firestore의 데이터를 받아오기 위해 getData, setData 함수 선언.
+
+```javascript
+// firestore.js
+import { database } from './firebaseConfig';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
+
+const getData = async (collectionName) => {
+  return await getDocs(collection(database, collectionName));
+};
+const setData = async (collectionName, data) => {
+  return await addDoc(collection(database, collectionName), data);
+};
+export { getData, setData };
 ```
 
 <br/>
+
+## Develop4 : 환경변수 적용(.env)
+
+- nextjs 에서는 env파일의 프리픽스를 NEXT_PUBLIC 로 설정할것.
+
+```jsx
+// 적용 우선순위 순서로 작성.
+// 1).env.local : 다른 파일들에 정의된 값들을 모두 덮어쓴다.
+// 2) .env.test : 테스트 환경(process.env.NODE_ENV === 'test') 에서 적용된다.
+// 3) .env.production : 배포/빌드 환경(process.env.NODE_ENV === 'production') 에서 적용된다.
+// 4) .env.development : 개발 환경(process.env.NODE_ENV === 'development') 에서 적용된다.
+// 5) .env : 모든 환경에서 공통적으로 적용할 디폴트 환경변수를 정의한다. 가장 우선순위가 낮다.
+```
+
+- .env 파일은 배포 서버에 직접 올려야 하기때문에 배포했던 netlify 페이지에 직접 배포함.
+- netlify 사이트 로그인 후 해당 프로젝트의 Build & deploy -> Environment -> Environment variables -> Edit variables 진입.
+  <img src="../assets/images/post/img_20221113_01.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+
+- 변수명과 키값 입력.
+
+  <img src="../assets/images/post/img_20221113_02.png" alt="" style="width:90%; max-width:700px; min-width:300px;" />
+
+- 적용결과. 잘됨ㅎ
+
+  <img src="../assets/images/post/img_20221113_03.png" alt="" style="width:70%; max-width:500px; min-width:300px;" />
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://velog.io/@edbera/react-admin-firebase-%EC%9D%98-api-key%EB%A5%BC-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98%EB%A1%9C-%EB%B3%B4%ED%98%B8%ED%95%98%EA%B8%B0](https://velog.io/@edbera/react-admin-firebase-%EC%9D%98-api-key%EB%A5%BC-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98%EB%A1%9C-%EB%B3%B4%ED%98%B8%ED%95%98%EA%B8%B0){:target="\_blank"}
+- [https://curryyou.tistory.com/503](https://curryyou.tistory.com/503){:target="\_blank"}
+- [https://kyounghwan01.github.io/blog/etc/netlify-env/](https://kyounghwan01.github.io/blog/etc/netlify-env/){:target="\_blank"}
+  <br/>
 
 ---
