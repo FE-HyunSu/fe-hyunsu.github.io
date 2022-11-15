@@ -94,7 +94,47 @@ signInWithEmailAndPassword(auth, email, password)
 - 🏄‍♀️ Login UI 적용.
 - 🔊 상태관리로 로그인 상태 유지.
 
-### ⏳ (정리중..)
+<br/>
+
+### 😈 Firebase.js 셋팅
+
+- firestore의 데이터를 받아오기 위해 getData, setData 함수 선언 및 Auth 처리 함수 선언.
+
+```js
+import { database } from './firebaseConfig';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { firebaseClientAuth } from '../firebase/firebaseConfig';
+
+const getData = async (collectionName) => {
+  return await getDocs(collection(database, collectionName));
+};
+
+const setData = async (collectionName, data) => {
+  return await addDoc(collection(database, collectionName), data);
+};
+
+const loginAuth = async (email, password) => {
+  return await signInWithEmailAndPassword(firebaseClientAuth, email, password);
+};
+
+export { getData, setData, loginAuth };
+```
+
+- export 한 loginAuth 함수를 사용하여, 폼에 입력된 정보를 통해 로그인 시도.
+
+```jsx
+// email, password 입력값을 인자로 loginAuth 함수 실행.
+loginAuth(email.value, password.value)
+  .then((userCredential) => {
+    // 로그인 성공 로직.
+  })
+  .catch((error) => {
+    // 로그인 에러 로직.
+  });
+```
+
+- loginAuth 함수를 통해 반환된 Promise 객체를 then, catch 메서드를 통해 성공 or 에러 케이스로 분기한다.
 
 <br/>
 
@@ -108,6 +148,7 @@ signInWithEmailAndPassword(auth, email, password)
 - [https://firebase.google.com/docs/auth/web/password-auth?authuser=0&hl=ko](https://firebase.google.com/docs/auth/web/password-auth?authuser=0&hl=ko){:target="\_blank"}
 - [https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest/setRequestHeader](https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest/setRequestHeader){:target="\_blank"}
 - [https://velog.io/@byron1st/Next.js-%EC%97%90-Firebase-Auth-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0](https://velog.io/@byron1st/Next.js-%EC%97%90-Firebase-Auth-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0){:target="\_blank"}
+- [https://hungseong.tistory.com/67](https://hungseong.tistory.com/67){:target="\_blank"}
   <br/><br/>
 
 ---
