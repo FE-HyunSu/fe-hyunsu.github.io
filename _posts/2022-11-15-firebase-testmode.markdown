@@ -26,8 +26,7 @@ service cloud.firestore {
 }
 ```
 
-- 하마터면 4일뒤 모든 요청이 거부되어 영문도 모르고 문제 생길뻔 했다.
-- 해결됨.
+- 해결됨. 🙂
 
 <img src="../assets/images/post/img_20221115_03.png" alt="" style="width:90%; max-width:400px; min-width:300px;" />
 
