@@ -142,7 +142,7 @@ const tryLogin = (email: HTMLSelectElement | null, password: HTMLInputElement | 
 
 <br/>
 
-### 👮‍♀️ 로그인 로직 Flow 체크. (작성중..)
+### 👮‍♀️ 로그인 로직 Flow 체크.
 
 (1) login 컴포넌트에서 폼에 입력된 이메일주소, 패스워드 정보를 인자값으로 tryLogin 함수 실행.
 
@@ -228,7 +228,3 @@ loginAuth(email.value, password.value)
   <br/><br/>
 
 ---
-
-```
-
-```
