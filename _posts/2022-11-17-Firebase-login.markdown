@@ -127,7 +127,13 @@ loginAuth(email.value, password.value)
 
 <img src="../assets/images/post/img_20221116_01.png" alt="" style="width:95%; max-width:700px; min-width:300px; vertical-align:top;" />
 
-- 위 로직에서 Promise가 반환될때, Fulfill의 then(onFulfilledment)은 then의 return 값 중 resolve의 케이스, reject의 then(onRejection)은 reject을 의미한다.
+- 위 로직에서 Promise가 반환될때, Fulfill의 then(onFulfilledment)은 then의 return 값 중 resolve의 케이스, reject의 then(onRejection)은 reject을 의미한다. 😲
+
+<br/>
+
+### 👶 로그인 유지하기
+
+-
 
 <br/>
 
@@ -148,6 +154,7 @@ loginAuth(email.value, password.value)
 - [https://joshua1988.github.io/web-development/javascript/promise-for-beginners](https://joshua1988.github.io/web-development/javascript/promise-for-beginners){:target="\_blank"}
 - [https://velog.io/@vraimentres/async-%ED%95%A8%EC%88%98%EC%99%80-try-catch](https://velog.io/@vraimentres/async-%ED%95%A8%EC%88%98%EC%99%80-try-catch){:target="\_blank"}
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise/then](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise/then){:target="\_blank"}
+- [https://eundol1113.tistory.com/m/226](https://eundol1113.tistory.com/m/226){:target="\_blank"}
   <br/><br/>
 
 ---

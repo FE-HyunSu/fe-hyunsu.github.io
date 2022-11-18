@@ -1,0 +1,100 @@
+---
+layout: post
+title: 'React 전역 상태관리 (Recoil)'
+date: 2022-11-18
+tags: [frontend-study]
+---
+
+### 🍧 Recoil.
+
+<img src="../assets/images/post/img_20221118_01.png" alt="" style="width:90%; width:300px; margin: auto 1rem; vertical-align:top;" />
+- Recoil은 React 프로젝트를 위한 많은 전역 상태관리 라이브러리들 중 하나.(2020년 5월 Facebook에서 출시함)
+- 다른 라이브러리(Redux, Mobx)와는 달리 React 전용으로 React에 최적화되어 있다고 할 수 있음.
+
+<br/>
+
+### 🌸 Recoil의 탄생 배경
+
+- Redux는 React 전용 라이브러리가 아님. React 관점에선 외부요인으로 Store가 취급되며, 동시성 모드를 구현하기에 호환성이 부족함.
+- Redux는 복잡한 초기세팅이 요구됨. Store, Action, Reducer 등 다양한 구성요소가 필요해 비효율적이며 러닝커브가 높다.
+- Redux는 비동기 데이터에 추가 리소스가 요구됨. Redux-saga 등 전역상태에 비동기 데이터를 호출하기 위한 서드파티 라이브러리가 필요함.
+- 이러한 단점들을 보완하고 React에 좀 더 최적화된 전역 상태관리 라이브러리로 Recoil이 만들어짐.
+
+<br/>
+
+## 🌧 프로젝트에 적용.
+
+#### 🍰 1. 설치
+
+```tsx
+$ npm install recoil
+```
+
+#### 🧁 2. \_app.tsx 에 호출.
+
+```tsx
+import { RecoilRoot } from 'recoil';
+
+...
+
+<RecoilRoot>
+~
+</RecoilRoot>
+```
+
+#### 🍮 3. store.js 파일 atom 선언.
+
+- Atoms는 Recoil 상태의 단위를 의미한다. 컴포넌트간에 이 상태는 공유되며, 구독 및 업데이트가 가능하다.
+- 특히, atom의 상태가 업데이트되면, 이를 구독하던 컴포넌트들이 모두 리렌더링된다.
+- atom의 값을 읽는 컴포넌트들은 암묵적으로 atom을 구독한다.
+- 그래서 atom에 어떤 변화가 있으면 그 atom을 구독하는 모든 컴포넌트들이 재 렌더링 되는 결과가 발생할 것이다.
+
+```tsx
+import { atom } from 'recoil';
+
+export const user = atom({
+  key: 'user',
+  default: {
+    email: '',
+  },
+});
+```
+
+#### 🍭 4. 전역상태 Recoil Hooks.
+
+- useRecoilState() : useState() 와 유사하다. [state, setState] 튜플에 할당하며, 인자에 Atoms(혹은 Selector)를 넣어준다.
+- useRecoilValue() : 전역상태의 state 상태값만을 참조하기 위해 사용된다. 선언된 변수에 할당하여 사용하면 된다.
+- useSetRecoilState() : 전역상태의 setter 함수만을 활용하기 위해 사용된다. 선언된 함수변수에 할당하여 사용하면 된다.
+- useResetRecoilState() : 전역상태를 default(초기값)으로 Reset 하기 위해 사용된다. 선언된 함수변수에 할당하여 사용하면 된다.
+
+```tsx
+...
+import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { user } from '../../store';
+
+const Test = () => {
+  const userEmail = useRecoilValue(user);
+  return (
+    <>
+      <div>{userEmail.email}</div>
+    </>
+  );
+};
+...
+```
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://tech.osci.kr/2022/06/16/recoil-state-management-of-react](https://tech.osci.kr/2022/06/16/recoil-state-management-of-react){:target="\_blank"}
+- [https://recoiljs.org/ko/docs/introduction/getting-started](https://recoiljs.org/ko/docs/introduction/getting-started){:target="\_blank"}
+- [https://abangpa1ace.tistory.com/212](https://abangpa1ace.tistory.com/212){:target="\_blank"}
+- [https://recoiljs.org/docs/api-reference/core/useRecoilValue](https://recoiljs.org/docs/api-reference/core/useRecoilValue/){:target="\_blank"}
+  <br/><br/>
+
+---

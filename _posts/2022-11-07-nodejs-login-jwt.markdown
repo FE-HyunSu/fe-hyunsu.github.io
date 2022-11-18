@@ -92,7 +92,7 @@ signInWithEmailAndPassword(auth, email, password)
 - 🏄‍♀️ Login UI 적용.
 - 🔊 상태관리로 로그인 상태 유지. (Recoil)
 - 👩🏻‍🏫 Login 처리에 대한 데이터 로직 정리.
-- 👨‍🎨 [2차](https://fe-hyunsu.github.io/Firebase-login){:target="\_blank"}로 넘어가보자
+- 👨‍🎨 [2차](https://fe-hyunsu.github.io/Firebase-login)로 넘어가보자
 
 <br/>
 
