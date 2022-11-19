@@ -66,7 +66,11 @@ const tryLogin = (email: HTMLSelectElement | null, password: HTMLInputElement | 
 
 <br/>
 
-### 👮‍♀️ 로그인 로직 Flow 체크.
+---
+
+<br/>
+
+## 👮‍♀️ 로그인 로직 Flow 체크.
 
 (1) login 컴포넌트에서 폼에 입력된 이메일주소, 패스워드 정보를 인자값으로 tryLogin 함수 실행.
 
@@ -107,6 +111,9 @@ const loginAuth = async (email, password) => {
 
 (3) 다시 login component의 tryLogin 함수로 돌아와 반환된 Promise로 성공 or 에러 케이스로 분기.
 
+- loginAuth에서 return된 Promise를 then-catch 와 try-catch 메서드로 처리해보고 비교해보자.
+- Promise 상태의 흐름을 이해하며 체크해볼것.
+
 ```js
 // [Promise 상태 3단계]
 // Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태.
@@ -114,14 +121,17 @@ const loginAuth = async (email, password) => {
 // Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태.
 ```
 
-- loginAuth에서 return된 Promise를 then-catch 또는 try-catch 메서드로 처리했을때, 각각 로직을 체크해 보자.
+<br/>
 
-#### 🧵 then-catch 메서드로 처리한 경우.
+---
+
+<br/>
+
+## 🧵 then-catch 메서드로 처리한 경우.
 
 ```jsx
-// login component -> tryLogin 함수 중.
 loginAuth(email.value, password.value)
-  .then((userCredential) => {
+  .then((userInfo) => {
     // login success.
   })
   .catch((error) => {
@@ -131,23 +141,35 @@ loginAuth(email.value, password.value)
 
 - Promise 흐름(then-catch)
 
+<img src="../assets/images/post/img_20221120_01.png" alt="" style="width:95%; max-width:700px; min-width:300px; vertical-align:top;" />
+
+출처 : [MDN:Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise){:target="\_blank"}
+
 <img src="../assets/images/post/img_20221116_01.png" alt="" style="width:95%; max-width:700px; min-width:300px; vertical-align:top;" />
 
-- 위 알고리즘으로 이해했을때 개인적으로 혼선이 있어 좀 더 자세하게 정리해보았음.
+- MDN에 설명된 알고리즘으로 로직을 그려봤을때 개인적으로 혼선이 있어 then-catch 로직에 대해 내방식대로 재정리 해보았음.
 
 <img src="../assets/images/post/img_20221119_01.png" alt="" style="width:95%; max-width:800px; min-width:300px; vertical-align:top;" />
 
-#### 🌼 try-catch 메서드로 처리한 경우.
+<br/>
+
+---
+
+<br/>
+
+## 🌼 try-catch 메서드로 처리한 경우.
 
 ```jsx
-// login component -> tryLogin 함수 중.
-loginAuth(email.value, password.value);
-// ...(작성중)
+try {
+  const returnUserInfo = await loginAuth(email.value, password.value);
+  const userInfo = returnUserInfo.user;
+  // login success.
+  ...
+} catch (error) {
+  // login error.
+  ...
+}
 ```
-
-### 👶 로그인 유지하기
-
--
 
 <br/>
 
@@ -170,6 +192,8 @@ loginAuth(email.value, password.value);
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise/then](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise/then){:target="\_blank"}
 - [https://eundol1113.tistory.com/m/226](https://eundol1113.tistory.com/m/226){:target="\_blank"}
 - [https://velog.io/@design0728/clean-code-typescript-%EC%97%90%EB%9F%AC%EC%B2%98%EB%A6%ACError-Handling](https://velog.io/@design0728/clean-code-typescript-%EC%97%90%EB%9F%AC%EC%B2%98%EB%A6%ACError-Handling){:target="\_blank"}
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise){:target="\_blank"}
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw){:target="\_blank"}
   <br/><br/>
 
 ---
