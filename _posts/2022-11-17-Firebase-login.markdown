@@ -88,7 +88,9 @@ const tryLogin = (email: HTMLSelectElement | null, password: HTMLInputElement | 
 ...
 ```
 
-(2) loginAuth 함수는 async, await을 통해 firebase/auth 내장 함수인 signInWithEmailAndPassword 함수를 실행하고, Promise를 반환함.
+<br/>
+
+(2) loginAuth 함수는 async, await을 통해 signInWithEmailAndPassword 함수를 실행하고, Promise를 반환함.
 
 ```js
 // firebase.js
@@ -101,7 +103,20 @@ const loginAuth = async (email, password) => {
 ...
 ```
 
-(3) 다시 login component의 tryLogin 함수로 돌아와 반환된 Promise로 then, catch 메서드를 통해 성공 or 에러 케이스로 분기한다.
+<br/>
+
+(3) 다시 login component의 tryLogin 함수로 돌아와 반환된 Promise로 성공 or 에러 케이스로 분기.
+
+```js
+// [Promise 상태 3단계]
+// Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태.
+// Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태.
+// Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태.
+```
+
+- loginAuth에서 return된 Promise를 then-catch 또는 try-catch 메서드로 처리했을때, 각각 로직을 체크해 보자.
+
+#### 🧵 then-catch 메서드로 처리한 경우.
 
 ```jsx
 // login component -> tryLogin 함수 중.
@@ -114,22 +129,21 @@ loginAuth(email.value, password.value)
   });
 ```
 
-(4) loginAuth에서 반환된 Promise로 then, catch 처리되는 로직에 대해 좀 더 알아보자.
-
-```js
-// Promise는 Pending(대기), Fulfilled(이행), Rejected(실패) 이렇게 3단계 상태로 나눌 수 있는데,
-// Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태.
-// Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태.
-// Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태.
-```
-
-- loginAuth 함수의 Promise 처리 흐름.
+- Promise 흐름(then-catch)
 
 <img src="../assets/images/post/img_20221116_01.png" alt="" style="width:95%; max-width:700px; min-width:300px; vertical-align:top;" />
 
-- 위 로직에서 Promise가 반환될때, Fulfill의 then(onFulfilledment)은 then의 return 값 중 resolve의 케이스, reject의 then(onRejection)은 reject을 의미한다. 😲
+- 위 알고리즘으로 이해했을때 개인적으로 혼선이 있어 좀 더 자세하게 정리해보았음.
 
-<br/>
+<img src="../assets/images/post/img_20221119_01.png" alt="" style="width:95%; max-width:800px; min-width:300px; vertical-align:top;" />
+
+#### 🌼 try-catch 메서드로 처리한 경우.
+
+```jsx
+// login component -> tryLogin 함수 중.
+loginAuth(email.value, password.value);
+// ...(작성중)
+```
 
 ### 👶 로그인 유지하기
 
@@ -155,6 +169,7 @@ loginAuth(email.value, password.value)
 - [https://velog.io/@vraimentres/async-%ED%95%A8%EC%88%98%EC%99%80-try-catch](https://velog.io/@vraimentres/async-%ED%95%A8%EC%88%98%EC%99%80-try-catch){:target="\_blank"}
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise/then](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise/then){:target="\_blank"}
 - [https://eundol1113.tistory.com/m/226](https://eundol1113.tistory.com/m/226){:target="\_blank"}
+- [https://velog.io/@design0728/clean-code-typescript-%EC%97%90%EB%9F%AC%EC%B2%98%EB%A6%ACError-Handling](https://velog.io/@design0728/clean-code-typescript-%EC%97%90%EB%9F%AC%EC%B2%98%EB%A6%ACError-Handling){:target="\_blank"}
   <br/><br/>
 
 ---
