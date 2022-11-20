@@ -194,8 +194,7 @@ try {
 ### 🧗‍♂️ 정리.
 
 - then-catch 문법의 대표적인 단점으로 chaining 현상정도만 인지하고 있었다.
-- 그럼 더 이상의 chaining이 없다는 가정하에 then-catch 문법을 써도되지 않을까?
-- 유연한 Error 처리를 위해 then-catch를 사용해도 결국 안에서 try-catch를 사용하게 될것.
+- 유연한 Error 처리를 위해 then-catch 안에서도 try-catch를 사용하게 될것.
 - 코드의 가독성 및 유지보수 효율성을 위해 then-catch 보다는 try-catch를 사용하도록 하자.
 
 <br/>
