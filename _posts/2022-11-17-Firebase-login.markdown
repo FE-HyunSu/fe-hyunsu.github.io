@@ -7,7 +7,7 @@ tags: [frontend-study]
 
 ## 🤐 기능 구현 개요
 
-- React Nextjs + Typescript 프로젝트에 Firebase Authentication 기능을 통해 로그인 기능 적용.
+- React Nextjs + Typescript 프로젝트에 Firebase Authentication 기능을 통해 로그인 기능 적용, 에러 핸들링.
 
 <br/>
 
@@ -160,22 +160,43 @@ loginAuth(email.value, password.value)
 ## 🌼 try-catch 메서드로 처리한 경우.
 
 ```jsx
+
+...
+const customError = new Error('커스텀에러');
 try {
+  // 유효성을 충족하지 않는다면, throw Error;
+  if(!유효성체크){
+    throw customError;
+  }
+
+  // loginAuth 시작.
   const returnUserInfo = await loginAuth(email.value, password.value);
   const userInfo = returnUserInfo.user;
   // login success.
   ...
 } catch (error) {
   // login error.
+  if(error.message === '커스텀에러'){
+    console.log('제대로 입력하고 다시오세요.');
+  } else {
+    ...
+  }
   ...
 }
 ```
 
+- 함수 실행 시 auth api를 호출 전 유효성 체크를 하고, throw로 예외처리를 적용시켰다.
+
+<img src="../assets/images/post/img_20221120_02.png" alt="" style="width:95%; max-width:700px; min-width:300px; vertical-align:top;" />
+
 <br/>
 
-### 👨‍🚀 NEXT STEP.
+### 🧗‍♂️ 정리.
 
-- (response 값으로 받은 user data의 accesstoken, refreshtoken으로 로그인 유지 로직)
+- then-catch 문법의 대표적인 단점으로 chaining 현상정도만 인지하고 있었다.
+- 그럼 더 이상의 chaining이 없다는 가정하에 then-catch 문법을 써도되지 않을까?
+- 유연한 Error 처리를 위해 then-catch를 사용해도 결국 안에서 try-catch를 사용하게 될것.
+- 코드의 가독성 및 유지보수 효율성을 위해 then-catch 보다는 try-catch를 사용하도록 하자.
 
 <br/>
 
@@ -194,6 +215,8 @@ try {
 - [https://velog.io/@design0728/clean-code-typescript-%EC%97%90%EB%9F%AC%EC%B2%98%EB%A6%ACError-Handling](https://velog.io/@design0728/clean-code-typescript-%EC%97%90%EB%9F%AC%EC%B2%98%EB%A6%ACError-Handling){:target="\_blank"}
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise){:target="\_blank"}
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw){:target="\_blank"}
+- [https://anerim.tistory.com/63](https://anerim.tistory.com/63){:target="\_blank"}
+- [https://www.youtube.com/watch?v=FXtooPhupr4](https://www.youtube.com/watch?v=FXtooPhupr4){:target="\_blank"}
   <br/><br/>
 
 ---
