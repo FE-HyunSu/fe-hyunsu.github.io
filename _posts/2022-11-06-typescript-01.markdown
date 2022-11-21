@@ -1,0 +1,69 @@
+---
+layout: post
+title: '🧮 TypeScript 문법 정리(작성중)'
+date: 2002-11-06
+tags: [frontend-study]
+---
+
+## 🐛 Type 지정.
+
+- 변수 선언 시 변수 타입을 함께 지정.
+- 타입 지정 시 Typescript 컴파일러가 컴파일할때 잘못된 사용 코드를 잡아낼 수 있음.
+
+```tsx
+let name: string = 'mason'; // name 변수에 'mason' 이라는 값을 할당하여 해당 값은 string 타입을 가짐.
+```
+
+- 컴포넌트 예시.
+
+```tsx
+import React from 'react';
+// 타입 지정.
+type Image = {
+  src: string;
+  alt: string;
+};
+
+// 초기값 설정.
+interface CardProps {
+  image?: Image;
+  title: string;
+  content: string;
+}
+// 컴포넌트 선언. props 타입 정보.
+const Card = ({ image, title, content }: CardProps) => {
+  return (
+    <div>
+      {image && <img src={image.src} alt={image.alt} />}
+      <h3>{title}</h3>
+      <p>{content}</p>
+    </div>
+  );
+};
+```
+
+### 컴포넌트에 생략 가능한 props 설정.
+
+- 컴포넌트의 props에서 생략 가능한 값인 경우, '?' 문자를 사용.
+- test.
+
+### 상황별 타입 지정
+
+- button event :
+
+```tsx
+const;
+```
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://defineall.tistory.com/919](https://defineall.tistory.com/919){:target="\_blank"}
+  <br/><br/>
+
+---
