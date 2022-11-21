@@ -11,10 +11,10 @@ window.onload = function () {
   if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent))
     document.body.firstElementChild.tabIndex = 1;
 
-  var $labelGroup = document.querySelector('.posts-labelgroup');
-  var $searchbar = document.getElementById('searchbar');
-  var $postLabel = document.getElementById('posts-label');
-  var $searchResults = document.querySelector('.search-results');
+  // var $labelGroup = document.querySelector('.posts-labelgroup');
+  // var $searchbar = document.getElementById('searchbar');
+  // var $postLabel = document.getElementById('posts-label');
+  // var $searchResults = document.querySelector('.search-results');
   // var labelWidth = $postLabel.scrollWidth;
   // $postLabel.style.width = labelWidth + "px";
 
@@ -30,10 +30,10 @@ window.onload = function () {
   //     document.body.onclick = searchCollapse;
   // });
 
-  var searchCollapse = function (e) {
-    $searchResults.style.display = 'none';
-    $labelGroup.setAttribute('class', 'posts-labelgroup');
-    // $postLabel.style.width = labelWidth + "px";
-    document.body.onclick = null;
-  };
+  // var searchCollapse = function (e) {
+  //   $searchResults.style.display = 'none';
+  //   $labelGroup.setAttribute('class', 'posts-labelgroup');
+  //   // $postLabel.style.width = labelWidth + "px";
+  //   document.body.onclick = null;
+  // };
 };
