@@ -1,0 +1,53 @@
+---
+layout: post
+title: '🔑 JWT(JSON Web Token) (작성중)'
+date: 2022-11-23
+tags: [frontend-study]
+---
+
+## 💬 JWT(JSON Web Token)
+
+- JWT는 JSON Web Token을 의미, 호출된 정보를 식별하기 위한 토큰기반 인증 방식.
+- 토큰은 세션과 달리 서버가 아닌 클라이언트에 저장되기 때문에 서버에 부담을 덜 수 있음.
+
+### 🔑 JWT를 통한 인증 절차
+
+- 사용자가 입력된 정보를 통해 인증 시도.(ex. 아이디, 패스워드 입력 시)
+- 서버에서 서명된(signed) jwt를 생성. 클라이언트에 응답.
+- 클라이언트가 서버에 데이터를 추가적으로 요구할때 jwt를 http Header에 첨부.
+- 서버에서 클라이언트로 온 jwt를 검증.
+
+### 🧬 JWT 구조
+
+- <img src="../assets/images/img_post_jwt.png" alt="" style="width:90%; max-width:500px; min-width:300px; vertical-align:top;" />
+
+- JWT는 Header / Payload / Signature 이렇게 3가지로 나눠져있고 ' . ' 으로 구분된다.
+  - 헤더(Header) : JWT에서 사용할 타입과 해시 알고리즘 종류.
+  - 정보(Payload) : 서버에서 첨부한 사용자 권한 데이터.
+  - 서명(Signature) : Header, Payload를 Base64 URL-safe Encode한 후 Header에 명시된 해시함수를 적용 + 개인키로 서명한 전자서명.
+
+<br/>
+
+---
+
+<br/>
+
+### 🔮 JWT를 통해 로그인 구현
+
+- (작성중)
+- (알고리즘 필요)
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://jwt.io](https://jwt.io){:target="\_blank"}
+- [https://charming-kyu.tistory.com/4](https://charming-kyu.tistory.com/4){:target="\_blank"}
+- [https://cloud.google.com/endpoints/docs/openapi/authenticating-users-firebase?hl=ko](https://cloud.google.com/endpoints/docs/openapi/authenticating-users-firebase?hl=ko){:target="\_blank"}
+  <br/><br/>
+
+---
