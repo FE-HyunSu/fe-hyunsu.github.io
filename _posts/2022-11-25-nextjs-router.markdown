@@ -34,6 +34,13 @@ router.push(url, as, options);
 - as: [선택] 브라우저 url 바에 보여지는 path.
 - options: [선택] scroll(라우팅 후 스크롤업), shallow, locale 등.
 
+```jsx
+// ex) /history 로 이동.
+router.push('/history');
+// ex) /history?pageIndex=3로 이동되지만, URL표기는 /history로 적용
+router.push('/history?pageIndex=3', '/history');
+```
+
 ### 👧 router.replace
 
 ```jsx
@@ -42,6 +49,7 @@ router.replace(url, as, options);
 
 - router.push 와 사용방식 동일.
 - 차이점은 router history stack에 쌓지 않고, 페이지 이동.
+- ex) 서비스 페이지 -> 로그인 -> 로그인 성공 후 뒤로가기(router.back()) 처리 했을때 서비스페이지로 이동.
 
 ### 🧒 router.prefetch
 
