@@ -37,7 +37,7 @@ router.push(url, as, options);
 ```jsx
 // ex) /history 로 이동.
 router.push('/history');
-// ex) /history?pageIndex=3로 이동되지만, URL표기는 /history로 적용
+// ex) /history?pageIndex=3로 이동되지만, URL표기는 /history로 적용.
 router.push('/history?pageIndex=3', '/history');
 ```
 
