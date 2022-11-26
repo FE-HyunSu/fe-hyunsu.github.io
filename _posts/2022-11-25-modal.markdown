@@ -1,0 +1,133 @@
+---
+layout: post
+title: "👛 Modal Component"
+date: 2022-11-25
+tags: [frontend-study]
+---
+
+## 🧥 Summary
+
+Nextjs에서 Modal 처리에 대해 알아보고, 나만의 커스텀 모달 팝업을 적용해보자.
+
+### 🥽 TODO LIST <br/>
+
+(1) \_document.tsx 컴포넌트에 <div> 태그 추가. <br/>
+(2) Modal 컴포넌트 생성. <br/>
+(3) 컨텐츠 컴포넌트 생성. <br/>
+(4) Modal 컴포넌트에 컨텐츠를 담아서 Modal 컴포넌트 호출.
+
+<br/>
+
+### 👕 1. \_document.tsx 컴포넌트에 <div> 태그 추가.
+
+- \_document.tsx 컴포넌트 HTML 마크업 구조 내 <div id="_modal"></div>를 추가.
+
+```tsx
+// _document.tsx
+...
+<body>
+  ...
+  <div id="_modal"></div>
+  ...
+</body>
+...
+```
+
+<br/>
+
+### 🩳 2. Modal 컴포넌트 생성.
+
+- ReactDOM.createPortal 함수를 통해 \_document.tsx에 만들어놓은 modal에 지정한 컴포넌트를 렌더링 시킴.
+- createPortal은 부모 구성 요소의 DOM 계층 외부에 있는 DOM 노드로 자식을 렌더링하는 최상의 방법을 제공함. [(출처 : React Docs)](https://reactjs.org/docs/portals.html){:target="\_blank"}
+
+```tsx
+// modal/index.tsx
+// createPortal을 활용한 Modal Component.
+import ReactDOM from "react-dom";
+import { PropsWithChildren } from "react";
+import { ModalTemplate, ModalBackground, ModalInner } from "./style";
+interface ModalProps {
+  onClose: () => void;
+}
+const ModalBgDimed = (props: ModalProps) => {
+  return <ModalBackground onClick={props.onClose} />;
+};
+const ModalContents = ({ children }: PropsWithChildren) => {
+  return <ModalInner>{children}</ModalInner>;
+};
+const Modal = (props: PropsWithChildren<ModalProps>) => {
+  const modalElement = document.getElementById("_modal");
+  if (modalElement === null) {
+    return <div></div>;
+  } else {
+    return (
+      <>
+        {ReactDOM.createPortal(
+          <>
+            <ModalTemplate>
+              <ModalContents>{props.children}</ModalContents>
+              <ModalBgDimed onClose={props.onClose}></ModalBgDimed>
+            </ModalTemplate>
+          </>,
+          modalElement
+        )}
+      </>
+    );
+  }
+};
+export default Modal;
+```
+
+<br/>
+
+### 👔 3. 컨텐츠 컴포넌트 생성.
+
+- Modal을 종료시킬 onClose를 Props로 갖는 부분 외 기존 컴포넌트 구성과 동일하게 생성.
+
+```tsx
+// Modal Contents Component.
+interface ModalProps {
+  onClose: () => void;
+}
+const ModalContents = (props: ModalProps) => {
+...
+}
+
+```
+
+<br/>
+
+### 🦊 4. Modal 컴포넌트에 컨텐츠를 담아서 Modal 컴포넌트 호출.
+
+- 페이지 내 useState로 Modal 노출 유무를 제어하고, 필요한 이벤트에 Modal을 호출하여 사용한다.
+- Modal 컴포넌트에는 Modal Components에 close 처리할 함수를 props로 전달해야함.
+
+```tsx
+...
+const [modalAddAccountItem, setModalAddAccountItem] = useState(false);
+const addAccountItem = () => {
+  setModalAddAccountItem(true);
+};
+const handleModalClose = () => {
+  setModalAddAccountItem(false);
+};
+...
+<FixedButton onClick={() => addAccountItem()}>작성하기</FixedButton>
+{modalAddAccountItem && <ModalItemAdd onClose={handleModalClose} />}
+...
+```
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://velog.io/@kkojae91/PropsWithChildren%EB%8A%94-%EC%95%88%EC%A0%84%ED%95%9C-%ED%83%80%EC%9E%85%EC%9D%BC%EA%B9%8C](https://velog.io/@kkojae91/PropsWithChildren%EB%8A%94-%EC%95%88%EC%A0%84%ED%95%9C-%ED%83%80%EC%9E%85%EC%9D%BC%EA%B9%8C){:target="\_blank"}
+- [https://velog.io/@choiminwoo2/Next.js%EC%97%90%EC%84%9C-React-portal-%EC%82%AC%EC%9A%A9](https://velog.io/@choiminwoo2/Next.js%EC%97%90%EC%84%9C-React-portal-%EC%82%AC%EC%9A%A9){:target="\_blank"}
+- [https://reactjs.org/docs/portals.html](https://reactjs.org/docs/portals.html){:target="\_blank"}
+  <br/><br/>
+
+---
