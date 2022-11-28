@@ -105,14 +105,14 @@ const ModalContents = (props: ModalProps) => {
 ```tsx
 ...
 const [modalAddAccountItem, setModalAddAccountItem] = useState(false);
-const addAccountItem = () => {
+const handleModalOpen = () => {
   setModalAddAccountItem(true);
 };
 const handleModalClose = () => {
   setModalAddAccountItem(false);
 };
 ...
-<FixedButton onClick={() => addAccountItem()}>작성하기</FixedButton>
+<FixedButton onClick={() => handleModalOpen()}>작성하기</FixedButton>
 {modalAddAccountItem && <ModalItemAdd onClose={handleModalClose} />}
 ...
 ```
