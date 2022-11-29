@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 'React 전역 상태관리 (Recoil)'
+title: "🐧 React 전역 상태관리 (Recoil)"
 date: 2022-11-18
 tags: [frontend-study]
 ---
 
-### 🍧 Recoil.
+## 🍧 Recoil.
 
 <img src="../assets/images/post/img_20221118_01.png" alt="" style="width:90%; width:300px; margin: auto 1rem; vertical-align:top;" />
 - Recoil은 React 프로젝트를 위한 많은 전역 상태관리 라이브러리들 중 하나.(2020년 5월 Facebook에서 출시함)
@@ -50,12 +50,12 @@ import { RecoilRoot } from 'recoil';
 - 그래서 atom에 어떤 변화가 있으면 그 atom을 구독하는 모든 컴포넌트들이 재 렌더링 되는 결과가 발생할 것이다.
 
 ```tsx
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
 export const user = atom({
-  key: 'user',
+  key: "user",
   default: {
-    email: '',
+    email: "",
   },
 });
 ```
