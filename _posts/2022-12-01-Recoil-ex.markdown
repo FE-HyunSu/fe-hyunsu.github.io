@@ -69,10 +69,7 @@ const [testState, setTestState] = useRecoilState(adminInfo);
 
 ## 🎫 참고 페이지
 
-- [https://tech.osci.kr/2022/06/16/recoil-state-management-of-react](https://tech.osci.kr/2022/06/16/recoil-state-management-of-react){:target="\_blank"}
-- [https://recoiljs.org/ko/docs/introduction/getting-started](https://recoiljs.org/ko/docs/introduction/getting-started){:target="\_blank"}
-- [https://abangpa1ace.tistory.com/212](https://abangpa1ace.tistory.com/212){:target="\_blank"}
-- [https://recoiljs.org/docs/api-reference/core/useRecoilValue](https://recoiljs.org/docs/api-reference/core/useRecoilValue/){:target="\_blank"}
+- [https://velog.io/@myway_7/Recoil%EA%B8%B0%EC%B4%88-Recoil-%EC%82%AC%EC%9A%A9%EB%B2%95](https://velog.io/@myway_7/Recoil%EA%B8%B0%EC%B4%88-Recoil-%EC%82%AC%EC%9A%A9%EB%B2%95){:target="\_blank"}
   <br/><br/>
 
 ---
