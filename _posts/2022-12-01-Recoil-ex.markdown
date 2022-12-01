@@ -70,6 +70,7 @@ const [testState, setTestState] = useRecoilState(adminInfo);
 ## 🎫 참고 페이지
 
 - [https://velog.io/@myway_7/Recoil%EA%B8%B0%EC%B4%88-Recoil-%EC%82%AC%EC%9A%A9%EB%B2%95](https://velog.io/@myway_7/Recoil%EA%B8%B0%EC%B4%88-Recoil-%EC%82%AC%EC%9A%A9%EB%B2%95){:target="\_blank"}
+- [https://leego.tistory.com/entry/recoil%EA%B3%BC-%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%98%B8%EC%B6%9C-%EC%84%A0%EC%96%B8%EC%A0%81-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D](https://leego.tistory.com/entry/recoil%EA%B3%BC-%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%98%B8%EC%B6%9C-%EC%84%A0%EC%96%B8%EC%A0%81-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D){:target="\_blank"}
   <br/><br/>
 
 ---
