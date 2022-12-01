@@ -1,0 +1,78 @@
+---
+layout: post
+title: "🧕 Recoil 비동기 함수 적용 (작성중)"
+date: 2022-12-01
+tags: [frontend-study]
+---
+
+## ⛑ Recoil 실습
+
+#### 👒 1. RecoilRoot 로 전체를 감싸준다.
+
+```tsx
+import React from "react";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
+
+function App() {
+  return (
+    <RecoilRoot>
+      <CharacterCounter />
+    </RecoilRoot>
+  );
+}
+```
+
+#### 👑 2. Atom을 활용하여 Global state 값 만들기.
+
+- Atom 이라는 Function은 객체를 파라메타로 받는다.
+- ({key:'...', default: '...'})
+- 여기서 key는 고유값.
+- Atom은 어떤 컴포넌트에서나 읽고 쓸 수 있음.
+- Atom의 값을 읽는 컴포넌트들은 암묵적으로 atom을 구독. 그래서 atom에 어떤 변화가 있으면 그 atom을 구독하는 모든 컴포넌트들이 재 렌더링 됨.
+
+```tsx
+import { atom } from "recoil";
+...
+export default adminInfo = atom<string | undefined>({
+  key: "user",
+  default: {
+    email: "",
+  },
+});
+```
+
+#### 👞 3. useRecoilState Hook을 통해 위에서 선언한 Global state값 가져와서 사용하기.
+
+- useRecoilState Hook에 고유 key 값을 넣어 사용.
+
+```tsx
+const [testState, setTestState] = useRecoilState(adminInfo);
+...
+
+```
+
+#### 🐸 4. selector 로 비동기 response 업데이트 하기.
+
+- (진행중)
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://tech.osci.kr/2022/06/16/recoil-state-management-of-react](https://tech.osci.kr/2022/06/16/recoil-state-management-of-react){:target="\_blank"}
+- [https://recoiljs.org/ko/docs/introduction/getting-started](https://recoiljs.org/ko/docs/introduction/getting-started){:target="\_blank"}
+- [https://abangpa1ace.tistory.com/212](https://abangpa1ace.tistory.com/212){:target="\_blank"}
+- [https://recoiljs.org/docs/api-reference/core/useRecoilValue](https://recoiljs.org/docs/api-reference/core/useRecoilValue/){:target="\_blank"}
+  <br/><br/>
+
+---
