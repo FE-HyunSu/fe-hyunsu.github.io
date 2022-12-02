@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🧕 Recoil 비동기 함수 적용 (작성중)"
+title: "🧕 Recoil 실습"
 date: 2022-12-01
 tags: [frontend-study]
 ---
@@ -11,55 +11,106 @@ tags: [frontend-study]
 
 ```tsx
 import React from "react";
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from "recoil";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
     <RecoilRoot>
-      <CharacterCounter />
+      <Project />
     </RecoilRoot>
   );
 }
 ```
 
+<br/>
+
 #### 👑 2. Atom을 활용하여 Global state 값 만들기.
 
 - Atom 이라는 Function은 객체를 파라메타로 받는다.
-- ({key:'...', default: '...'})
-- 여기서 key는 고유값.
+- ({key:'...', default: '...'}) -> key는 고유값.
 - Atom은 어떤 컴포넌트에서나 읽고 쓸 수 있음.
-- Atom의 값을 읽는 컴포넌트들은 암묵적으로 atom을 구독. 그래서 atom에 어떤 변화가 있으면 그 atom을 구독하는 모든 컴포넌트들이 재 렌더링 됨.
+- Atom의 값을 읽는 컴포넌트들은 암묵적으로 atom을 구독. 그래서 atom에 어떤 변화가 있으면 그 atom을 구독하는 모든 컴포넌트들이 리렌더링됨.
 
 ```tsx
-import { atom } from "recoil";
+// store.ts
+import { atom, selector } from "recoil";
 ...
-export default adminInfo = atom<string | undefined>({
-  key: "user",
-  default: {
-    email: "",
-  },
+export const updateCheckState = atom({
+  key: "updateCheckState",
+  default: false,
 });
+
 ```
+
+<br/>
 
 #### 👞 3. useRecoilState Hook을 통해 위에서 선언한 Global state값 가져와서 사용하기.
 
 - useRecoilState Hook에 고유 key 값을 넣어 사용.
 
 ```tsx
-const [testState, setTestState] = useRecoilState(adminInfo);
+import { useRecoilState } from 'recoil';
+import { updateCheckState } from './store';
 ...
-
+const [testState, setTestState] = useRecoilState(updateCheckState);
+const handleTest = () => {
+  setTestState(!testState);
+}
+...
 ```
 
-#### 🐸 4. selector 로 비동기 response 업데이트 하기.
+- useRecoilValue로 구독하는 state값 업데이트 확인.
 
-- (진행중)
+```tsx
+import { useRecoilValue } from "recoil";
+import { updateCheckState } from "./store";
+
+const updateCheck = useRecoilValue(updateCheckState);
+```
+
+<br/>
+
+#### 🐸 4. selector.
+
+- Selector는 Recoil에서 함수나 파생된 상태를 나타냄.
+
+```tsx
+// store.ts
+import { atom, selector } from "recoil";
+...
+export const updateCheckSelector = selector<boolean>({
+  key: "updateCheckSelector",
+  get: ({ get }) => {
+    const updateCheck = get(updateCheckState);
+    return updateCheck;
+  },
+  set: ({ set }, updateCheck) => {
+    const returnState = updateCheck;
+    set(updateCheckState, returnState);
+  },
+});
+```
+
+### get
+
+- 파생된 상태의 값을 평가하는 함수.
+- 값을 직접 반환하거나 비동기적인 Promise나 또는 같은 유형을 나타내는 다른 atom이나 selector를 반환할 수 있다.
+- 첫 번째 매개변수로 다음 속성을 포함하는 객체를 전달한다.
+
+### set
+
+- 이 속성이 설정되면 selector는 쓰기 가능한 상태를 반환한다.
+- 첫번째 매개변수로 콜백 객체와 새로 입력 값이 전달된다.
+- 사용자가 selector를 재설정할 경우 새로 입력 값은 T 타입의 값 또는 DefaultValue 타입의 객체일 수 있다.
+- set(변하고자하는 atom값, 변하게 할 값)
+
+<br/>
+
+### 👮‍♂️ 정리
+
+- useRecoilValue(State) : 읽기 전용.
+- useSetRecoilState(State) : 값 변경.
+- useResetRecoilState(State) : 디폴트값으로 값 변경.
 
 <br/>
 
