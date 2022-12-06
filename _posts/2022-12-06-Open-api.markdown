@@ -1,0 +1,57 @@
+---
+layout: post
+title: "🎄 Open API"
+date: 2022-12-06
+tags: [frontend-study]
+---
+
+## 🍻 OPEN API
+
+- 신규 프로젝트를 진행하기 위해 사용가능한 OPEN API를 검색해보자.
+
+  <br/>
+
+## 👒 공공데이터 api 활용
+
+<img src="../assets/images/post/img_20221206_01.png" alt="" style="width:90%; width:700px; margin: auto 1rem; vertical-align:top;" />
+
+- 공공데이터포털에서 원하는 api 검색.
+- [https://www.data.go.kr/index.do](https://www.data.go.kr/index.do){:target="\_blank"} 해당 사이트에서 공공 api를 신청해보자.
+- 로그인 후 api 검색 후 활용 신청 버튼 클릭.
+
+<img src="../assets/images/post/img_20221206_02.png" alt="" style="width:90%; width:700px; margin: auto 1rem; vertical-align:top;" />
+
+- 활용 목적을 입력하고.
+
+<img src="../assets/images/post/img_20221206_03.png" alt="" style="width:90%; width:700px; margin: auto 1rem; vertical-align:top;" />
+
+- 동의 체크 후 활용 신청.
+
+<img src="../assets/images/post/img_20221206_04.png" alt="" style="width:90%; width:700px; margin: auto 1rem; vertical-align:top;" />
+
+- 승인 결과를 확인해보자.
+
+<img src="../assets/images/post/img_20221206_05.png" alt="" style="width:90%; width:700px; margin: auto 1rem; vertical-align:top;" />
+
+<br/>
+
+## 🍼 승인된 API 호출
+
+- 요청변수 확인.
+
+<img src="../assets/images/post/img_20221206_06.png" alt="" style="width:90%; width:700px; margin: auto 1rem; vertical-align:top;" />
+
+- ... 작성중.
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://www.data.go.kr/index.do](https://www.data.go.kr/index.do){:target="\_blank"}
+  <br/><br/>
+
+---
