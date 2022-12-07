@@ -41,7 +41,28 @@ tags: [frontend-study]
 
 <img src="../assets/images/post/img_20221206_06.png" alt="" style="width:90%; width:700px; margin: auto 1rem; vertical-align:top;" />
 
-- ... 작성중.
+- api URL : 기본 api URL + ServiceKey + 그외 필수 parameta.
+
+```tsx
+// ex
+...
+const serviceKey = process.env.NEXT_PUBLIC_SERVICE_KEY;
+const apiGet = async () => {
+  try {
+    const response = await axios.get(
+      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=${serviceKey}&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20221207&base_time=0600&nx=55&ny=127`
+    );
+    console.log(response.data);
+  } catch (e) {
+    console.error(e);
+  }
+};
+...
+```
+
+- api 호출 성공.
+
+<img src="../assets/images/post/img_20221207_01.png" alt="" style="width:90%; width:700px; margin: auto 1rem; vertical-align:top;" />
 
 <br/>
 
