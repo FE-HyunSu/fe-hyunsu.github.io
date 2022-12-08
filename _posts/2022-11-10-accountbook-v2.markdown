@@ -1,8 +1,8 @@
 ---
 layout: post
-title: '📟 AccountBook develop'
+title: "📟 AccountBook develop"
 date: 2022-11-12
-tags: [toyproject]
+tags: [retrospect]
 ---
 
 ## 🔉 AccountBook project migration
@@ -31,8 +31,8 @@ $ npm install firebase
 ```js
 // firebaseConfig.js
 // Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -187,8 +187,8 @@ db.collection('product') //원하는 컬렉션 선택하기, 지금은 product�
 ```javascript
 // firebase.js
 // Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -210,8 +210,8 @@ export const database = getFirestore(app);
 
 ```javascript
 // firestore.js
-import { database } from './firebaseConfig';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { database } from "./firebaseConfig";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 const getData = async (collectionName) => {
   return await getDocs(collection(database, collectionName));

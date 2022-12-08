@@ -61,7 +61,8 @@ layout: default
       %}
       onclick="location.href='{{ post.url | relative_url }}'"
     >
-      {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+      {%- assign date_format = site.plainwhite.date_format | default: "%b %-d,
+      %Y" -%}
       <a class="post-link" href="#" onclick="return false;">
         <h2 class="post-title">{{ post.title | escape }}</h2>
       </a>
@@ -80,13 +81,17 @@ layout: default
       </div>
       <div class="post">
         {%- if site.show_excerpts -%} {{ post.excerpt }}
-        <a class="post-link" href="{{" post.url | relative_url }}> ...(more) </a>
+        <a class="post-link" href="{{" post.url | relative_url }}>
+          ...(more)
+        </a>
         {%- endif -%}
       </div>
       <div class="tag-container">
         {% for tag in post.tags %}
         <a class="link-tag">
-          <span class="tag" data-tag="{{tag}}"> {{ site.data.format[tag] }} </span>
+          <span class="tag" data-tag="{{tag}}">
+            {{ site.data.format[tag] }}
+          </span>
         </a>
         {% endfor %}
       </div>
@@ -114,7 +119,7 @@ layout: default
       filterByTagName(currentTag);
     }
   });
-  $('[data-tag]').click((e) => {
+  $("[data-tag]").click((e) => {
     if (currentTag == e.target.dataset.tag) {
       releaseFilter();
       currentTag = null;
@@ -127,26 +132,29 @@ layout: default
 
   function getQuery() {
     var query = {};
-    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
-      query[key] = value;
-    });
+    window.location.search.replace(
+      /[?&]+([^=&]+)=([^&]*)/gi,
+      function (str, key, value) {
+        query[key] = value;
+      }
+    );
     return query;
   }
 
   function releaseFilter() {
-    $('.hidden').removeClass('hidden');
-    $('.tag').removeClass('selected');
+    $(".hidden").removeClass("hidden");
+    $(".tag").removeClass("selected");
   }
 
   function filterByTagName(tagName) {
-    $('.hidden').removeClass('hidden');
-    $('.post-wrapper').each((index, elem) => {
+    $(".hidden").removeClass("hidden");
+    $(".post-wrapper").each((index, elem) => {
       if (!elem.hasAttribute(`data-${tagName}`)) {
-        $(elem).parent().addClass('hidden');
+        $(elem).parent().addClass("hidden");
       }
     });
-    $(`.tag`).removeClass('selected');
-    $(`.tag[data-tag=${$.escapeSelector(tagName)}]`).addClass('selected');
+    $(`.tag`).removeClass("selected");
+    $(`.tag[data-tag=${$.escapeSelector(tagName)}]`).addClass("selected");
   }
 
   function updateQueryString(tagName) {
@@ -156,6 +164,6 @@ layout: default
     } else {
       path = `${location.protocol}//${location.host}${location.pathname}?tag=${tagName}`;
     }
-    window.history.replaceState({ path }, '', path);
+    window.history.replaceState({ path }, "", path);
   }
 </script>

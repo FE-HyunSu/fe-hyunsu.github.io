@@ -4,11 +4,11 @@ layout: default
 
 {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
 <div class="post-container">
-  <a class="post-link" href="{{ page.url | relative_url }}">
-    <h2 class="post-title">{{ page.title | escape }}</h2>
-  </a>
+  <h2 class="post-title">{{ page.title | escape }}</h2>
   <div class="post-meta">
-    <div class="post-date"><i class="icon-calendar"></i>{{ page.date | date: date_format }}</div>
+    <div class="post-date">
+      <i class="icon-calendar"></i>{{ page.date | date: date_format }}
+    </div>
     {%- if page.categories.size > 0 -%}
     <ul class="post-categories">
       {%- for tag in page.categories -%}
@@ -19,7 +19,8 @@ layout: default
   </div>
   <div class="post">{{ content }}</div>
   <div class="tag-container">
-    {% if page.tags %} {% for tag in page.tags %} {% if site.data.tags contains tag %}
+    {% if page.tags %} {% for tag in page.tags %} {% if site.data.tags contains
+    tag %}
     <a class="no-underline" href="{{ site.baseurl }}/?tag={{ tag }}">
       <span class="tag">{{ site.data.format[tag] }}</span>
     </a>
@@ -29,14 +30,15 @@ layout: default
   <div id="disqus_thread" style="margin-top: 25px"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = '{{ page.url | absolute_url }}';
-      this.page.identifier = '{{ page.url | absolute_url }}';
+      this.page.url = "{{ page.url | absolute_url }}";
+      this.page.identifier = "{{ page.url | absolute_url }}";
     };
     (function () {
       var d = document,
-        s = d.createElement('script');
-      s.src = 'https://{{ site.plainwhite.disqus_shortname }}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
+        s = d.createElement("script");
+      s.src =
+        "https://{{ site.plainwhite.disqus_shortname }}.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
       (d.head || d.body).appendChild(s);
     })();
   </script>

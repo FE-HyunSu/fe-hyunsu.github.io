@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ' 💵 AccountBook'
+title: " 💵 AccountBook"
 date: 2022-11-04
-tags: [toyproject]
+tags: [retrospect]
 ---
 
 ## 🛼 React study 모임 정산 페이지
