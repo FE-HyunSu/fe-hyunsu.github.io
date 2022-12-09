@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '🧮 TypeScript 문법 정리(작성중)'
+title: "🧮 TypeScript 문법 정리(작성중)"
 date: 2002-11-06
 tags: [frontend-study]
 ---
@@ -11,13 +11,13 @@ tags: [frontend-study]
 - 타입 지정 시 Typescript 컴파일러가 컴파일단계에서 잘못된 사용 코드를 잡아낼 수 있음.
 
 ```tsx
-let name: string = 'mason'; // name 변수에 'mason' 이라는 값을 할당하여 해당 값은 string 타입을 가짐.
+let name: string = "mason"; // name 변수에 'mason' 이라는 값을 할당하여 해당 값은 string 타입을 가짐.
 ```
 
 - 컴포넌트 예시.
 
 ```tsx
-import React from 'react';
+import React from "react";
 // 타입 지정.
 type Image = {
   src: string;
@@ -65,17 +65,35 @@ const sample = (count: number = 10) => {
 
 <br/>
 
-### 컴포넌트에 생략 가능한 props 설정.
-
-- 컴포넌트의 props에서 생략 가능한 값인 경우, '?' 문자를 사용.
-- test.
-
-### 상황별 타입 지정
-
-- button event :
+### 타입 지정 방식.
 
 ```tsx
-const;
+// 명시적 타입 지정.
+const name: string = `mason`;
+
+// 별칭으로 타입 지정.
+type nameType = string;
+const name: nameType = `mason`;
+
+// 객체로 타입 지정.
+type typeGroup = {
+  age: number;
+  name: string;
+};
+const user: typeGroup = {
+  age: 14,
+  name: `mason`,
+};
+
+// interface로 타입 지정.
+interface typeGroup {
+  age: number;
+  name: string;
+}
+const user: typeGroup = {
+  age: 14,
+  name: `mason`,
+};
 ```
 
 <br/>
