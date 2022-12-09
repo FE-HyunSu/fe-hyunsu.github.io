@@ -14,7 +14,8 @@ tags: [retrospect]
 
 ## 📺 URL
 
-- [https://tubular-cocada-39cf07.netlify.app](https://tubular-cocada-39cf07.netlify.app){:target="\_blank"}
+- 페이지 URL : [https://tubular-cocada-39cf07.netlify.app](https://tubular-cocada-39cf07.netlify.app){:target="\_blank"}
+- Github 저장소 : [https://github.com/FE-HyunSu/accountbook.v2](https://github.com/FE-HyunSu/accountbook.v2){:target="\_blank"}
 
 <br/>
 
