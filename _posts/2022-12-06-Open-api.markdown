@@ -66,6 +66,12 @@ const apiGet = async () => {
 
 <br/>
 
+## 👀 etc. Open API
+
+- 서울 열린 데이터 광장 : [https://data.seoul.go.kr](https://data.seoul.go.kr){:target="\_blank"}
+
+<br/>
+
 ---
 
 <br/>
@@ -73,6 +79,7 @@ const apiGet = async () => {
 ## 🎫 참고 페이지
 
 - [https://www.data.go.kr/index.do](https://www.data.go.kr/index.do){:target="\_blank"}
+- [https://data.seoul.go.kr](https://data.seoul.go.kr){:target="\_blank"}
   <br/><br/>
 
 ---
