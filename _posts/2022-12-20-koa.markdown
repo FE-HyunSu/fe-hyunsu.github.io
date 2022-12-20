@@ -1,0 +1,63 @@
+---
+layout: post
+title: "🦓 KOA"
+date: 2022-12-20
+tags: [backend-study]
+---
+
+## 🐌 Hello Koa.
+
+- Node.js의 웹 프레임워크인 Express.js 의 개발팀이, Koa 라는 웹프레임워크를 새로 만들었음.
+- 기존의 Express 의 경우엔 오픈소스의 소유권이 IBM 계열사인 StrongLoop 으로 이전이 되었으며, 유지보수는 되고있긴 하지만, 장기적으로 보면 이로 인하여 인지도를 잃을 확률이 높다고 함.
+- 물론, Express는 유명한 라이브러리이기 때문에, 매우 많은 프로젝트에서 Express 를 사용하고 있긴 함.
+- 하지만, Koa 로 마이그레이션 하는 프로젝트도 늘어나는 추세.
+- Koa의 장점으론 Express보다 훨씬 가볍고, Node.js v7 의 async/await 기능을 아주 편하게 사용 할 수 있다는 점.
+
+<br/>
+
+## 🦟 Koa에 대해 좀더 알아보자.
+
+- Koa 어플리케이션은, 미들웨어의 배열로 구성됨.
+- app.use 라는 함수를 통해 미들웨어를 어플리케이션에 등록 함.
+
+```js
+const Koa = require("koa"); // Node.JS 에서는 require 메서드를 통해 외부 모듈을 가져올 수 있음.
+const app = new Koa();
+
+app.use((ctx) => {
+  ctx.body = "Hello Koa";
+});
+
+app.listen(4000, () => {
+  console.log("heurm server is listening to port 4000");
+});
+```
+
+- 여기서 ctx => { ... } 코드가, 하나의 미들웨어 인 것.
+- koa 의 미들웨어함수에선, 두가지의 파라미터를 받는다.
+- ctx : 웹 요청과, 응답에 대한 정보를 지니고있음.
+- next : 다음 미들웨어를 실행시키는 함수. (만약 미들웨어에서 next 호출하지 않게 된다면, 그 부분에서 요청처리를 완료시키고, 응답을 하게됨.)
+
+```js
+app.use((ctx, next) => {
+  console.log(1);
+  next();
+});
+app.use((ctx, next) => {
+  console.log(2);
+  next();
+});
+```
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://www.youtube.com/watch?v=9wrHxqI6zuM](https://www.youtube.com/watch?v=9wrHxqI6zuM){:target="\_blank"}
+  <br/><br/>
+
+---
