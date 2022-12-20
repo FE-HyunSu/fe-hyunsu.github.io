@@ -49,6 +49,48 @@ app.use((ctx, next) => {
 });
 ```
 
+- next() 메서드는 Promise를 반환한다.
+- 아래와 같은 형식으로 than을 통해, 다음 작업들에 대한 내용을 정의할 수 있음.
+
+```js
+app.use((ctx, next) => {
+  console.log(1);
+  const started = new Date();
+  next().then(() => {
+    console.log(new Date() - started + "ms");
+  });
+});
+```
+
+<br/>
+
+## 🐅 koa-router.
+
+- koa 모듈에 router가 내장되어 있진 않다.
+- kor-router 모듈 추가 설치가 필요.
+
+```js
+const Koa = require("koa");
+const Router = require("koa-router");
+
+const app = new Koa();
+const router = new Router(); // Router 인스턴스를 새로 생성하여 router 값에 넣고,
+
+// '/' 경로로 들어오면 홈 이라는 내용으로 응답하도록 라우터 설정.
+router.get("/", (ctx, next) => {
+  ctx.body = "홈";
+});
+
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+app.listen(4000, () => {
+  console.log("heurm server is listening to port 4000");
+});
+```
+
+- Router 인스턴스를 새로 생성하여 router 값에 넣고, '/' 경로로 들어오면 홈 이라는 내용으로 응답하도록 라우터 설정.
+
 <br/>
 
 ---
