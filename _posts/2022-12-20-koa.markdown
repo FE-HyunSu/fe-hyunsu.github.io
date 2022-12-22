@@ -15,13 +15,59 @@ tags: [backend-study]
 
 <br/>
 
+## 👩‍🔬 Express 와 Koa 비교.
+
+- Express setup.
+
+```js
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3000;
+const server = app.listen(PORT, () => {
+  console.log(`Express is listening to <http://localhost>:${PORT}`);
+});
+```
+
+- KOA setup.
+
+```js
+const koa = require("koa");
+const app = express();
+const PORT = process.env.PORT || 3000;
+const server = app.listen(PORT, () => {
+  console.log(`Koa is listening to <http://localhost>:${PORT}`);
+});
+```
+
+<br/>
+
 ## 🦟 Koa에 대해 좀더 알아보자.
 
 - Koa 어플리케이션은, 미들웨어의 배열로 구성됨.
 - app.use 라는 함수를 통해 미들웨어를 어플리케이션에 등록 함.
 
+- Express Middleware.
+
 ```js
-const Koa = require("koa"); // Node.JS 에서는 require 메서드를 통해 외부 모듈을 가져올 수 있음.
+app.use((req, res, next) => {
+  console.log(`Time : ${Date.now()}`);
+  next();
+});
+```
+
+- KOA Middleware. (async/await 사용 가능.)
+
+```js
+app.use(async (ctx, next) => {
+  console.log(`Time: ${Date.now()}`);
+  await next();
+});
+```
+
+- 샘플 페이지를 만들어보자.
+
+```js
+const Koa = require("koa");
 const app = new Koa();
 
 app.use((ctx) => {
@@ -123,6 +169,7 @@ module.exports = books;
 ## 🎫 참고 페이지
 
 - [https://www.youtube.com/watch?v=9wrHxqI6zuM](https://www.youtube.com/watch?v=9wrHxqI6zuM){:target="\_blank"}
+- [https://devlog-h.tistory.com/13](https://devlog-h.tistory.com/13){:target="\_blank"}
   <br/><br/>
 
 ---
