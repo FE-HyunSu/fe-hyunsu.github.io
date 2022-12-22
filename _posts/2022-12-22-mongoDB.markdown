@@ -75,6 +75,36 @@ client.connect((err) => {
 
 <br/>
 
+## 🕊 atlas 클러스터 생성 후 mongoose를 통한 연결.
+
+- options 값에 대해 알아보자.
+
+```js
+// Set to true to opt into the MongoDB driver's new URL parser logic.
+[options.useNewUrlParser=false] <Boolean>
+default : false
+```
+
+```js
+// Set to true to opt into the MongoDB driver's replica set and sharded cluster monitoring engine.
+[options.useUnifiedTopology=false] <Boolean>
+default : false
+```
+
+```js
+// Mongoose-specific option. If true, this connection will use createIndex() instead of ensureIndex() for automatic index builds via Model.init().
+[options.useCreateIndex=true] <Boolean>
+```
+
+```js
+// Set to false to make findOneAndUpdate() and findOneAndRemove() use native findOneAndUpdate() rather than findAndModify().
+[options.useFindAndModify=true] <Boolean>
+default : true
+// => true로 설정했으니 findOneAndUpdate() and findOneAndRemove()를 사용해야 한다.
+```
+
+<br/>
+
 ---
 
 <br/>
@@ -82,6 +112,8 @@ client.connect((err) => {
 ## 🎫 참고 페이지
 
 - [https://meetup.toast.com/posts/275](https://meetup.toast.com/posts/275){:target="\_blank"}
+- [https://darrengwon.tistory.com/330](https://darrengwon.tistory.com/330){:target="\_blank"}
+- [https://mongoosejs.com/docs/api.html#mongoose_Mongoose-connect](https://mongoosejs.com/docs/api.html#mongoose_Mongoose-connect){:target="\_blank"}
   <br/><br/>
 
 ---
