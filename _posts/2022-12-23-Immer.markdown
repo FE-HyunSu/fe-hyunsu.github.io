@@ -1,0 +1,47 @@
+---
+layout: post
+title: "🐚 Immer"
+date: 2022-12-23
+tags: [frontend-study]
+---
+
+## Immer를 활용하여 쉬운 불변성 유지.
+
+- 배열이나 객체를 업데이트 해야 할 때에는 직접 수정 하지 않고 불변성을 유지하면서 업데이트를 해야함.
+- 보통 스프레드 연산자를 활용하여 데이터를 업데이트 처리한다.
+- immer를 활용하여 쉬운 불변성 유지해보자.
+
+```tsx
+$ npm install immer
+```
+
+- 샘플 코드.
+
+```tsx
+import produce from "immer";
+
+const state = {
+  number: 1,
+  contents: 2,
+};
+
+const stateUpdate = produce(state, (draft) => {
+  draft.number += 1;
+});
+
+console.log(stateUpdate);
+// result : { number: 2, contents: 2 }
+```
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://react.vlpt.us/basic/23-immer.html](https://react.vlpt.us/basic/23-immer.html){:target="\_blank"}
+  <br/><br/>
+
+---
