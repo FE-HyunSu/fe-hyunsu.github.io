@@ -1,0 +1,81 @@
+---
+layout: post
+title: "🌚 CORS"
+date: 2022-12-24
+tags: [frontend-study]
+---
+
+## 🌏 개요
+
+- 공공기관 오픈 API 혹은 네이버나 카카오에서 제공하는 기업 API로 데이터 요청이 필요한 경우, CORS 에러에 막히는 경우가 종종 발생되어 기록.<br/>
+  <img src="../assets/images/post/img_20221224_02.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+
+<br/>
+
+## 🪸 CORS (Cross Origin Resource Share) 란?
+
+- '교차 출처 리소스 공유'라고 하는 이 개념은 서로 다른 아이피 혹은 서버에서 데이터의 요청할 때 중요한 개념.
+- 웹 어플리케이션은 리소스가 자신의 출처(프로토콜, 도메인, 포트)와 다를 때 교차출처 HTTP 요청을 실행하기 때문.<br/>
+  <img src="../assets/images/post/img_20221224_01.png" alt="" style="width:90%; max-width:600px; min-width:300px;" />
+
+<br/>
+
+## ☄️ CORS 에러 해결방법.
+
+### 🗿 (1) cors-anywhere 사이트 프록시 서버 활용.
+
+- https://cors-anywhere.herokuapp.com
+- 위 사이트가 프록시 서버 역할을 해준다.
+- ```tsx
+  // 사용방법.
+  axios
+    .get("https://cors-anywhere.herokuapp.com/https://{apiURL}")
+    .then((response) => {
+      console.log(response);
+    });
+  ```
+
+### 🗿 (2) JSONP를 활용. (GET 요청만 가능)
+
+- JSONP(JSON-P, JSON with Padding)
+- JSONP는 클라이언트가 아닌 다른 도메인의 서버로부터 데이터를 요청하기 위해 사용됨.
+- 동일-출처 정책을 우회하는 데이터의 공유를 가능하게함.
+- 브라우저에서 <script> 요소는 다른 도메인(스크립트 파일)에 임베드할 수 있기 때문에 보안상 제한되는 부분에 해당하지 않고, 이점을 활용.
+- 위와 같은 이유로 GET요청에 대해서만 유효하다.
+- ```sh
+  $ npm install jsonp
+  ```
+
+- ```tsx
+  // As-is
+  const response = await Axios.get("{apiURL}/?format=json");
+
+  // To-be
+  await jsonp("{apiURL}?format=jsonp", null, (error, response) => {
+    console.log(response);
+  });
+  ```
+
+### 🗿 (3) 미들웨어 CORS 추가. (서버설정을 직접할 수 없음)
+
+- 작성중.
+
+### 🗿 (4) 백엔드 서버를 거친다.
+
+- 백엔드에서 특정 도메인 허용 (access-control-allow-origin)
+
+### 🗿 (5) 프록시 서버 구축.
+
+<br/>
+
+---
+
+<br/>
+
+## 🎫 참고 페이지
+
+- [https://devlog.kro.kr/postitem/?name=Cors](https://devlog.kro.kr/postitem/?name=Cors){:target="\_blank"}
+- [https://velog.io/@yunsungyang-omc/React-React-App%EC%97%90%EC%84%9C-CORS-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0](https://velog.io/@yunsungyang-omc/React-React-App%EC%97%90%EC%84%9C-CORS-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0){:target="\_blank"}
+  <br/><br/>
+
+---
