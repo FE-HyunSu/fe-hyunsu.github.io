@@ -42,29 +42,51 @@ tags: [frontend-study]
 - 동일-출처 정책을 우회하는 데이터의 공유를 가능하게함.
 - 브라우저에서 <script> 요소는 다른 도메인(스크립트 파일)에 임베드할 수 있기 때문에 보안상 제한되는 부분에 해당하지 않고, 이점을 활용.
 - 위와 같은 이유로 GET요청에 대해서만 유효하다.
-- ```sh
-  $ npm install jsonp
-  ```
 
-- ```tsx
-  // As-is
-  const response = await Axios.get("{apiURL}/?format=json");
+```sh
+$ npm install jsonp
+```
 
-  // To-be
-  await jsonp("{apiURL}?format=jsonp", null, (error, response) => {
-    console.log(response);
-  });
-  ```
+```tsx
+await jsonp("{apiURL}?format=jsonp", null, (error, response) => {
+  console.log(response);
+});
+```
 
-### 🗿 (3) 미들웨어 CORS 추가. (서버설정을 직접할 수 없음)
+### 🗿 (3) package.json에 proxy 추가.
 
-- 작성중.
+```json
+// package.json
+{
+  ...,
+  "proxy": "https://apiURL"
+}
+```
 
-### 🗿 (4) 백엔드 서버를 거친다.
+- api 호출 시 url host 삭제 후 호출.
+
+```tsx
+axios.get("/url").then((data) => {
+  console.log(data.data);
+});
+```
+
+### 🗿 (4) 미들웨어 CORS 추가. (서버설정을 직접할 수 없음)
+
+```sh
+$ npm install cors
+```
+
+```js
+const cors = require("cors");
+app.use(cors());
+```
+
+### 🗿 (5) 백엔드 서버를 거친다.
 
 - 백엔드에서 특정 도메인 허용 (access-control-allow-origin)
 
-### 🗿 (5) 프록시 서버 구축.
+### 🗿 (6) 프록시 서버 구축.
 
 <br/>
 
