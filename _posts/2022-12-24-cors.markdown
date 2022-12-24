@@ -20,7 +20,62 @@ tags: [frontend-study]
 
 <br/>
 
-## ☄️ CORS 에러 해결방법.
+## 🛩 Nextjs 에서 CORS 에러 해결.
+
+- CORS 에러를 해결하는 방법은 프로젝트 환경에 따라 다양하게 있다.
+- React Nextjs 에서 CORS 에러를 처리하는 방법에 대해 알아보자.
+- Nextjs에서 커스텀 설정을 하기 위해 root레벨에 next.config.js 또는 next.config.mjs 파일을 만들 수 있음.
+- (Node.js 모듈이라 마지막에 module.exports 해줘야함)
+
+```tsx
+// next.config.js
+...
+const nextConfig = {
+  ...,
+  async rewrites() {
+      return [
+        {
+          source: '/:path*',
+          destination: `https://api.vworld.kr/:path*`,
+        },
+      ];
+    },
+  }
+...
+```
+
+- Rewrites는 특정 URL을 직접 입력하면 다른 URL로 이동을 하지만 사용자에게는 마치 이동이 되지 않은 것 처럼 보여준다.
+- 특정 URL을 Masking 하면서 다른 URL을 보여주는 것이다.
+- 이를 통해 Nextjs 에서 CORS 에러 해결이 가능하다.
+
+<br/>
+
+## 🛩 Netlify 에서 CORS 에러 해결.
+
+- 위 방법을 통해 문제가 해결되었다고 자만하지말자.
+- 로컬 환경과는 다르게 서비스 배포 시 참조하지 못하는 이슈가 발생된다.
+- 각 환경마다 다르겠지만, Netlify에서는 netlify.toml 파일 설정을 통해 해결했다.
+
+```js
+[[redirects]]
+  from = "/req"
+  to = "https://api.vworld.kr/req"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+```
+
+<br/>
+
+## ☄️ 그 외 CORS 에러 해결방법.
+
+- React Nextjs 환경 외 다양한 환경에서 CORS 에러 해결 방법들이다.
+- 모든 케이스를 확인해본것은 아니지만 기억해두자.
 
 ### 🗿 (1) cors-anywhere 사이트 프록시 서버 활용.
 
@@ -82,11 +137,20 @@ const cors = require("cors");
 app.use(cors());
 ```
 
-### 🗿 (5) 백엔드 서버를 거친다.
+### 🗿 (5) 백엔드 서버에서 설정.
 
 - 백엔드에서 특정 도메인 허용 (access-control-allow-origin)
+- 서버 담당자가 access-control-allow-origin 을 \* 해주거나 특정 URL을 허용해 주어야 한다.
 
 ### 🗿 (6) 프록시 서버 구축.
+
+- 프로젝트 내 프록시 서버를 구축. (express or koa)
+
+### 🗿 (7) http-proxy-middleware 활용.
+
+```sh
+$ npm install http-proxy-middleware
+```
 
 <br/>
 
