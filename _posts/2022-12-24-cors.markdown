@@ -20,9 +20,16 @@ tags: [frontend-study]
 
 <br/>
 
-## 🛩 Nextjs 에서 CORS 에러 해결.
+## 🛸 CORS 에러 해결방향.
 
 - CORS 에러를 해결하는 방법은 프로젝트 환경에 따라 다양하게 있다.
+- 대표적으로 클라이언트에서 처리하는 방법과 서버에서 처리하는 방법이 있고, 나머지는 디테일 구성에 따라 다름.
+- 하나씩 알아보자.
+
+<br/>
+
+## 🛩 Nextjs 에서 CORS 에러 해결.
+
 - React Nextjs 에서 CORS 에러를 처리하는 방법에 대해 알아보자.
 - Nextjs에서 커스텀 설정을 하기 위해 root레벨에 next.config.js 또는 next.config.mjs 파일을 만들 수 있음.
 - (Node.js 모듈이라 마지막에 module.exports 해줘야함)
@@ -162,6 +169,7 @@ $ npm install http-proxy-middleware
 
 - [https://devlog.kro.kr/postitem/?name=Cors](https://devlog.kro.kr/postitem/?name=Cors){:target="\_blank"}
 - [https://velog.io/@yunsungyang-omc/React-React-App%EC%97%90%EC%84%9C-CORS-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0](https://velog.io/@yunsungyang-omc/React-React-App%EC%97%90%EC%84%9C-CORS-%EC%9D%B4%EC%8A%88-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0){:target="\_blank"}
+- [https://docs.netlify.com/routing/redirects](https://docs.netlify.com/routing/redirects){:target="\_blank"}
   <br/><br/>
 
 ---
