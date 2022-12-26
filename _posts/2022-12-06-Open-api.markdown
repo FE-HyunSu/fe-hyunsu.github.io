@@ -69,6 +69,8 @@ const apiGet = async () => {
 ## 👀 etc. Open API
 
 - 서울 열린 데이터 광장 : [https://data.seoul.go.kr](https://data.seoul.go.kr){:target="\_blank"}
+- vWould Open API : [https://www.vworld.kr](https://www.vworld.kr){:target="\_blank"}
+- KAKAO Open API : [https://developers.kakao.com](https://developers.kakao.com){:target="\_blank"}
 
 <br/>
 
