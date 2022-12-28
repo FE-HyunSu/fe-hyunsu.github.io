@@ -2,7 +2,7 @@
 layout: post
 title: "🧯 router.isReady"
 date: 2022-12-28
-tags: [frontend-study]
+tags: [issue]
 ---
 
 ## 🔋 개요.
@@ -14,7 +14,7 @@ tags: [frontend-study]
 ## 🪫 바로 해결.
 
 - useEffect Hook의 의존성 배열에 router.isReady 값을 담아 호출.
-- NextJS@10.0.5 이후.
+- NextJS@10.0.5 버전 이상.
 - ```tsx
   ...
   const router = useRouter();
