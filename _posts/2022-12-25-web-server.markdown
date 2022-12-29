@@ -5,6 +5,12 @@ date: 2022-12-29
 tags: [backend-study]
 ---
 
+## ⛲️ Server 구성 및 요청 흐름.
+
+<img src="../assets/images/post/img_20221229_01.png" alt="" style="width:90%; max-width:800px; margin: auto 1rem; vertical-align:top;" />
+
+<br/>
+
 ## 🌏 Web Server가 하는일.
 
 - (1) 클라이언트로 부터 HTTP 요청을 받을 수 있다.
@@ -17,8 +23,6 @@ tags: [backend-study]
 
 - (1) 클라이언트로 부터 HTTP 요청 및 요청받은 정적 컨텐츠를 제공할 수 있음. (대부분의 WAS는 Web Server가 내장되어 있기 때문)
 - (2) DB조회나 다양한 로직 처리를 위해 동적 컨텐츠를 제공.
-
-<img src="../assets/images/post/img_20221229_01.png" alt="" style="width:90%; max-width:800px; margin: auto 1rem; vertical-align:top;" />
 
 <br/>
 
