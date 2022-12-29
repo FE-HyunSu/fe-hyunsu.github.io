@@ -26,7 +26,7 @@ tags: [frontend-study]
 
 - api 호출 시 data.realtimeArrivalList 경로에 필요한 데이터가 들어있다.
 
-<img src="../assets/images/post/img_20221210_01.png" alt="" style="width:90%; width:400px; margin: auto 1rem; vertical-align:top;" />
+<img src="../assets/images/post/img_20221210_01.png" alt="" style="width:90%; max-width:400px; margin: auto 1rem; vertical-align:top;" />
 
 - response 값들에 대해 자세히 알아보자.
 
@@ -89,7 +89,7 @@ const getSubwayInfo = async (name: string) => {
 
 - 버튼 UI도 가볍게 만들고, 위 함수를 활용하여 데이터를 호출해보자.
 
-<img src="../assets/images/post/img_20221210_02.png" alt="" style="width:90%; width:400px; margin: auto 1rem; vertical-align:top;" />
+<img src="../assets/images/post/img_20221210_02.png" alt="" style="width:90%; max-width:400px; margin: auto 1rem; vertical-align:top;" />
 
 <br/>
 

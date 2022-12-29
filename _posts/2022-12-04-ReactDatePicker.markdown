@@ -53,7 +53,7 @@ const [selectDate, setSelectDate] = useState(new Date());
 
 - AccountAdmin 프로젝트에 적용해봄. [이동](https://reliable-florentine-21f16f.netlify.app){:target="\_blank"}
 
-<img src="../assets/images/post/img_20221204_01.png" alt="" style="width:90%; width:200px; margin: auto 1rem; vertical-align:top;" />
+<img src="../assets/images/post/img_20221204_01.png" alt="" style="width:90%; max-width:200px; margin: auto 1rem; vertical-align:top;" />
 
 - Good.
 
