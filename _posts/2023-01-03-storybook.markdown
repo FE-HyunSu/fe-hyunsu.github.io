@@ -17,23 +17,36 @@ tags: [front-study]
 
 ## 🧍 Storybook 설치.
 
+- React NextJS + Typescript.
+
 ```sh
-$ npx @storybook/cli sb init
+// 스토리북 설치.
+$ npm install -D sb
+
+// 스토리북 라이브러리 초기화 설치.
+$ npx sb init
 ```
 
-- package.json 파일에 2개의 스크립트와 4개의 개발 의존성 추가 확인.
+- package.json 파일에 스크립트와 개발 의존성 추가 확인.
 
 ```json
 "scripts": {
   // 생략
-  "storybook": "start-storybook -p 9009 -s public",
-  "build-storybook": "build-storybook -s public"
+  "storybook": "start-storybook -p 6006",
+  "build-storybook": "build-storybook"
 },
 "devDependencies": {
-  "@storybook/addon-actions": "^5.2.8",
-  "@storybook/addon-links": "^5.2.8",
-  "@storybook/addons": "^5.2.8",
-  "@storybook/react": "^5.2.8"
+  "@storybook/addon-actions": "^6.5.15",
+  "@storybook/addon-essentials": "^6.5.15",
+  "@storybook/addon-interactions": "^6.5.15",
+  "@storybook/addon-links": "^6.5.15",
+  "@storybook/builder-webpack5": "^6.5.15",
+  "@storybook/manager-webpack5": "^6.5.15",
+  "@storybook/react": "^6.5.15",
+  "@storybook/testing-library": "^0.0.13",
+  "@types/styled-components": "^5.1.26",
+  "babel-loader": "^8.3.0",
+  "sb": "^6.5.15"
 }
 ```
 
@@ -41,18 +54,20 @@ $ npx @storybook/cli sb init
 - addons.js : Storybook 애드온을 추가할 때 사용.
 - config.js : 그 외 다른 설정을 할 때 사용.
 - .storybook/config.js 파일을 열고, src 디렉터리 내부에 stories.js로 끝나는 모든 파일이 Story로 인식되도록 설정해줌.<br/>(기본 설정은 src/stories 디렉터리 하위만 탐색하므로 주석 처리가 하거나 삭제)
+- .gitignore에 storybook 관련 내용 추가.
 
 ```tsx
-import { configure } from "@storybook/react";
-
-// automatically import all files ending in *.stories.js
-// configure(require.context('../src/stories', true, /\.stories\.js$/), module);
-configure(require.context("../src", true, /\.stories\.js$/), module);
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
 ```
+
+<br/>
 
 ## 🦖 StoryBook 구동.
 
-- Storybook 구동 시, 9009 포트에서 실행됨.
+- Storybook 구동 시, 6006 포트로 설정함.
 
 ```sh
 $ npm run storybook
