@@ -2,10 +2,10 @@
 layout: post
 title: "🤐 Storybook"
 date: 2023-01-03
-tags: [front-study]
+tags: [frontend-study]
 ---
 
-## 👽 Storybook 특.
+## 👽 Storybook.
 
 - 스토리북(Storybook)은 UI 컴포넌트 개발 도구.
 - UI 라이브러리를 내부 개발자들을 위해 문서화(documentation) 목적.
@@ -74,6 +74,7 @@ $ npm run storybook
 ```
 
 - Storybook은 프로젝트에서 개발하는 매인 애플리케이션과 별개로 따로 구동이 가능한 웹사이트.
+- (정리중)
 
 <br/>
 
