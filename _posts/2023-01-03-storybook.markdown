@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "🤐 Storybook"
-date: 2023-01-03
+title: "🤐 Storybook(정리중)"
+date: 2003-01-03
 tags: [frontend-study]
 ---
 
@@ -74,7 +74,9 @@ $ npm run storybook
 ```
 
 - Storybook은 프로젝트에서 개발하는 매인 애플리케이션과 별개로 따로 구동이 가능한 웹사이트.
-- (정리중)
+- (재정리중)
+- Storybook 적용 시 Webpack, Vite.
+- Nextjs 에서 설정값 정리 필요.
 
 <br/>
 
