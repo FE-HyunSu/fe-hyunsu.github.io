@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "🧮 TypeScript 문법 정리(작성중)"
-date: 2002-11-06
+title: "🧮 TypeScript 문법 정리"
+date: 2023-01-08
 tags: [frontend-study]
 ---
 
@@ -44,7 +44,7 @@ const Card = ({ image, title, content }: CardProps) => {
 
 <br/>
 
-### 매개변수 기존 조건 지정.
+### 🗡 매개변수 기존 조건 지정.
 
 - short circuiting이나 조건문 대신 기본 매개변수를 사용.
 
@@ -65,7 +65,7 @@ const sample = (count: number = 10) => {
 
 <br/>
 
-### 타입 지정 방식.
+### 🪓 타입 지정 방식.
 
 ```tsx
 // 명시적 타입 지정.
@@ -98,6 +98,44 @@ const user: typeGroup = {
 
 <br/>
 
+### 🔪 Javascript 원시 타입.
+
+- 타입스크립트 타입 지정을 위해 자바스크립트 원시타입에 대해 알아보자.
+- string, number, boolean, undefined, null, symbol, bigint
+- 자주 접하지 못했던 symbol, bigint 타입에 대해 알아보자.
+- symbol : 자바스크립트(JavaScript)에서 심볼은 원시 데이터 값(primitive value).
+- BigInt : **BigInt**는 Number 원시 값이 안정적으로 나타낼 수 있는 최대치인 2^53 - 1보다 큰 정수를 표현할 수 있는 내장 객체.<br/>BigInt 데이터 타입은 위에서 설명한 Number 데이터 타입의 한계로 최근 문법에 추가된 데이터 타입.<br/>BigInt는 임의의 정밀도로 정수를 나타낼 수있는 JavaScript의 새로운 숫자 데이터형.<br/>BigInt를 사용하면 숫자에 대한 안전한 정수 제한을 초과하여 큰 정수를 안전하게 저장하고 조작 할 수 있음.
+
+```tsx
+// BigInt
+
+const previousMaxSafe = BigInt(Number.MAX_SAFE_INTEGER);
+// ↪ 9007199254740991
+
+const maxPlusOne = previousMaxSafe + 1n;
+// ↪ 9007199254740992n
+
+const theFuture = previousMaxSafe + 2n;
+// ↪ 9007199254740993n, this works now!
+
+const multi = previousMaxSafe * 2n;
+// ↪ 18014398509481982n
+
+const subtr = multi – 10n;
+// ↪ 18014398509481972n
+
+const mod = multi % 10n;
+// ↪ 2n
+
+const bigN = 2n ** 54n;
+// ↪ 18014398509481984n
+
+bigN * -1n
+// ↪ –18014398509481984n
+```
+
+<br/>
+
 ---
 
 <br/>
@@ -105,6 +143,7 @@ const user: typeGroup = {
 ## 🎫 참고 페이지
 
 - [https://defineall.tistory.com/919](https://defineall.tistory.com/919){:target="\_blank"}
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/BigInt](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/BigInt){:target="\_blank"}
   <br/><br/>
 
 ---
