@@ -98,9 +98,11 @@ const user: typeGroup = {
 
 <br/>
 
-### 🔪 Javascript 원시 타입.
+### 🔪 Javascript 데이터 타입.
 
-- 타입스크립트 타입 지정을 위한 자바스크립트 원시타입 종류.<br/>ㄴ `string`, `number`, `boolean`, `undefined`, `null`, `symbol`, `bigint`
+- 데이터 타입은 총 8가지(원시형 타입 7개, object 타입)로 나뉨.
+- object 타입으로는 보통 알고있는 객체형 데이터 { ... }, function도 object 타입.
+- 원시형 타입으로는 `string`, `number`, `boolean`, `undefined`, `null`, `symbol`, `bigint` 가 있음.
 - 자주 접하지 못했던 `symbol`, `bigint` 타입에 대해 알아보자.
 - symbol : 자바스크립트(JavaScript)에서 심볼은 원시 데이터 값(primitive value).
 - BigInt : **BigInt**는 Number 원시 값이 안정적으로 나타낼 수 있는 최대치인 2^53 - 1보다 큰 정수를 표현할 수 있는 내장 객체.<br/>ㄴ BigInt 데이터 타입은 위에서 설명한 Number 데이터 타입의 한계로 최근 문법에 추가된 데이터 타입.<br/>ㄴ BigInt는 임의의 정밀도로 정수를 나타낼 수있는 JavaScript의 새로운 숫자 데이터형.<br/>ㄴ BigInt를 사용하면 숫자에 대한 안전한 정수 제한을 초과하여 큰 정수를 안전하게 저장하고 조작 할 수 있음.
@@ -147,6 +149,7 @@ bigN * -1n
 
 - [https://defineall.tistory.com/919](https://defineall.tistory.com/919){:target="\_blank"}
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/BigInt](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/BigInt){:target="\_blank"}
+- [https://velog.io/@jewon119/01.JavaScript-%EA%B8%B0%EC%B4%88-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85](https://velog.io/@jewon119/01.JavaScript-%EA%B8%B0%EC%B4%88-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85){:target="\_blank"}
   <br/><br/>
 
 ---
