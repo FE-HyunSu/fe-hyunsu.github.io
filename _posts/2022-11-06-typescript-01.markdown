@@ -100,11 +100,10 @@ const user: typeGroup = {
 
 ### 🔪 Javascript 원시 타입.
 
-- 타입스크립트 타입 지정을 위해 자바스크립트 원시타입에 대해 알아보자.
-- string, number, boolean, undefined, null, symbol, bigint
-- 자주 접하지 못했던 symbol, bigint 타입에 대해 알아보자.
+- 타입스크립트 타입 지정을 위한 자바스크립트 원시타입 종류.<br/>ㄴ `string`, `number`, `boolean`, `undefined`, `null`, `symbol`, `bigint`
+- 자주 접하지 못했던 `symbol`, `bigint` 타입에 대해 알아보자.
 - symbol : 자바스크립트(JavaScript)에서 심볼은 원시 데이터 값(primitive value).
-- BigInt : **BigInt**는 Number 원시 값이 안정적으로 나타낼 수 있는 최대치인 2^53 - 1보다 큰 정수를 표현할 수 있는 내장 객체.<br/>BigInt 데이터 타입은 위에서 설명한 Number 데이터 타입의 한계로 최근 문법에 추가된 데이터 타입.<br/>BigInt는 임의의 정밀도로 정수를 나타낼 수있는 JavaScript의 새로운 숫자 데이터형.<br/>BigInt를 사용하면 숫자에 대한 안전한 정수 제한을 초과하여 큰 정수를 안전하게 저장하고 조작 할 수 있음.
+- BigInt : **BigInt**는 Number 원시 값이 안정적으로 나타낼 수 있는 최대치인 2^53 - 1보다 큰 정수를 표현할 수 있는 내장 객체.<br/>ㄴ BigInt 데이터 타입은 위에서 설명한 Number 데이터 타입의 한계로 최근 문법에 추가된 데이터 타입.<br/>ㄴ BigInt는 임의의 정밀도로 정수를 나타낼 수있는 JavaScript의 새로운 숫자 데이터형.<br/>ㄴ BigInt를 사용하면 숫자에 대한 안전한 정수 제한을 초과하여 큰 정수를 안전하게 저장하고 조작 할 수 있음.
 
 ```tsx
 // BigInt
@@ -133,6 +132,10 @@ const bigN = 2n ** 54n;
 bigN * -1n
 // ↪ –18014398509481984n
 ```
+
+<br/>
+
+(정리중..)
 
 <br/>
 
