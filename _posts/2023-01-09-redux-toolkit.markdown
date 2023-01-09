@@ -14,12 +14,14 @@ tags: [frontend-study]
 - 비동기 작업을 위한 thunk 와 saga 등 리덕스의 유효한 기능을 사용하기 위해 라이브러리를 사용해야 함.
 - Redux-Toolkit은 saga를 제외한 위 모든 기능을 내장된 기능으로 제공한다.
 
+<img src="../assets/images/post/img_20230109_01.gif" alt="" style="width:90%; max-width:500px; margin: auto 1rem; vertical-align:top;" />
+
 <br/>
 
 ## 🏺 Redux-toolkit 설치.
 
 ```sh
-$ npm install @reduxjs/toolkit react-redux.
+$ npm install @reduxjs/toolkit react-redux
 ```
 
 <br/>
@@ -39,6 +41,8 @@ $ npm install @reduxjs/toolkit react-redux.
 <br/>
 
 ## 🔬 진행과정.
+
+<img src="../assets/images/post/img_20230109_02.gif" alt="" style="width:90%; max-width:600px; margin: auto 1rem; vertical-align:top;" />
 
 - UI가 처음 렌더링될 때, UI 컴포넌트는 리덕스 스토어의 상태에 접근하여 해당 상태를 렌더링한다.
 - 이후 UI에서 상태가 변경되면, 앱은 디스패치를 실행해 액션을 일으킨다.
