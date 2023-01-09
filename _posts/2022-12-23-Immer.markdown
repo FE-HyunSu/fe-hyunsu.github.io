@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🐚 Immer"
+title: "🐚 불변성 유지(Immer)"
 date: 2022-12-23
 tags: [frontend-study]
 ---
@@ -39,16 +39,16 @@ console.log(stateUpdate);
 ...
 function reducer(state, action) {
   switch (action.type) {
-    case "CREATE_USER":
+    case "TEST_USER1":
       return produce(state, (draft) => {
         draft.users.push(action.user);
       });
-    case "TOGGLE_USER":
+    case "TEST_USER2":
       return produce(state, (draft) => {
         const user = draft.users.find((user) => user.id === action.id);
         user.active = !user.active;
       });
-    case "REMOVE_USER":
+    case "TEST_USER3":
       return produce(state, (draft) => {
         const index = draft.users.findIndex((user) => user.id === action.id);
         draft.users.splice(index, 1);
