@@ -20,9 +20,9 @@ tags: [issue]
   const router = useRouter();
   ...
   useEffect(() => {
-      if (!router.isReady) return;
-      console.log(lat);
-      console.log(lng);
+    if (!router.isReady) return;
+    console.log(lat);
+    console.log(lng);
   }, [router.isReady]);
   ```
 
