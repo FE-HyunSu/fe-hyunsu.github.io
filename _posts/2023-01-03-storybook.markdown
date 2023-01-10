@@ -5,24 +5,39 @@ date: 2003-01-03
 tags: [frontend-study]
 ---
 
-## 👽 Storybook.
+## 👽 Storybook 이란?
 
 - 스토리북(Storybook)은 UI 컴포넌트 개발 도구.
+
+## 🧺 Storybook 사용 목적.
+
 - UI 라이브러리를 내부 개발자들을 위해 문서화(documentation) 목적.
 - 외부 공개용 디자인 시스템(Design System)을 개발하기 위한 기본 플랫폼 목적.
-- 스토리북(Storybook)을 기본 구성 단위는 스토리(Story)이며 하나의 UI 컴포넌트는 보통 하나 이상의 Story를 가지게 됨.
+
+## 🛋 Storybook 특징.
+
+- 기본 구성 단위는 스토리(Story)이며 하나의 UI 컴포넌트는 보통 하나 이상의 Story를 가지게 됨.
 - 각 Story는 해당 UI 컴포넌트가 어떻게 사용될 수 있는지를 보여주는 샘플.
+- Storybook은 프로젝트에서 개발하는 매인 애플리케이션과 별개로 따로 구동이 가능한 웹사이트.
 
 <br/>
 
-## 🧍 Storybook 설치.
+## 🧍 Storybook 설치. (React NextJS + Typescript)
 
-- React NextJS + Typescript.
+- 스토리북 + webpack 설치.
 
 ```sh
-// 스토리북 설치.
-$ npm install -D sb
+$ npx sb init --builder webpack5
+```
 
+<br/>
+
+## 번들링으로 Vite가 아닌 Webpack을 선택한 이유.
+
+- Vite의 SSR 지원 단계는 아직 실험적 단계라고 함.
+- Nextjs와 같은 SSR에서 사용 시 vite-plugin-ssr과 같은 플러그인 도움을 받아야 함.
+
+```sh
 // 스토리북 라이브러리 초기화 설치.
 $ npx sb init
 ```
@@ -72,11 +87,6 @@ storybook-static
 ```sh
 $ npm run storybook
 ```
-
-- Storybook은 프로젝트에서 개발하는 매인 애플리케이션과 별개로 따로 구동이 가능한 웹사이트.
-- (재정리중)
-- Storybook 적용 시 Webpack, Vite.
-- Nextjs 에서 설정값 정리 필요.
 
 <br/>
 
